@@ -2,18 +2,18 @@
 /**
  * Add sidebar class in body
  *
- * @since Polite 1.0.0
+ * @since Springy 1.0.0
  *
  */
 
-add_filter('body_class', 'polite_body_class');
-function polite_body_class($classes)
+add_filter('body_class', 'springy_body_class');
+function springy_body_class($classes)
 {
     $classes[] = 'at-sticky-sidebar';
-    global $polite_theme_options;
+    global $springy_theme_options;
     
     if (is_singular()) {
-        $sidebar = $polite_theme_options['polite-sidebar-single-page'];
+        $sidebar = $springy_theme_options['springy-sidebar-single-page'];
         if ($sidebar == 'single-no-sidebar') {
             $classes[] = 'single-no-sidebar';
         } elseif ($sidebar == 'single-left-sidebar') {
@@ -25,7 +25,7 @@ function polite_body_class($classes)
         }
     }
     
-    $sidebar = $polite_theme_options['polite-sidebar-blog-page'];
+    $sidebar = $springy_theme_options['springy-sidebar-blog-page'];
     if ($sidebar == 'no-sidebar') {
         $classes[] = 'no-sidebar';
     } elseif ($sidebar == 'left-sidebar') {
@@ -41,15 +41,15 @@ function polite_body_class($classes)
 /**
  * Add layout class in body
  *
- * @since Polite 1.0.0
+ * @since Springy 1.0.0
  *
  */
 
-add_filter('body_class', 'polite_layout_body_class');
-function polite_layout_body_class($classes)
+add_filter('body_class', 'springy_layout_body_class');
+function springy_layout_body_class($classes)
 {
-    global $polite_theme_options;
-    $layout = $polite_theme_options['polite-column-blog-page'];
+    global $springy_theme_options;
+    $layout = $springy_theme_options['springy-column-blog-page'];
     if ($layout == 'masonry-post') {
         $classes[] = 'masonry-post';
     } else {

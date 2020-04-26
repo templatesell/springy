@@ -4,17 +4,17 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Polite
+ * @package Springy
  */
-global $polite_theme_options;
-$image_option = absint($polite_theme_options['polite-single-page-featured-image']);
+global $springy_theme_options;
+$image_option = absint($springy_theme_options['springy-single-page-featured-image']);
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="post-wrap">
         <div class="post-media">
             <?php
             if ($image_option == 1) {
-                polite_post_thumbnail();
+                springy_post_thumbnail();
             }
             ?>
         </div>
@@ -26,7 +26,7 @@ $image_option = absint($polite_theme_options['polite-single-page-featured-image'
                 the_content();
                 
                 wp_link_pages(array(
-                    'before' => '<div class="page-links">' . esc_html__('Pages:', 'polite'),
+                    'before' => '<div class="page-links">' . esc_html__('Pages:', 'springy'),
                     'after' => '</div>',
                 ));
                 ?>
@@ -39,8 +39,8 @@ $image_option = absint($polite_theme_options['polite-single-page-featured-image'
             </div>
             <!-- .entry-content end -->
             <footer class="post-footer entry-footer">
-                <?php polite_entry_meta(); ?>
-                <?php do_action( 'polite_social_sharing' ,get_the_ID() );?>
+                <?php springy_entry_meta(); ?>
+                <?php do_action( 'springy_social_sharing' ,get_the_ID() );?>
             </footer><!-- .entry-footer end -->
         </div>
     </div>

@@ -1,7 +1,7 @@
 <?php
 /**
  * Radio Image Custom Control
- * Polite 1.0.0
+ * Springy 1.0.0
  */
 if ( ! class_exists( 'WP_Customize_Control' ) )
     return NULL;
@@ -9,9 +9,9 @@ if ( ! class_exists( 'WP_Customize_Control' ) )
 /**
  * A class to create a imags in customizer
  */
-if( ! class_exists( 'Polite_Radio_Image_Control' ) ) {
+if( ! class_exists( 'Springy_Radio_Image_Control' ) ) {
 
-    class Polite_Radio_Image_Control extends WP_Customize_Control {
+    class Springy_Radio_Image_Control extends WP_Customize_Control {
         
         public $type = 'radio-image';
 

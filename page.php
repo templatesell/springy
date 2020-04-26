@@ -9,7 +9,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Polite
+ * @package Springy
  */
 get_header();
 ?>
@@ -17,7 +17,7 @@ get_header();
     <div class="container">
         <div class="row">
 			<div class="breadcrumbs-wrap">
-				<?php do_action('polite_breadcrumb_options_hook'); ?> <!-- Breadcrumb hook -->
+				<?php do_action('springy_breadcrumb_options_hook'); ?> <!-- Breadcrumb hook -->
 			</div>
 			<div id="primary" class="col-md-8 content-area">
 				<main id="main" class="site-main">

@@ -2,20 +2,20 @@
 /**
  * Display related posts from same category
  *
- * @since Polite 1.0.0
+ * @since Springy 1.0.0
  *
  * @param int $post_id
  * @return void
  *
  */
-if (!function_exists('polite_related_post')) :
+if (!function_exists('springy_related_post')) :
     
-    function polite_related_post($post_id)
+    function springy_related_post($post_id)
     {
         
-        global $polite_theme_options;
-        $title = esc_html($polite_theme_options['polite-single-page-related-posts-title']);
-        if (0 == $polite_theme_options['polite-single-page-related-posts']) {
+        global $springy_theme_options;
+        $title = esc_html($springy_theme_options['springy-single-page-related-posts-title']);
+        if (0 == $springy_theme_options['springy-single-page-related-posts']) {
             return;
         }
         $categories = get_the_category($post_id);
@@ -34,7 +34,7 @@ if (!function_exists('polite_related_post')) :
                     </h2>
                     <div class="related-posts-list">
                         <?php
-                        $polite_cat_post_args = array(
+                        $springy_cat_post_args = array(
                             'category__in' => $category_ids,
                             'post__not_in' => array($post_id),
                             'post_type' => 'post',
@@ -42,9 +42,9 @@ if (!function_exists('polite_related_post')) :
                             'post_status' => 'publish',
                             'ignore_sticky_posts' => true
                         );
-                        $polite_featured_query = new WP_Query($polite_cat_post_args);
+                        $springy_featured_query = new WP_Query($springy_cat_post_args);
                         
-                        while ($polite_featured_query->have_posts()) : $polite_featured_query->the_post();
+                        while ($springy_featured_query->have_posts()) : $springy_featured_query->the_post();
                             ?>
                             <div class="show-2-related-posts">
                                 <div class="post-wrap">
@@ -54,7 +54,7 @@ if (!function_exists('polite_related_post')) :
                                         <div class="post-media-part">
                                             <div class="post-media">
                                                 <a href="<?php the_permalink() ?>">
-                                                    <?php the_post_thumbnail('polite-related-post-thumbnails'); ?>
+                                                    <?php the_post_thumbnail('springy-related-post-thumbnails'); ?>
                                                 </a>
                                             </div>
                                         </div>
@@ -65,11 +65,11 @@ if (!function_exists('polite_related_post')) :
                                         <div class="meta-wrapper">
                                             <div class="meta-categories">
                                                 <div class="post-cats">
-                                                    <?php polite_entry_meta(); ?>
+                                                    <?php springy_entry_meta(); ?>
                                                 </div>
                                             </div>
                                             <?php 
-                                            do_action( 'polite_social_sharing' ,get_the_ID() );
+                                            do_action( 'springy_social_sharing' ,get_the_ID() );
                                             ?>
                                         </div>
                                     </div>
@@ -84,11 +84,11 @@ if (!function_exists('polite_related_post')) :
                                                     ?>
                                                     <div class="post-author">
                                                         <?php echo get_avatar( get_the_author_meta( 'ID' ) , 32 ); ?>
-                                                        <?php polite_posted_by(); ?>
+                                                        <?php springy_posted_by(); ?>
                                                     </div>
                                                     <div class="post-date">
                                                         <div class="entry-meta">
-                                                            <span class="ti-calendar"></span><?php  polite_posted_on();  ?>
+                                                            <span class="ti-calendar"></span><?php  springy_posted_on();  ?>
                                                         </div><!-- .entry-meta -->
                                                     </div>
                                                 <?php endif; ?>
@@ -107,4 +107,4 @@ if (!function_exists('polite_related_post')) :
         }
     }
 endif;
-add_action('polite_related_posts', 'polite_related_post', 10, 1);
+add_action('springy_related_posts', 'springy_related_post', 10, 1);

@@ -2,31 +2,31 @@
 /**
  * Functions to manage breadcrumbs
  */
-if (!function_exists('polite_breadcrumb_options')) :
-    function polite_breadcrumb_options()
+if (!function_exists('springy_breadcrumb_options')) :
+    function springy_breadcrumb_options()
     {
-        global $polite_theme_options;
-        if (1 == $polite_theme_options['polite-extra-breadcrumb']) {
-            polite_breadcrumbs();
+        global $springy_theme_options;
+        if (1 == $springy_theme_options['springy-extra-breadcrumb']) {
+            springy_breadcrumbs();
         }
     }
 endif;
-add_action('polite_breadcrumb_options_hook', 'polite_breadcrumb_options');
+add_action('springy_breadcrumb_options_hook', 'springy_breadcrumb_options');
 
 /**
  * BreadCrumb Settings
  */
-if (!function_exists('polite_breadcrumbs')):
-    function polite_breadcrumbs()
+if (!function_exists('springy_breadcrumbs')):
+    function springy_breadcrumbs()
     {
-        if (!function_exists('polite_breadcrumb_trail')) {
+        if (!function_exists('springy_breadcrumb_trail')) {
             require get_template_directory() . '/templatesell/breadcrumbs/breadcrumbs.php';
         }
         $breadcrumb_args = array(
             'container' => 'div',
             'show_browse' => false
         );        
-        polite_breadcrumb_trail($breadcrumb_args);
+        springy_breadcrumb_trail($breadcrumb_args);
     }
 endif;
-add_action('polite_breadcrumbs_hook', 'polite_breadcrumbs');
+add_action('springy_breadcrumbs_hook', 'springy_breadcrumbs');

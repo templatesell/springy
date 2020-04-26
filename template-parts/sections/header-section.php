@@ -6,21 +6,20 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Polite
+ * @package Springy
  */
-$GLOBALS['polite_theme_options'] = polite_get_options_value();
-global $polite_theme_options;
-$offcanvas = absint($polite_theme_options['polite_enable_offcanvas']);
-$search_header = absint($polite_theme_options['polite_enable_search']);
+$GLOBALS['springy_theme_options'] = springy_get_options_value();
+global $springy_theme_options;
+$search_header = absint($springy_theme_options['springy_enable_search']);
+$header_text = esc_html($springy_theme_options['springy_header_image_text']);
+$header_btn = esc_html($springy_theme_options['springy_header_image_button_text']);
+$header_link = esc_url($springy_theme_options['springy_header_image_button_link']);
 ?>
 
 <header class="header-1">		
 	<div class="mega_ts_menu">
          <div class="navbar fixed-nav transparent-white">
             <div class="nav-container clearfix_mn">	
-				<?php if( 1 == $offcanvas ){ ?>
-					<button class="js-canvi-open-button--left mobile-menu"><span></span></button>
-				<?php } ?>
 				<div class="logo">
 					<?php
 					the_custom_logo();
@@ -33,10 +32,10 @@ $search_header = absint($polite_theme_options['polite_enable_search']);
 						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 						<?php
 					endif;
-					$polite_description = get_bloginfo( 'description', 'display' );
-					if ( $polite_description || is_customize_preview() ) :
+					$springy_description = get_bloginfo( 'description', 'display' );
+					if ( $springy_description || is_customize_preview() ) :
 						?>
-						<p class="site-description"><?php echo $polite_description; /* WPCS: xss ok. */ ?></p>
+						<p class="site-description"><?php echo $springy_description; /* WPCS: xss ok. */ ?></p>
 					<?php endif; ?>
 				</div>
 				<!-- .site-logo -->
@@ -57,10 +56,6 @@ $search_header = absint($polite_theme_options['polite_enable_search']);
 		   	            	<a href="#0" class="search-box"><i class="ti-search"></i></a>
 		   	            	<div class="search-input">
 		   	            		<?php echo get_search_form(); ?>
-		   	            		<!-- <form action="/" method="get">
-								    <input type="text" name="s" id="search" value="<?php the_search_query(); ?>" />
-								    <input type="submit" alt="Search"  />
-								</form> -->
 		   	            	</div>
 		               	</div>
 	               </div>
@@ -81,7 +76,8 @@ $search_header = absint($polite_theme_options['polite_enable_search']);
 	?>
 	<div class="main-header <?php echo esc_attr($header_class); ?>" style="background-image:url(<?php echo esc_url($header_image) ?>); background-size: cover; background-position: center; background-repeat: no-repeat;">
 		<div class="head-img">
-			<h1 class="wel-title">Welcome to Elementify</h1>
+			<h1 class="wel-title"><?php esc_html_e($header_text); ?></h1>
+			<p class="wel-sub-title"><a href="<?php echo esc_url($header_link); ?>"><?php esc_html_e($header_btn); ?></a></p>
 		</div>
 	</div><!-- #masthead -->		
 

@@ -1,22 +1,22 @@
 <?php
 /**
- * Polite Featured Post Widget.
+ * Springy Featured Post Widget.
  *
  * @since 1.0.0
  */
-if (!class_exists('Polite_Featured_Post')) :
+if (!class_exists('Springy_Featured_Post')) :
 
     /**
      * Highlight Post widget class.
      *
      * @since 1.0.0
      */
-    class Polite_Featured_Post extends WP_Widget
+    class Springy_Featured_Post extends WP_Widget
     {
         private function defaults()
         {
             $defaults = array(
-                'title'    => esc_html__( 'Recent Posts', 'polite' ),
+                'title'    => esc_html__( 'Recent Posts', 'springy' ),
                 'cat'     => 0,
                 'post-number'=> 5,
 
@@ -27,11 +27,11 @@ if (!class_exists('Polite_Featured_Post')) :
         public function __construct()
         {
             $opts = array(
-                'classname' => 'polite-featured-post',
-                'description' => esc_html__('Displays Featured Post in Sidebars. Place it in Sidebar Widget Area.', 'polite'),
+                'classname' => 'springy-featured-post',
+                'description' => esc_html__('Displays Featured Post in Sidebars. Place it in Sidebar Widget Area.', 'springy'),
             );
 
-            parent::__construct('polite-featured-post', esc_html__('Polite Featured Post', 'polite'), $opts);
+            parent::__construct('springy-featured-post', esc_html__('Springy Featured Post', 'springy'), $opts);
         }
 
 
@@ -116,14 +116,14 @@ if (!class_exists('Polite_Featured_Post')) :
             ?>
             <p>
                 <label
-                for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_html_e('Title:', 'polite'); ?></label>
+                for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_html_e('Title:', 'springy'); ?></label>
                 <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>"
                 name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text"
                 value="<?php echo esc_attr($instance['title']); ?>"/>
             </p>
             <p class="custom-dropdown-posts">
                 <label for="<?php echo esc_attr($this->get_field_name('cat')); ?>">
-                    <strong><?php esc_html_e('Select Category: ', 'polite'); ?></strong>
+                    <strong><?php esc_html_e('Select Category: ', 'springy'); ?></strong>
                 </label>
                 <?php
                 $cat_args = array(
@@ -134,7 +134,7 @@ if (!class_exists('Polite_Featured_Post')) :
                     'class' => 'widefat',
                     'taxonomy' => 'category',
                     'selected' => absint($instance['cat']),
-                    'show_option_all' => esc_html__('Show Recent Posts', 'polite')
+                    'show_option_all' => esc_html__('Show Recent Posts', 'springy')
                 );
                 wp_dropdown_categories($cat_args);
                 ?>
@@ -142,7 +142,7 @@ if (!class_exists('Polite_Featured_Post')) :
 
             <p>
                 <label
-                for="<?php echo esc_attr($this->get_field_id('post-number')); ?>"><?php esc_html_e('Number of Posts to Display:', 'polite'); ?></label>
+                for="<?php echo esc_attr($this->get_field_id('post-number')); ?>"><?php esc_html_e('Number of Posts to Display:', 'springy'); ?></label>
                 <input class="widefat" id="<?php echo esc_attr($this->get_field_id('post-number')); ?>"
                 name="<?php echo esc_attr($this->get_field_name('post-number')); ?>" type="number"
                 value="<?php echo esc_attr($instance['post-number']); ?>"/>

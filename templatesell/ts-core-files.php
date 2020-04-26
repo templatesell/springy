@@ -84,6 +84,12 @@ require get_template_directory() . '/templatesell/filters/jetpack-widget.php';
 require get_template_directory() . '/templatesell/filters/body-class.php';
 
 /**
- * Upgrade to pro
+ * Load custom function
+*/
+require get_template_directory() . '/templatesell/custom-functions.php';
+
+/**
+ * TGM Plugin Activation
  */
-require get_template_directory() . '/templatesell/upgrade/class-customize.php';
+require get_template_directory() . '/templatesell/library/tgm-plugin-activation.php';
+require get_template_directory() . '/templatesell/library/tgm.php';

@@ -2,25 +2,25 @@
 /**
  * Dynamic css
  *
- * @since Polite 1.0.0
+ * @since Springy 1.0.0
  *
  * @param null
  * @return null
  *
  */
-if (!function_exists('polite_dynamic_css')) :
+if (!function_exists('springy_dynamic_css')) :
 
-    function polite_dynamic_css()
+    function springy_dynamic_css()
     {
-        global $polite_theme_options;
+        global $springy_theme_options;
 
         /* Color Options Options */
-        $polite_primary_color              = esc_attr($polite_theme_options['polite_primary_color']);
+        $springy_primary_color              = esc_attr($springy_theme_options['springy_primary_color']);
 
         $custom_css = '';
 
         //Primary  Background 
-        if (!empty($polite_primary_color)) {
+        if (!empty($springy_primary_color)) {
             $custom_css .= "
             #toTop:hover,
             a.effect:before,
@@ -40,14 +40,14 @@ if (!function_exists('polite_dynamic_css')) :
             article.format-gallery .post-content .post-format::after, 
             article.format-audio .post-content .post-format::after, 
             article.format-quote .post-content .post-format::after{ 
-                background-color: ". $polite_primary_color."; 
-                border-color: ".$polite_primary_color.";
+                background-color: ". $springy_primary_color."; 
+                border-color: ".$springy_primary_color.";
             }";
 
         }
 
         //Primary Color
-        if (!empty($polite_primary_color)) {
+        if (!empty($springy_primary_color)) {
             $custom_css .= "
             .main-header a:hover, 
             .main-header a:focus, 
@@ -80,11 +80,11 @@ if (!function_exists('polite_dynamic_css')) :
             .footer-social-links a:focus,
             .site-footer a:hover, 
             .site-footer a:focus{ 
-                color : ". $polite_primary_color."; 
+                color : ". $springy_primary_color."; 
             }";
         }
 
-        wp_add_inline_style('polite-style', $custom_css);
+        wp_add_inline_style('springy-style', $custom_css);
     }
 endif;
-add_action('wp_enqueue_scripts', 'polite_dynamic_css', 99);
+add_action('wp_enqueue_scripts', 'springy_dynamic_css', 99);

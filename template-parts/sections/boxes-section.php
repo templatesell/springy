@@ -1,20 +1,17 @@
 <?php
 /**
- * Polite Promo Unique
- * @since Polite 1.0.0
+ * Springy Promo Unique
+ * @since Springy 1.0.0
  *
  * @param null
  * @return void
  *
  */
-global $polite_theme_options;
-$promo_cat = absint($polite_theme_options['polite-promo-select-category']);
+global $springy_theme_options;
+$promo_cat = absint($springy_theme_options['springy-promo-select-category']);
 
-if( $promo_cat > 0 && is_home() )
-{ ?>
-    <section class="polite-promo-section">
-        <?php if ( is_front_page() && is_home() )
-        {  ?>
+?>
+    <section class="springy-promo-section">
             <div class="container">
                 <div class="promo-section promo-three">
                     <?php
@@ -38,7 +35,7 @@ if( $promo_cat > 0 && is_home() )
                                     {
                                         
                                         $image_id  = get_post_thumbnail_id();
-                                        $image_url = wp_get_attachment_image_src($image_id,'polite-promo-post',true);
+                                        $image_url = wp_get_attachment_image_src($image_id,'springy-promo-post',true);
                                         ?>
                                         
                                         <figure>
@@ -60,8 +57,8 @@ if( $promo_cat > 0 && is_home() )
                                     <div class="post-date">
                                         <div class="entry-meta">
                                             <?php
-                                            polite_posted_by();
-                                            polite_posted_on();
+                                            springy_posted_by();
+                                            springy_posted_on();
                                             ?>
                                         </div><!-- .entry-meta -->
                                     </div>
@@ -71,6 +68,4 @@ if( $promo_cat > 0 && is_home() )
                         <?php endwhile; endif; wp_reset_postdata(); ?>
                 </div>
             </div>
-        <?php } ?>
     </section>
-<?php   }

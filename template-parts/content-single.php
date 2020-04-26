@@ -3,23 +3,23 @@
  * Template part for displaying posts
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- * @package Polite
+ * @package Springy
  */
-global $polite_theme_options;
-$social_share = absint($polite_theme_options['polite-single-social-share']);
+global $springy_theme_options;
+$social_share = absint($springy_theme_options['springy-single-social-share']);
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="single-post-wrap">
         <div class="post-media-part">
             <div class="post-media">
-                <?php polite_post_thumbnail(); ?>
+                <?php springy_post_thumbnail(); ?>
             </div>
         </div>
         <div class="post-meta-info">
             <div class="meta-wrapper">
                 <div class="meta-categories">
                     <div class="post-cats">
-                        <?php polite_entry_meta(); ?>
+                        <?php springy_entry_meta(); ?>
                     </div>
                 </div>
             </div>
@@ -39,15 +39,15 @@ $social_share = absint($polite_theme_options['polite-single-social-share']);
                         ?>
                         <div class="post-author">
                             <?php echo get_avatar( get_the_author_meta( 'ID' ) , 32 ); ?>
-                            <?php polite_posted_by(); ?>
+                            <?php springy_posted_by(); ?>
                         </div>
                         <div class="post-date">
                             <div class="entry-meta">
-                                <span class="ti-calendar"></span><?php  polite_posted_on();  ?>
+                                <span class="ti-calendar"></span><?php  springy_posted_on();  ?>
                             </div><!-- .entry-meta -->
                         </div>
                         <div class="reading-time">
-                            <span class="ti-time"></span> <?php echo reading_time(); ?>
+                            <span class="ti-time"></span> <?php echo springy_reading_time(); ?>
                         </div>
                         <div class="comment-num">
                             <?php echo get_comments_number($post->ID);?> <span class="ti-comment"></span>
@@ -60,7 +60,7 @@ $social_share = absint($polite_theme_options['polite-single-social-share']);
                 the_content(sprintf(
                     wp_kses(
                     /* translators: %s: Name of current post. Only visible to screen readers */
-                        __('Continue reading<span class="screen-reader-text"> "%s"</span>', 'polite'),
+                        __('Continue reading<span class="screen-reader-text"> "%s"</span>', 'springy'),
                         array(
                             'span' => array(
                                 'class' => array(),
@@ -71,7 +71,7 @@ $social_share = absint($polite_theme_options['polite-single-social-share']);
                 
                 ));
                 wp_link_pages(array(
-                    'before' => '<div class="page-links">' . esc_html__('Pages:', 'polite'),
+                    'before' => '<div class="page-links">' . esc_html__('Pages:', 'springy'),
                     'after' => '</div>',
                 
                 ));
@@ -83,7 +83,7 @@ $social_share = absint($polite_theme_options['polite-single-social-share']);
                 </div>
                 <?php 
                     if( 1 == $social_share ){
-                        do_action( 'polite_social_sharing' ,get_the_ID() );
+                        do_action( 'springy_social_sharing' ,get_the_ID() );
                     }
                 ?>
             </div>
@@ -144,6 +144,6 @@ $social_share = absint($polite_theme_options['polite-single-social-share']);
         ?>
     </div>
     <div class="related-posts clearfix">
-        <?php do_action( 'polite_related_posts' ,get_the_ID() ); ?>
+        <?php do_action( 'springy_related_posts' ,get_the_ID() ); ?>
     </div>
 </article>

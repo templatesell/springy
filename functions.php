@@ -1,13 +1,13 @@
 <?php
 /**
- * Polite functions and definitions
+ * Springy functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Polite
+ * @package Springy
  */
 
-if ( ! function_exists( 'polite_setup' ) ) :
+if ( ! function_exists( 'springy_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -15,14 +15,14 @@ if ( ! function_exists( 'polite_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function polite_setup() {
+	function springy_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on Polite, use a find and replace
-		 * to change 'polite' to the name of your theme in all the template files.
+		 * If you're building a theme based on Springy, use a find and replace
+		 * to change 'springy' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'polite' );
+		load_theme_textdomain( 'springy' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -45,13 +45,13 @@ if ( ! function_exists( 'polite_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'polite' ),
-			'footer' => esc_html__( 'Footer Menu', 'polite' ),
-			'social' => esc_html__( 'Social Icons', 'polite' ),
+			'menu-1' => esc_html__( 'Primary', 'springy' ),
+			'footer' => esc_html__( 'Footer Menu', 'springy' ),
+			'social' => esc_html__( 'Social Icons', 'springy' ),
 		) );
 
 		/*
-		 * Polite default core markup for search form, comment form, and comments
+		 * Springy default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
 		add_theme_support( 'html5', array(
@@ -93,26 +93,26 @@ if ( ! function_exists( 'polite_setup' ) ) :
 			'editor-font-sizes',
 			array(
 				array(
-					'name'      => __( 'Small', 'polite' ),
-					'shortName' => __( 'S', 'polite' ),
+					'name'      => __( 'Small', 'springy' ),
+					'shortName' => __( 'S', 'springy' ),
 					'size'      => 16,
 					'slug'      => 'small',
 				),
 				array(
-					'name'      => __( 'Medium', 'polite' ),
-					'shortName' => __( 'M', 'polite' ),
+					'name'      => __( 'Medium', 'springy' ),
+					'shortName' => __( 'M', 'springy' ),
 					'size'      => 20,
 					'slug'      => 'medium',
 				),
 				array(
-					'name'      => __( 'Large', 'polite' ),
-					'shortName' => __( 'L', 'polite' ),
+					'name'      => __( 'Large', 'springy' ),
+					'shortName' => __( 'L', 'springy' ),
 					'size'      => 25,
 					'slug'      => 'large',
 				),
 				array(
-					'name'      => __( 'Larger', 'polite' ),
-					'shortName' => __( 'XL', 'polite' ),
+					'name'      => __( 'Larger', 'springy' ),
+					'shortName' => __( 'XL', 'springy' ),
 					'size'      => 35,
 					'slug'      => 'larger',
 				),
@@ -125,13 +125,13 @@ if ( ! function_exists( 'polite_setup' ) ) :
          * @link https://developer.wordpress.org/reference/functions/add_image_size/
          */
         
-        add_image_size('polite-thumbnail-size', 800, 800, true); 
-        add_image_size('polite-related-size', 600, 400, true); 
-        add_image_size('polite-promo-post', 800, 500, true); 
-        add_image_size('polite-related-post-thumbnails', 850, 550, true ); 
+        add_image_size('springy-thumbnail-size', 800, 800, true); 
+        add_image_size('springy-related-size', 600, 400, true); 
+        add_image_size('springy-promo-post', 800, 500, true); 
+        add_image_size('springy-related-post-thumbnails', 850, 550, true ); 
 	}
 endif;
-add_action( 'after_setup_theme', 'polite_setup' );
+add_action( 'after_setup_theme', 'springy_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -140,24 +140,24 @@ add_action( 'after_setup_theme', 'polite_setup' );
  *
  * @global int $content_width
  */
-function polite_content_width() {
+function springy_content_width() {
 	// This variable is intended to be overruled from themes.
 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'polite_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'springy_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'polite_content_width', 0 );
+add_action( 'after_setup_theme', 'springy_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function polite_widgets_init() {
+function springy_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'polite' ),
+		'name'          => esc_html__( 'Sidebar', 'springy' ),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'polite' ),
+		'description'   => esc_html__( 'Add widgets here.', 'springy' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -165,9 +165,9 @@ function polite_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer One', 'polite' ),
+		'name'          => esc_html__( 'Footer One', 'springy' ),
 		'id'            => 'footer-1',
-		'description'   => esc_html__( 'Add widgets here.', 'polite' ),
+		'description'   => esc_html__( 'Add widgets here.', 'springy' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -175,9 +175,9 @@ function polite_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer Two', 'polite' ),
+		'name'          => esc_html__( 'Footer Two', 'springy' ),
 		'id'            => 'footer-2',
-		'description'   => esc_html__( 'Add widgets here.', 'polite' ),
+		'description'   => esc_html__( 'Add widgets here.', 'springy' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -185,9 +185,9 @@ function polite_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer Three', 'polite' ),
+		'name'          => esc_html__( 'Footer Three', 'springy' ),
 		'id'            => 'footer-3',
-		'description'   => esc_html__( 'Add widgets here.', 'polite' ),
+		'description'   => esc_html__( 'Add widgets here.', 'springy' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -195,9 +195,9 @@ function polite_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer Four', 'polite' ),
+		'name'          => esc_html__( 'Footer Four', 'springy' ),
 		'id'            => 'footer-4',
-		'description'   => esc_html__( 'Add widgets here.', 'polite' ),
+		'description'   => esc_html__( 'Add widgets here.', 'springy' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -205,61 +205,19 @@ function polite_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Offcanvas', 'polite' ),
+		'name'          => esc_html__( 'Offcanvas', 'springy' ),
 		'id'            => 'offcanvas',
-		'description'   => esc_html__( 'Add widgets here.', 'polite' ),
+		'description'   => esc_html__( 'Add widgets here.', 'springy' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', 'polite_widgets_init' );
+add_action( 'widgets_init', 'springy_widgets_init' );
 
 /**
  * Load TS Core Files
  */
 
 require get_template_directory() . '/templatesell/ts-core-files.php';
-
-
-
-/**
- * Menu class
- */
-// function add_additional_class_on_li($classes, $item, $args) {
-//     if(isset($args->add_li_class)) {
-//         $classes[] = $args->add_li_class;
-//     }
-//     return $classes;
-// }
-// add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
-
-
-function dropdown_class ($classes, $item) {
-    if (in_array('menu-item-has-children', $classes) ){
-        $classes[] = 'ts_dropdown';
-    }
-    return $classes;
-}
-add_filter('nav_menu_css_class' , 'dropdown_class', 10 , 2 );
-
-function new_submenu_class($menu) {    
-    $menu = preg_replace('/ class="sub-menu"/','/ class="drop-list" /', $menu);        
-    return $menu;      
-}
-add_filter('wp_nav_menu','new_submenu_class');
-
-//estimated reading time
-function reading_time() {
-	$content = get_post_field( 'post_content', $post->ID );
-	$word_count = str_word_count( strip_tags( $content ) );
-	$readingtime = ceil($word_count / 200);
-	if ($readingtime == 1) {
-	$timer = " Min Read";
-	} else {
-	$timer = " Min Read";
-	}
-	$totalreadingtime = $readingtime . $timer;
-	return $totalreadingtime;
-}

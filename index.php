@@ -9,7 +9,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Polite
+ * @package Springy
  */
 get_header();
 ?>
@@ -32,7 +32,7 @@ get_header();
 					endif;
 
 					/* Masonry Start Section */
-					do_action('polite_masonry_start_hook'); 
+					do_action('springy_masonry_start_hook'); 
 
 					/* Start the Loop */
 					while ( have_posts() ) :
@@ -49,16 +49,16 @@ get_header();
 					endwhile;
 
 					/* Masonry end Section */
-					do_action('polite_masonry_end_hook'); 
+					do_action('springy_masonry_end_hook'); 
 
 					/**
-		             * polite_action_navigation hook
-		             * @since Polite 1.0.0
+		             * springy_action_navigation hook
+		             * @since Springy 1.0.0
 		             *
-		             * @hooked polite_action_navigation -  10
+		             * @hooked springy_action_navigation -  10
 		             */
 
-		            do_action( 'polite_action_navigation');
+		            do_action( 'springy_action_navigation');
 
 				else :
 

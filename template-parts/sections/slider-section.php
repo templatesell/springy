@@ -1,14 +1,14 @@
 <?php 
 /**
- * Polite Slider Function
- * @since Polite 1.0.0
+ * Springy Slider Function
+ * @since Springy 1.0.0
  *
  * @param null
  * @return void
  *
  */
-global $polite_theme_options;
-$slide_id = absint($polite_theme_options['polite-select-category']);
+global $springy_theme_options;
+$slide_id = absint($springy_theme_options['springy-select-category']);
         $slick_args = array(
             'slidesToShow'      => 1,
             'slidesToScroll'    => 1,
@@ -43,11 +43,11 @@ $slide_id = absint($polite_theme_options['polite-select-category']);
                     ?>
                     <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                     <div class="entry-meta">
-                        <?php polite_posted_on(); ?>
+                        <?php springy_posted_on(); ?>
                     </div>
                     <div class="post-excerpt entry-content">
                       <?php the_excerpt(); ?>
-                        <a class="more-btn" href="<?php the_permalink(); ?>"><?php _e('Read More', 'polite'); ?></a>
+                        <a class="more-btn" href="<?php the_permalink(); ?>"><?php _e('Read More', 'springy'); ?></a>
                     </div>
                   </div>
                 </div> 

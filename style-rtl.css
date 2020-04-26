@@ -1,21 +1,21 @@
 
 /*
-Theme Name: Polite
-Theme URI: https://www.templatesell.com/item/polite-minimal-blog-wordpress-theme/
+Theme Name: Springy
+Theme URI: https://www.templatesell.com/item/springy-minimal-blog-wordpress-theme/
 Author: templatesell
 Author URI: https://www.templatesell.com/
-Description: A perfect theme for blog and magazine site. With masonry layout and multiple blog page layout, this theme is the awesome and minimal theme. This theme has search option, off-canvas sidebar, multiple sidebar options, footer options, featured slider, promo boxed, footer widgets and many more. Besides that, this theme comes with added custom widgets for author information, featured posts, social icons, etc. It comes with primary color option to change the whole site color with a single click. More Details: https://www.templatesell.com/item/polite-minimal-blog-wordpress-theme/
+Description: A perfect theme for blog and magazine site. With masonry layout and multiple blog page layout, this theme is the awesome and minimal theme. This theme has search option, off-canvas sidebar, multiple sidebar options, footer options, featured slider, promo boxed, footer widgets and many more. Besides that, this theme comes with added custom widgets for author information, featured posts, social icons, etc. It comes with primary color option to change the whole site color with a single click. More Details: https://www.templatesell.com/item/springy-minimal-blog-wordpress-theme/
 Version: 1.0.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: polite
+Text Domain: springy
 Tags: custom-background, custom-header, one-column, two-columns, three-columns, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, blog, news
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-Polite is free WordPress theme by, Template Sell.
-Polite is distributed under the terms of the GNU GPL v2 or later.
+Springy is free WordPress theme by, Template Sell.
+Springy is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
@@ -5310,11 +5310,11 @@ ul.social-menu li a[href*="dribble.com"]:before {
  - Popular posts widgets
  * -------------------------------------------------------------
  */
- .widget_polite-popular-post-widget ul{
+ .widget_springy-popular-post-widget ul{
     margin: 0;
     padding: 0;
  }
-.widget_polite-popular-post-widget li{
+.widget_springy-popular-post-widget li{
     margin-bottom: 20px;
     list-style: none;
 }
@@ -5532,11 +5532,11 @@ ul.social-menu li a[href*="dribble.com"]:before {
  * Featured Post widgets
  * -------------------------------------------------------------
  */
- .polite-featured-post > ul {
+ .springy-featured-post > ul {
     margin: 0;
     padding: 5px 0 0;
 }
- .polite-featured-post > ul > li {
+ .springy-featured-post > ul > li {
     position: relative;
     margin-bottom: 20px;
     list-style: none;
@@ -5925,7 +5925,7 @@ ul.trail-items li a:hover span{
 .breadcrumbs .delim:last-child{
     display: none;
 }
-div#polite-breadcrumbs {
+div#springy-breadcrumbs {
     float: left;
 }
 

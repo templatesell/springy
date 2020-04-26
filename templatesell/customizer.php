@@ -1,80 +1,82 @@
 <?php
 /**
- * Polite Theme Customizer
+ * Springy Theme Customizer
  *
- * @package Polite
+ * @package Springy
  */
 
-if ( !function_exists('polite_default_theme_options_values') ) :
+if ( !function_exists('springy_default_theme_options_values') ) :
 
-    function polite_default_theme_options_values() {
+    function springy_default_theme_options_values() {
 
         $default_theme_options = array(
 
           /*Header Options*/
-            'polite_enable_offcanvas'  => 0,
-            'polite_enable_search'  => 0,
+            'springy_enable_search'  => 0,
+            'springy_header_image_text'=> esc_html__('Flexible For Everyone','springy'),
+            'springy_header_image_button_link'=> '#',
+            'springy_header_image_button_text'=> esc_html__('Get Started','springy'),
 
             /*Colors Options*/
-            'polite_primary_color'              => '#d42929',
+            'springy_primary_color'              => '#d42929',
 
             /*Slider Options*/
-            'polite_enable_slider'      => 1,
-            'polite-select-category'    => 0,
+            'springy_enable_slider'      => 1,
+            'springy-select-category'    => 0,
     
             /*Boxes Section */
-            'polite_enable_promo'       => 1,
-            'polite-promo-select-category'=> 0,
+            'springy_enable_promo'       => 1,
+            'springy-promo-select-category'=> 0,
             
             /*Blog Page*/
-            'polite-sidebar-blog-page' => 'no-sidebar',
-            'polite-column-blog-page'  => 'masonry-post',
-            'polite-blog-image-layout' => 'full-image',
-            'polite-content-show-from' => 'excerpt',
-            'polite-excerpt-length'    => 25,
-            'polite-pagination-options'=> 'ajax',
-            'polite-read-more-text'    => '',
-            'polite-show-hide-share'   => 1,
+            'springy-sidebar-blog-page' => 'no-sidebar',
+            'springy-column-blog-page'  => 'masonry-post',
+            'springy-blog-image-layout' => 'full-image',
+            'springy-content-show-from' => 'excerpt',
+            'springy-excerpt-length'    => 25,
+            'springy-pagination-options'=> 'ajax',
+            'springy-read-more-text'    => '',
+            'springy-show-hide-share'   => 1,
 
             /*Single Page */
-            'polite-single-page-featured-image' => 1,
-            'polite-single-page-related-posts'  => 0,
-            'polite-single-page-related-posts-title' => esc_html__('Related Posts','polite'),
-            'polite-sidebar-single-page'=> 'single-right-sidebar',
-            'polite-single-social-share' => 1,
+            'springy-single-page-featured-image' => 1,
+            'springy-single-page-related-posts'  => 0,
+            'springy-single-page-related-posts-title' => esc_html__('Related Posts','springy'),
+            'springy-sidebar-single-page'=> 'single-right-sidebar',
+            'springy-single-social-share' => 1,
 
 
             /*Sticky Sidebar*/
-            'polite-enable-sticky-sidebar' => 0,
+            'springy-enable-sticky-sidebar' => 0,
 
             /*Footer Section*/
-            'polite-footer-copyright'  => esc_html__('Copyright All Right Reserved 2020','polite'),
+            'springy-footer-copyright'  => esc_html__('Copyright All Right Reserved 2020','springy'),
 
             /*Breadcrumb Options*/
-            'polite-extra-breadcrumb' => 1,
+            'springy-extra-breadcrumb' => 1,
 
         );
-return apply_filters( 'polite_default_theme_options_values', $default_theme_options );
+return apply_filters( 'springy_default_theme_options_values', $default_theme_options );
 }
 endif;
 /**
- *  Polite Theme Options and Settings
+ *  Springy Theme Options and Settings
  *
- * @since Polite 1.0.0
+ * @since Springy 1.0.0
  *
  * @param null
- * @return array polite_get_options_value
+ * @return array springy_get_options_value
  *
  */
-if ( !function_exists('polite_get_options_value') ) :
-    function polite_get_options_value() {
-        $polite_default_theme_options_values = polite_default_theme_options_values();
-        $polite_get_options_value = get_theme_mod( 'polite_options');
-        if( is_array( $polite_get_options_value )){
-            return array_merge( $polite_default_theme_options_values, $polite_get_options_value );
+if ( !function_exists('springy_get_options_value') ) :
+    function springy_get_options_value() {
+        $springy_default_theme_options_values = springy_default_theme_options_values();
+        $springy_get_options_value = get_theme_mod( 'springy_options');
+        if( is_array( $springy_get_options_value )){
+            return array_merge( $springy_default_theme_options_values, $springy_get_options_value );
         }
         else{
-            return $polite_default_theme_options_values;
+            return $springy_default_theme_options_values;
         }
     }
 endif;
@@ -84,7 +86,7 @@ endif;
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function polite_customize_register( $wp_customize ) {
+function springy_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -92,26 +94,26 @@ function polite_customize_register( $wp_customize ) {
     if ( isset( $wp_customize->selective_refresh ) ) {
       $wp_customize->selective_refresh->add_partial( 'blogname', array(
          'selector'        => '.site-title a',
-         'render_callback' => 'polite_customize_partial_blogname',
+         'render_callback' => 'springy_customize_partial_blogname',
      ) );
       $wp_customize->selective_refresh->add_partial( 'blogdescription', array(
          'selector'        => '.site-description',
-         'render_callback' => 'polite_customize_partial_blogdescription',
+         'render_callback' => 'springy_customize_partial_blogdescription',
      ) );
   }
-  $default = polite_default_theme_options_values();
+  $default = springy_default_theme_options_values();
 
   require get_template_directory() . '/templatesell/theme-settings/theme-settings.php';
 
 }
-add_action( 'customize_register', 'polite_customize_register' );
+add_action( 'customize_register', 'springy_customize_register' );
 
 /**
  * Render the site title for the selective refresh partial.
  *
  * @return void
  */
-function polite_customize_partial_blogname() {
+function springy_customize_partial_blogname() {
 	bloginfo( 'name' );
 }
 
@@ -120,21 +122,21 @@ function polite_customize_partial_blogname() {
  *
  * @return void
  */
-function polite_customize_partial_blogdescription() {
+function springy_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
-function polite_customize_preview_js() {
-	wp_enqueue_script( 'polite-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20200412', true );
+function springy_customize_preview_js() {
+	wp_enqueue_script( 'springy-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20200412', true );
 }
-add_action( 'customize_preview_init', 'polite_customize_preview_js' );
+add_action( 'customize_preview_init', 'springy_customize_preview_js' );
 
 /*
 ** Customizer Styles
 */
-function polite_panels_css() {
-     wp_enqueue_style('polite-customizer-css', get_template_directory_uri() . '/css/customizer-style.css', array(), '4.5.0');
+function springy_panels_css() {
+     wp_enqueue_style('springy-customizer-css', get_template_directory_uri() . '/css/customizer-style.css', array(), '4.5.0');
 }
-add_action( 'customize_controls_enqueue_scripts', 'polite_panels_css' );
+add_action( 'customize_controls_enqueue_scripts', 'springy_panels_css' );

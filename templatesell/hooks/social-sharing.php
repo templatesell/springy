@@ -7,37 +7,37 @@
  * @return void
  *
  */
-if (!function_exists('polite_social_sharing')) :
-    function polite_social_sharing($post_id)
+if (!function_exists('springy_social_sharing')) :
+    function springy_social_sharing($post_id)
     {
-        $polite_url = get_the_permalink($post_id);
-        $polite_title = get_the_title($post_id);
-        $polite_image = get_the_post_thumbnail_url($post_id);
+        $springy_url = get_the_permalink($post_id);
+        $springy_title = get_the_title($post_id);
+        $springy_image = get_the_post_thumbnail_url($post_id);
         
         //sharing url
-        $polite_twitter_sharing_url = esc_url('http://twitter.com/share?text=' . $polite_title . '&url=' . $polite_url);
-        $polite_facebook_sharing_url = esc_url('https://www.facebook.com/sharer/sharer.php?u=' . $polite_url);
-        $polite_pinterest_sharing_url = esc_url('http://pinterest.com/pin/create/button/?url=' . $polite_url . '&media=' . $polite_image . '&description=' . $polite_title);
-        $polite_linkedin_sharing_url = esc_url('http://www.linkedin.com/shareArticle?mini=true&title=' . $polite_title . '&url=' . $polite_url);
+        $springy_twitter_sharing_url = esc_url('http://twitter.com/share?text=' . $springy_title . '&url=' . $springy_url);
+        $springy_facebook_sharing_url = esc_url('https://www.facebook.com/sharer/sharer.php?u=' . $springy_url);
+        $springy_pinterest_sharing_url = esc_url('http://pinterest.com/pin/create/button/?url=' . $springy_url . '&media=' . $springy_image . '&description=' . $springy_title);
+        $springy_linkedin_sharing_url = esc_url('http://www.linkedin.com/shareArticle?mini=true&title=' . $springy_title . '&url=' . $springy_url);
         
         ?>
         <div class="meta-bottom">
             <a href="#"></a>
             <div class="post-share-wrapper">
                 <div class="post-share">
-                <a class="share-facebook" target="_blank" href="<?php echo $polite_facebook_sharing_url; ?>">
+                <a class="share-facebook" target="_blank" href="<?php echo $springy_facebook_sharing_url; ?>">
                     <i class="fa fa-facebook"></i>
                     <span>Facebook</span>
                 </a>
-                <a class="share-twitter" target="_blank" href="<?php echo $polite_twitter_sharing_url; ?>">
+                <a class="share-twitter" target="_blank" href="<?php echo $springy_twitter_sharing_url; ?>">
                     <i class="fa fa-twitter"></i>
                     <span>Twitter</span>
                 </a>
-                <a class="share-pinterest" target="_blank" href="<?php echo $polite_pinterest_sharing_url; ?>">
+                <a class="share-pinterest" target="_blank" href="<?php echo $springy_pinterest_sharing_url; ?>">
                     <i class="fa fa-pinterest"></i>
                     <span>Pinterest</span>
                 </a>
-                <a class="share-linkedin" target="_blank" href="<?php echo $polite_linkedin_sharing_url; ?>">
+                <a class="share-linkedin" target="_blank" href="<?php echo $springy_linkedin_sharing_url; ?>">
                     <i class="fa fa-linkedin"></i>
                     <span>Linkedin</span>
                 </a>
@@ -47,4 +47,4 @@ if (!function_exists('polite_social_sharing')) :
         <?php
     }
 endif;
-add_action('polite_social_sharing', 'polite_social_sharing', 10);
+add_action('springy_social_sharing', 'springy_social_sharing', 10);

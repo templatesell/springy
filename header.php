@@ -6,12 +6,12 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Polite
+ * @package Springy
  */
-$GLOBALS['polite_theme_options'] = polite_get_options_value();
-global $polite_theme_options;
-$enable_slider = absint($polite_theme_options['polite_enable_slider']);
-$enable_box = $polite_theme_options['polite_enable_promo'];
+$GLOBALS['springy_theme_options'] = springy_get_options_value();
+global $springy_theme_options;
+$enable_slider = absint($springy_theme_options['springy_enable_slider']);
+$enable_box = $springy_theme_options['springy_enable_promo'];
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -32,15 +32,15 @@ if ( function_exists( 'wp_body_open' ) ) {
 }
 ?>
 <div id="page" class="site ">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'polite' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'springy' ); ?></a>
 
 	<?php
     /**
-     * Hook - polite_action_header.
+     * Hook - springy_action_header.
      *
-     * @hooked polite_add_main_header - 10
+     * @hooked springy_add_main_header - 10
      */
-    do_action( 'polite_action_header' );
+    do_action( 'springy_action_header' );
     ?>
     <div class="clear-fix"></div>
 	 <?php if ($enable_slider == 1 && (is_home() || is_front_page())) { ?>
@@ -49,7 +49,7 @@ if ( function_exists( 'wp_body_open' ) ) {
             /*
             * Slider Section Hook
             */
-                do_action('polite_action_slider');
+                do_action('springy_action_slider');
             ?>
         </section>
     <?php } ?>
@@ -60,7 +60,7 @@ if ( function_exists( 'wp_body_open' ) ) {
             /*
             * Boxes Section Hook
             */
-            do_action('polite_action_boxes');
+            do_action('springy_action_boxes');
             ?>
         </section>
     <?php } ?>

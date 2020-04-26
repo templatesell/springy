@@ -1,26 +1,26 @@
 <?php 
 /*Sticky Sidebar*/
-$wp_customize->add_section( 'polite_sticky_sidebar', array(
+$wp_customize->add_section( 'springy_sticky_sidebar', array(
    'priority'       => 20,
    'capability'     => 'edit_theme_options',
    'theme_supports' => '',
-   'title'          => __( 'Sticky Sidebar Settings', 'polite' ),
-   'panel' 		 => 'polite_panel',
+   'title'          => __( 'Sticky Sidebar Settings', 'springy' ),
+   'panel' 		 => 'springy_panel',
 ) );
 
 /*Sticky Sidebar Setting*/
-$wp_customize->add_setting( 'polite_options[polite-enable-sticky-sidebar]', array(
+$wp_customize->add_setting( 'springy_options[springy-enable-sticky-sidebar]', array(
     'capability'        => 'edit_theme_options',
     'transport' => 'refresh',
-    'default'           => $default['polite-enable-sticky-sidebar'],
-    'sanitize_callback' => 'polite_sanitize_checkbox'
+    'default'           => $default['springy-enable-sticky-sidebar'],
+    'sanitize_callback' => 'springy_sanitize_checkbox'
 ) );
 
-$wp_customize->add_control( 'polite_options[polite-enable-sticky-sidebar]', array(
-    'label'     => __( 'Enable Sticky Sidebar', 'polite' ),
-    'description' => __('Enable and Disable sticky sidebar from this section.', 'polite'),
-    'section'   => 'polite_sticky_sidebar',
-    'settings'  => 'polite_options[polite-enable-sticky-sidebar]',
+$wp_customize->add_control( 'springy_options[springy-enable-sticky-sidebar]', array(
+    'label'     => __( 'Enable Sticky Sidebar', 'springy' ),
+    'description' => __('Enable and Disable sticky sidebar from this section.', 'springy'),
+    'section'   => 'springy_sticky_sidebar',
+    'settings'  => 'springy_options[springy-enable-sticky-sidebar]',
     'type'      => 'checkbox',
     'priority'  => 15,
 ) );

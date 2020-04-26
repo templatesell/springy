@@ -6,10 +6,10 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Polite
+ * @package Springy
  */
-global $polite_theme_options;
-$copyright = wp_kses_post($polite_theme_options['polite-footer-copyright']);
+global $springy_theme_options;
+$copyright = wp_kses_post($springy_theme_options['springy-footer-copyright']);
 if ( is_active_sidebar('footer-1') || is_active_sidebar('footer-2') || is_active_sidebar('footer-3') || is_active_sidebar('footer-4') ) {
 	$count = 0;
 	for ( $i = 1; $i <= 4; $i++ )
@@ -68,7 +68,7 @@ if ( is_active_sidebar('footer-1') || is_active_sidebar('footer-2') || is_active
 							<?php echo $copyright; ?>
 							<?php
 							/* translators: 1: Theme name, 2: Theme author. */
-							printf( esc_html__( '- %1$s WordPress Theme by : %2$s', 'polite' ), 'Polite', '<a href="https://www.templatesell.com/">Templatesell</a>' );
+							printf( esc_html__( '- %1$s WordPress Theme by : %2$s', 'springy' ), 'Springy', '<a href="https://www.templatesell.com/">Templatesell</a>' );
 							?>
 						</p>
 					</div>
@@ -86,7 +86,7 @@ if ( is_active_sidebar('footer-1') || is_active_sidebar('footer-2') || is_active
 			</div>
 		</div>
 	</footer>
-	<?php do_action('polite_go_to_top_hook'); ?>
+	<?php do_action('springy_go_to_top_hook'); ?>
 </div>
 </div><!-- main content -->
 </div><!-- #page -->

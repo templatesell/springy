@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package Polite
+ * @package Springy
  */
 get_header();
 ?>
@@ -12,10 +12,10 @@ get_header();
 	<div class="container">
 		<div class="breadcrumbs-wrapper">	
 			<div class="archive-heading">
-				<h2><?php esc_html_e( 'Blog', 'polite' ); ?></h2>
+				<h2><?php esc_html_e( 'Blog', 'springy' ); ?></h2>
 			</div>
 			<div class="breadcrumb">
-				<?php do_action('polite_breadcrumb_options_hook'); ?> <!-- Breadcrumb hook -->
+				<?php do_action('springy_breadcrumb_options_hook'); ?> <!-- Breadcrumb hook -->
 			</div>
 		</div>
 	</div>

@@ -2,31 +2,31 @@
 /**
  * Author Profile Widget
  *
- * @package Polite
+ * @package Springy
  */
 
-if (!class_exists('Polite_Author_Widget')) :
+if (!class_exists('Springy_Author_Widget')) :
 
     /**
      * Author widget class.
      *
-     * @since Polite 1.0.0
+     * @since Springy 1.0.0
      */
-    class Polite_Author_Widget extends WP_Widget
+    class Springy_Author_Widget extends WP_Widget
     {
          private function defaults()
         {
             $defaults = array(
-                'title'    => esc_html__( 'Follow Us', 'polite' ),
-                'name'    => esc_html__( 'Your Name', 'polite' ),
-                'author_description' => esc_html__( 'Author Description goes here.', 'polite' ),
+                'title'    => esc_html__( 'Follow Us', 'springy' ),
+                'name'    => esc_html__( 'Your Name', 'springy' ),
+                'author_description' => esc_html__( 'Author Description goes here.', 'springy' ),
                 'author_image'=>'',
-                'author_facebook' => esc_html__( '#', 'polite' ),
-                'author_twitter' => esc_html__( '#', 'polite' ),
-                'author_linkedin' => esc_html__( '#', 'polite' ),
-                'author_instagram' => esc_html__( '#', 'polite' ),
+                'author_facebook' => esc_html__( '#', 'springy' ),
+                'author_twitter' => esc_html__( '#', 'springy' ),
+                'author_linkedin' => esc_html__( '#', 'springy' ),
+                'author_instagram' => esc_html__( '#', 'springy' ),
                 'author_pinterest' => '',
-                'author_youtube' => esc_html__( '#', 'polite' ),
+                'author_youtube' => esc_html__( '#', 'springy' ),
                 'author_vk' => '',
                 'author_sign'=>'',
            );
@@ -36,15 +36,15 @@ if (!class_exists('Polite_Author_Widget')) :
         /**
          * Constructor.
          *
-         * @since Polite 1.0.0
+         * @since Springy 1.0.0
          */
         public function __construct()
         {
             $opts = array(
-                'classname' => 'polite_widget_author',
-                'description' => esc_html__('Display Author Profile.', 'polite'),
+                'classname' => 'springy_widget_author',
+                'description' => esc_html__('Display Author Profile.', 'springy'),
             );
-            parent::__construct('polite-author', esc_html__('Polite Author', 'polite'), $opts);
+            parent::__construct('springy-author', esc_html__('Springy Author', 'springy'), $opts);
         }
 
         /**
@@ -104,7 +104,7 @@ if (!class_exists('Polite_Author_Widget')) :
                     }
                     ?>
                     <h5 class="author-title">
-                        <span class="author--text"><?php esc_html_e( 'Hi, Im', 'polite' ); ?></span>
+                        <span class="author--text"><?php esc_html_e( 'Hi, Im', 'springy' ); ?></span>
                         <?php if (isset($author_name) && !empty($author_name)) {
                             echo wp_kses_post($instance['author_name']);
                         } ?>
@@ -116,49 +116,49 @@ if (!class_exists('Polite_Author_Widget')) :
                             <?php if ($author_facebook) { ?>
                                 <li>
                                     <a href="<?php echo esc_url($author_facebook); ?>" target="_blank"><span
-                                            class="screen-reader-text"><?php esc_html_e('facebook', 'polite'); ?></span><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                            class="screen-reader-text"><?php esc_html_e('facebook', 'springy'); ?></span><i class="fa fa-facebook" aria-hidden="true"></i></a>
                                 </li>
                             <?php } ?>
 
                             <?php if ($author_twitter) { ?>
                                 <li>
                                     <a href="<?php echo esc_url($author_twitter); ?>" target="_blank"><span
-                                            class="screen-reader-text"><?php esc_html_e('twitter', 'polite'); ?></span><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                            class="screen-reader-text"><?php esc_html_e('twitter', 'springy'); ?></span><i class="fa fa-twitter" aria-hidden="true"></i></a>
                                 </li>
                             <?php } ?>
 
                             <?php if ($author_linkedin) { ?>
                                 <li>
                                     <a href="<?php echo esc_url($author_linkedin); ?>" target="_blank"><span
-                                            class="screen-reader-text"><?php esc_html_e('linkedin', 'polite'); ?></span><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                            class="screen-reader-text"><?php esc_html_e('linkedin', 'springy'); ?></span><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                                 </li>
                             <?php } ?>
 
                             <?php if ($author_instagram) { ?>
                                 <li>
                                     <a href="<?php echo esc_url($author_instagram); ?>" target="_blank"><span
-                                            class="screen-reader-text"><?php esc_html_e('instagram', 'polite'); ?></span><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                            class="screen-reader-text"><?php esc_html_e('instagram', 'springy'); ?></span><i class="fa fa-instagram" aria-hidden="true"></i></a>
                                 </li>
                             <?php } ?>
 
                             <?php if ($author_pinterest) { ?>
                                 <li>
                                     <a href="<?php echo esc_url($author_pinterest); ?>" target="_blank"><span
-                                            class="screen-reader-text"><?php esc_html_e('pinterest', 'polite'); ?></span><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                                            class="screen-reader-text"><?php esc_html_e('pinterest', 'springy'); ?></span><i class="fa fa-pinterest" aria-hidden="true"></i></a>
                                 </li>
                             <?php } ?>
 
                             <?php if ($author_youtube) { ?>
                                 <li>
                                     <a href="<?php echo esc_url($author_youtube); ?>" target="_blank"><span
-                                            class="screen-reader-text"><?php esc_html_e('youtube', 'polite'); ?></span><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                                            class="screen-reader-text"><?php esc_html_e('youtube', 'springy'); ?></span><i class="fa fa-youtube" aria-hidden="true"></i></a>
                                 </li>
                             <?php } ?>
 
                             <?php if ($author_vk) { ?>
                                 <li>
                                     <a href="<?php echo esc_url($author_vk); ?>" target="_blank"><span
-                                            class="screen-reader-text"><?php esc_html_e('vk', 'polite'); ?></span><i class="fa fa-vk" aria-hidden="true"></i></a>
+                                            class="screen-reader-text"><?php esc_html_e('vk', 'springy'); ?></span><i class="fa fa-vk" aria-hidden="true"></i></a>
                                 </li>
                             <?php } ?>
                         </ul>
@@ -249,21 +249,21 @@ if (!class_exists('Polite_Author_Widget')) :
 
             <p>
                 <label
-                    for="<?php echo esc_attr($this->get_field_id('title')); ?>"><strong><?php esc_html_e('Title:', 'polite'); ?></strong></label>
+                    for="<?php echo esc_attr($this->get_field_id('title')); ?>"><strong><?php esc_html_e('Title:', 'springy'); ?></strong></label>
                 <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>"
                        name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text"
                        value="<?php echo esc_attr($instance['title']); ?>"/>
             </p>
             <p>
                 <label
-                    for="<?php echo esc_attr($this->get_field_id('author_name')); ?>"><strong><?php esc_html_e('Name:', 'polite'); ?></strong></label>
+                    for="<?php echo esc_attr($this->get_field_id('author_name')); ?>"><strong><?php esc_html_e('Name:', 'springy'); ?></strong></label>
                 <input class="widefat" id="<?php echo esc_attr($this->get_field_id('author_name')); ?>"
                        name="<?php echo esc_attr($this->get_field_name('author_name')); ?>" type="text"
                        value="<?php echo esc_attr($instance['author_name']); ?>"/>
             </p>
             <p>
                 <label
-                    for="<?php echo esc_attr($this->get_field_id('author_description')); ?>"><strong><?php esc_html_e('Description:', 'polite'); ?></strong></label>
+                    for="<?php echo esc_attr($this->get_field_id('author_description')); ?>"><strong><?php esc_html_e('Description:', 'springy'); ?></strong></label>
                 <input class="widefat" id="<?php echo esc_attr($this->get_field_id('author_description')); ?>"
                        name="<?php echo esc_attr($this->get_field_name('author_description')); ?>" type="text"
                        value="<?php echo esc_attr($instance['author_description']); ?>"/>
@@ -271,7 +271,7 @@ if (!class_exists('Polite_Author_Widget')) :
 
             <p>
                 <label for="<?php echo $this->get_field_id('author_image'); ?>">
-                    <?php _e('Select Image: Recommended size 250*250', 'polite'); ?>
+                    <?php _e('Select Image: Recommended size 250*250', 'springy'); ?>
                 </label>
                 <br/>
                 <?php
@@ -289,12 +289,12 @@ if (!class_exists('Polite_Author_Widget')) :
                 ?>">
                 <input type="button" class="button button-primary custom_media_button" id="custom_media_button"
                        name="<?php echo $this->get_field_name('author_image'); ?>"
-                       value="<?php esc_attr_e('Upload Image', 'polite') ?>"/>
+                       value="<?php esc_attr_e('Upload Image', 'springy') ?>"/>
             </p>
 
             <p>
                 <label for="<?php echo esc_attr($this->get_field_name('author_facebook')); ?>">
-                    <?php esc_html_e('Facebook:', 'polite'); ?>
+                    <?php esc_html_e('Facebook:', 'springy'); ?>
                 </label>
                 <input class="widefat" id="<?php echo esc_attr($this->get_field_id('author_facebook')); ?>"
                        name="<?php echo esc_attr($this->get_field_name('author_facebook')); ?>" type="text"
@@ -303,7 +303,7 @@ if (!class_exists('Polite_Author_Widget')) :
 
             <p>
                 <label for="<?php echo esc_attr($this->get_field_name('author_twitter')); ?>">
-                    <?php esc_html_e('Twitter:', 'polite'); ?>
+                    <?php esc_html_e('Twitter:', 'springy'); ?>
                 </label>
                 <input class="widefat" id="<?php echo esc_attr($this->get_field_id('author_twitter')); ?>"
                        name="<?php echo esc_attr($this->get_field_name('author_twitter')); ?>" type="text"
@@ -312,7 +312,7 @@ if (!class_exists('Polite_Author_Widget')) :
 
             <p>
                 <label for="<?php echo esc_attr($this->get_field_name('author_linkedin')); ?>">
-                    <?php esc_html_e('LinkedIn:', 'polite'); ?>
+                    <?php esc_html_e('LinkedIn:', 'springy'); ?>
                 </label>
                 <input class="widefat" id="<?php echo esc_attr($this->get_field_id('author_linkedin')); ?>"
                        name="<?php echo esc_attr($this->get_field_name('author_linkedin')); ?>" type="text"
@@ -321,7 +321,7 @@ if (!class_exists('Polite_Author_Widget')) :
 
             <p>
                 <label for="<?php echo esc_attr($this->get_field_name('author_instagram')); ?>">
-                    <?php esc_html_e('Instagram:', 'polite'); ?>
+                    <?php esc_html_e('Instagram:', 'springy'); ?>
                 </label>
                 <input class="widefat" id="<?php echo esc_attr($this->get_field_id('author_instagram')); ?>"
                        name="<?php echo esc_attr($this->get_field_name('author_instagram')); ?>" type="text"
@@ -330,7 +330,7 @@ if (!class_exists('Polite_Author_Widget')) :
 
             <p>
                 <label for="<?php echo esc_attr($this->get_field_name('author_pinterest')); ?>">
-                    <?php esc_html_e('Pinterest:', 'polite'); ?>
+                    <?php esc_html_e('Pinterest:', 'springy'); ?>
                 </label>
                 <input class="widefat" id="<?php echo esc_attr($this->get_field_id('author_pinterest')); ?>"
                        name="<?php echo esc_attr($this->get_field_name('author_pinterest')); ?>" type="text"
@@ -339,7 +339,7 @@ if (!class_exists('Polite_Author_Widget')) :
 
             <p>
                 <label for="<?php echo esc_attr($this->get_field_name('author_youtube')); ?>">
-                    <?php esc_html_e('Youtube:', 'polite'); ?>
+                    <?php esc_html_e('Youtube:', 'springy'); ?>
                 </label>
                 <input class="widefat" id="<?php echo esc_attr($this->get_field_id('author_youtube')); ?>"
                        name="<?php echo esc_attr($this->get_field_name('author_youtube')); ?>" type="text"
@@ -348,7 +348,7 @@ if (!class_exists('Polite_Author_Widget')) :
 
             <p>
                 <label for="<?php echo esc_attr($this->get_field_name('author_vk')); ?>">
-                    <?php esc_html_e('VK:', 'polite'); ?>
+                    <?php esc_html_e('VK:', 'springy'); ?>
                 </label>
                 <input class="widefat" id="<?php echo esc_attr($this->get_field_id('author_vk')); ?>"
                        name="<?php echo esc_attr($this->get_field_name('author_vk')); ?>" type="text"
@@ -357,7 +357,7 @@ if (!class_exists('Polite_Author_Widget')) :
 
             <p>
                 <label
-                    for="<?php echo esc_attr($this->get_field_id('author_sign')); ?>"><strong><?php esc_html_e('Author Sign Text:', 'polite'); ?></strong></label>
+                    for="<?php echo esc_attr($this->get_field_id('author_sign')); ?>"><strong><?php esc_html_e('Author Sign Text:', 'springy'); ?></strong></label>
                 <input class="widefat" id="<?php echo esc_attr($this->get_field_id('author_sign')); ?>"
                        name="<?php echo esc_attr($this->get_field_name('author_sign')); ?>" type="text"
                        value="<?php echo esc_attr($instance['author_sign']); ?>"/>
@@ -369,11 +369,11 @@ if (!class_exists('Polite_Author_Widget')) :
     }
 
 endif;
-add_action('admin_enqueue_scripts', 'polite_widgets_backend_enqueue');
-function polite_widgets_backend_enqueue()
+add_action('admin_enqueue_scripts', 'springy_widgets_backend_enqueue');
+function springy_widgets_backend_enqueue()
 {
-    wp_register_script('polite-custom-widgets', get_template_directory_uri() . '/assets/js/widgets.js', array('jquery'), true);
+    wp_register_script('springy-custom-widgets', get_template_directory_uri() . '/assets/js/widgets.js', array('jquery'), true);
     
     wp_enqueue_media();
-    wp_enqueue_script('polite-custom-widgets');
+    wp_enqueue_script('springy-custom-widgets');
 }

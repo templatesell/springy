@@ -1,21 +1,21 @@
 <?php
 /**
- * Polite Social Icons menu widget
+ * Springy Social Icons menu widget
  *
  * @since 1.0.0
  */
 
-if (!class_exists('Polite_Social_Widget')) :
+if (!class_exists('Springy_Social_Widget')) :
 
     /**
      * Social widget class.
      */
-    class Polite_Social_Widget extends WP_Widget
+    class Springy_Social_Widget extends WP_Widget
     {
          private function defaults()
         {
             $defaults = array(
-                'title'    => esc_html__( 'Follow Us', 'polite' ),
+                'title'    => esc_html__( 'Follow Us', 'springy' ),
            );
             return $defaults;
         }
@@ -26,10 +26,10 @@ if (!class_exists('Polite_Social_Widget')) :
         public function __construct()
         {
             $opts = array(
-                'classname' => 'polite-menu-social',
-                'description' => esc_html__('Social Menu Widget', 'polite'),
+                'classname' => 'springy-menu-social',
+                'description' => esc_html__('Social Menu Widget', 'springy'),
             );
-            parent::__construct('polite-social-icons', esc_html__('Polite Social', 'polite'), $opts);
+            parent::__construct('springy-social-icons', esc_html__('Springy Social', 'springy'), $opts);
         }
 
         /**
@@ -77,7 +77,7 @@ if (!class_exists('Polite_Social_Widget')) :
             ?>
             <p>
                 <label
-                    for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_html_e('Title:', 'polite'); ?></label>
+                    for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_html_e('Title:', 'springy'); ?></label>
                 <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>"
                        name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text"
                        value="<?php echo esc_attr($instance['title']); ?>"/>
@@ -85,7 +85,7 @@ if (!class_exists('Polite_Social_Widget')) :
 
             <?php if (!has_nav_menu('social')) : ?>
             <p>
-                <?php esc_html_e('Go to Appearance > Customize > Menus and create a menu and assign to Social.', 'polite'); ?>
+                <?php esc_html_e('Go to Appearance > Customize > Menus and create a menu and assign to Social.', 'springy'); ?>
             </p>
         <?php endif; ?>
         <?php

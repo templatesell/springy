@@ -4,14 +4,14 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Polite
+ * @package Springy
  */
-global $polite_theme_options;
-$show_content_from = esc_attr($polite_theme_options['polite-content-show-from']);
-$read_more = esc_html($polite_theme_options['polite-read-more-text']);
-$masonry = esc_attr($polite_theme_options['polite-column-blog-page']);
-$image_location = esc_attr($polite_theme_options['polite-blog-image-layout']);
-$social_share = absint($polite_theme_options['polite-show-hide-share']);
+global $springy_theme_options;
+$show_content_from = esc_attr($springy_theme_options['springy-content-show-from']);
+$read_more = esc_html($springy_theme_options['springy-read-more-text']);
+$masonry = esc_attr($springy_theme_options['springy-column-blog-page']);
+$image_location = esc_attr($springy_theme_options['springy-blog-image-layout']);
+$social_share = absint($springy_theme_options['springy-show-hide-share']);
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class($masonry); ?>>
@@ -19,19 +19,19 @@ $social_share = absint($polite_theme_options['polite-show-hide-share']);
         <?php if(has_post_thumbnail()) { ?>
             <div class="post-media-part">
                 <div class="post-media">
-                    <?php polite_post_thumbnail(); ?>
+                    <?php springy_post_thumbnail(); ?>
                 </div>
             </div>
             <div class="post-meta-info">
                 <div class="meta-wrapper">
                     <div class="meta-categories">
                         <div class="post-cats">
-                            <?php polite_entry_meta(); ?>
+                            <?php springy_entry_meta(); ?>
                         </div>
                     </div>
                     <?php 
                         if( 1 == $social_share ){
-                            do_action( 'polite_social_sharing' ,get_the_ID() );
+                            do_action( 'springy_social_sharing' ,get_the_ID() );
                         }
                     ?>
                 </div>
@@ -61,7 +61,7 @@ $social_share = absint($polite_theme_options['polite-show-hide-share']);
                     }
                 }
                 wp_link_pages(array(
-                    'before' => '<div class="page-links">' . esc_html__('Pages:', 'polite'),
+                    'before' => '<div class="page-links">' . esc_html__('Pages:', 'springy'),
                     'after' => '</div>',
                 ));
                 ?>
@@ -80,15 +80,15 @@ $social_share = absint($polite_theme_options['polite-show-hide-share']);
                         ?>
                         <div class="post-author">
                             <?php echo get_avatar( get_the_author_meta( 'ID' ) , 32 ); ?>
-                            <?php polite_posted_by(); ?>
+                            <?php springy_posted_by(); ?>
                         </div>
                         <div class="post-date">
                             <div class="entry-meta">
-                                <span class="ti-calendar"></span><?php  polite_posted_on();  ?>
+                                <span class="ti-calendar"></span><?php  springy_posted_on();  ?>
                             </div><!-- .entry-meta -->
                         </div>
                         <div class="reading-time">
-                            <span class="ti-time"></span> <?php echo reading_time(); ?>
+                            <span class="ti-time"></span> <?php echo springy_reading_time(); ?>
                         </div>
                         <div class="comment-num">
                             <?php echo get_comments_number($post->ID);?> <span class="ti-comment"></span>
