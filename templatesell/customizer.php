@@ -14,6 +14,7 @@ if ( !function_exists('springy_default_theme_options_values') ) :
           /*Header Options*/
             'springy_enable_search'  => 0,
             'springy_header_image_text'=> esc_html__('Flexible For Everyone','springy'),
+            'springy_header_image_sub_heading' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua','springy'),
             'springy_header_image_button_link'=> '#',
             'springy_header_image_button_text'=> esc_html__('Get Started','springy'),
 
@@ -44,6 +45,8 @@ if ( !function_exists('springy_default_theme_options_values') ) :
             'springy-single-page-related-posts-title' => esc_html__('Related Posts','springy'),
             'springy-sidebar-single-page'=> 'single-right-sidebar',
             'springy-single-social-share' => 1,
+            'springy-single-page-blog-title' =>  esc_html__('Blog','springy'),
+            'springy-single-page-blog-image'=> '',
 
 
             /*Sticky Sidebar*/

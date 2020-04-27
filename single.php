@@ -7,12 +7,15 @@
  * @package Springy
  */
 get_header();
+
+global $springy_theme_options;
+$main_title = esc_html($springy_theme_options['springy-single-page-blog-title']);
 ?>
 <section  class="page-bg" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/page-banner-1.jpg');">
 	<div class="container">
 		<div class="breadcrumbs-wrapper">	
 			<div class="archive-heading">
-				<h2><?php esc_html_e( 'Blog', 'springy' ); ?></h2>
+				<h2><?php esc_html_e( $main_title ); ?></h2>
 			</div>
 			<div class="breadcrumb">
 				<?php do_action('springy_breadcrumb_options_hook'); ?> <!-- Breadcrumb hook -->

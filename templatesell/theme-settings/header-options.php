@@ -45,6 +45,24 @@ $wp_customize->add_control( 'springy_options[springy_header_image_text]', array(
 
 ) );
 
+/*Header Image Text Sub heading*/
+$wp_customize->add_setting( 'springy_options[springy_header_image_sub_heading]', array(
+    'capability'        => 'edit_theme_options',
+    'transport' => 'refresh',
+    'default'           => $default['springy_header_image_sub_heading'],
+    'sanitize_callback' => 'sanitize_text_field'
+) );
+
+$wp_customize->add_control( 'springy_options[springy_header_image_sub_heading]', array(
+    'label'     => __( 'Header SubText', 'springy' ),
+    'description' => __('If header image is used, this text will appear above it.', 'springy'),
+    'section'   => 'header_image',
+    'settings'  => 'springy_options[springy_header_image_sub_heading]',
+    'type'      => 'text',
+    'priority'  => 25,
+
+) );
+
 /*Header Image Button Above*/
 $wp_customize->add_setting( 'springy_options[springy_header_image_button_text]', array(
     'capability'        => 'edit_theme_options',

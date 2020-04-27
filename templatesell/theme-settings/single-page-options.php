@@ -8,6 +8,24 @@ $wp_customize->add_section('springy_single_page_section', array(
     'panel' => 'springy_panel',
 ));
 
+
+/*Title For Single Page*/
+$wp_customize->add_setting('springy_options[springy-single-page-blog-title]', array(
+    'capability' => 'edit_theme_options',
+    'transport' => 'refresh',
+    'default' => $default['springy-single-page-blog-title'],
+    'sanitize_callback' => 'sanitize_text_field'
+));
+
+$wp_customize->add_control('springy_options[springy-single-page-blog-title]', array(
+    'label' => __('Enter the title for the single page', 'springy'),
+    'description' => __('This title will come on all the single pages.', 'springy'),
+    'section' => 'springy_single_page_section',
+    'settings' => 'springy_options[springy-single-page-blog-title]',
+    'type' => 'text',
+    'priority' => 15,
+));
+
 /*Featured Image Option*/
 $wp_customize->add_setting('springy_options[springy-single-page-featured-image]', array(
     'capability' => 'edit_theme_options',
