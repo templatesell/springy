@@ -76,10 +76,14 @@ $header_link = esc_url($springy_theme_options['springy_header_image_button_link'
 	$header_class = ($header_image == "") ? '' : 'header-image';
 	?>
 	<div class="main-header <?php echo esc_attr($header_class); ?>" style="background-image:url(<?php echo esc_url($header_image) ?>); background-size: cover; background-position: center; background-repeat: no-repeat;">
-		<div class="head-img">
-			<h1 class="wel-title"><?php esc_html_e($header_text); ?></h1>
-			<p class="wel-title"><?php esc_html_e($header_subtext); ?></p>
-			<p class="wel-sub-title"><a href="<?php echo esc_url($header_link); ?>"><?php esc_html_e($header_btn); ?></a></p>
+		<div class="container">
+			<div class="head-img-wrapper">
+				<div class="head-content">
+					<h1 class="wel-title"><?php esc_html_e($header_text); ?></h1>
+					<p class="wel-title"><?php esc_html_e($header_subtext); ?></p>
+					<a href="<?php echo esc_url($header_link); ?>"><?php esc_html_e($header_btn); ?></a>
+				</div>
+			</div>
 		</div>
 	</div><!-- #masthead -->		
 

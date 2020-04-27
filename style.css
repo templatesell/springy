@@ -915,18 +915,53 @@ th {
     display: none;
 }
 .main-header.header-image {
-    min-height: 600px;
+    min-height: 650px;
     display: block;
 }
-.head-img{
+.head-img-wrapper{
     display: table;
-    width: 100%;
-    text-align: center;
-    min-height: 600px;
+    max-width: 480px;
+    text-align: left;
+    min-height: 650px;
 }
-.wel-title{
+.head-content{
     display: table-cell;
     vertical-align: middle;
+}
+.head-content h1{
+    font-size: calc(24px + 40*(100vw - 300px)/1620);
+    font-weight: 600;
+    line-height: normal;
+    color: #fff;
+}
+.head-content p{
+    color: #fff;
+    margin:15px 0;
+    display: inline-block;
+}
+.head-content a{
+    padding: 14px 35px;
+    font-size: calc(13px + (16 - 13) * ((100vw - 300px) / (1920 - 300)));
+    font-weight: 500;
+    border: 2px solid;
+    text-transform: capitalize;
+    border-radius: 50px;
+    color: #fff !important;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    letter-spacing: 0;
+    white-space: nowrap;
+    display: inline-block;
+    margin: 15px 0;
+}
+.head-content a:hover, 
+.head-content a:focus, 
+.head-content a:active {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    background-color: #fff;
+    border: 2px solid #774ddd;
+    color: #774ddd !important;
 }
 /*==============================================================
 ## Main Banner CSS
