@@ -23,11 +23,16 @@ if ( !function_exists('springy_default_theme_options_values') ) :
 
             /*Slider Options*/
             'springy_enable_slider'      => 1,
+            'springy-select-slider-from'=>'from-page',
             'springy-select-category'    => 0,
+            'springy-select-slider-from-page-one'=> 0,
+            'springy-select-slider-from-page-two'=> 0,
+            'springy-select-slider-from-page-three'=> 0,
     
             /*Boxes Section */
             'springy_enable_promo'       => 1,
             'springy-promo-select-category'=> 0,
+            'springy-select-boxes-from'=> 'from-customizer',
             
             /*Blog Page*/
             'springy-sidebar-blog-page' => 'no-sidebar',

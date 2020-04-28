@@ -50,7 +50,6 @@ require get_template_directory() . '/templatesell/customizer-category-control.ph
  * Load category dropdown functions
  */
 require get_template_directory() . '/templatesell/customizer-radio-image-control.php';
-
 /**
  * Dynamic CSS file load
  */

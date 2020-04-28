@@ -41,7 +41,45 @@ $wp_customize->add_control(
         'type'      => 'checkbox',
        'priority'  => 15,
    )
- );        
+ );
+
+ /*Select the Slider from*/
+$wp_customize->add_setting('springy_options[springy-select-slider-from]', array(
+    'capability' => 'edit_theme_options',
+    'transport' => 'refresh',
+    'default' => $default['springy-select-slider-from'],
+    'sanitize_callback' => 'springy_sanitize_select'
+));
+
+$wp_customize->add_control('springy_options[springy-select-slider-from]', array(
+    'choices' => array(
+        'from-page' => __('Slider From Page', 'springy'),
+        'from-post' => __('Slider From Post', 'springy'),
+    ),
+    'label' => __('Select Slider From Options', 'springy'),
+    'description' => __('You can either select the slider from post category or pages.', 'springy'),
+    'section' => 'springy_slider_section',
+    'settings' => 'springy_options[springy-select-slider-from]',
+    'type' => 'select',
+    'priority' => 15,
+    'active_callback' => 'springy_slider_active_callback',
+
+));
+
+/*callback functions slider getting from post*/
+if ( !function_exists('springy_slider_get_from_active_callback') ) :
+  function springy_slider_get_from_active_callback(){
+      global $springy_theme_options;
+      $enable_slider = absint($springy_theme_options['springy_enable_slider']);
+      $slider_from = esc_attr($springy_theme_options['springy-select-slider-from']);
+      if( 1 == $enable_slider && $slider_from == 'from-post' ){
+          return true;
+      }
+      else{
+          return false;
+      }
+  }
+endif;        
 
 /*Slider Category Selection*/
 $wp_customize->add_setting( 'springy_options[springy-select-category]', array(
@@ -63,7 +101,76 @@ $wp_customize->add_control(
             'settings'  => 'springy_options[springy-select-category]',
             'type'      => 'category_dropdown',
             'priority'  => 15,
+            'active_callback'=> 'springy_slider_get_from_active_callback',
         )
     )
 
 );
+
+/*callback functions slider getting from page*/
+if ( !function_exists('springy_slider_get_from_page_active_callback') ) :
+  function springy_slider_get_from_page_active_callback(){
+      global $springy_theme_options;
+      $enable_slider = absint($springy_theme_options['springy_enable_slider']);
+      $slider_from = esc_attr($springy_theme_options['springy-select-slider-from']);
+      if( 1 == $enable_slider && $slider_from == 'from-page' ){
+          return true;
+      }
+      else{
+          return false;
+      }
+  }
+endif; 
+
+/* Page Selection option for the Slider one*/
+$wp_customize->add_setting('springy_options[springy-select-slider-from-page-one]', array(
+    'capability' => 'edit_theme_options',
+    'transport' => 'refresh',
+    'default' => $default['springy-select-slider-from-page-one'],
+    'sanitize_callback' => 'absint'
+));
+
+$wp_customize->add_control('springy_options[springy-select-slider-from-page-one]', array(
+    'label' => __('Select the page', 'springy'),
+    'description' => __('Select the page for the first slide. The featured image will be appear as the slider image.', 'springy'),
+    'section' => 'springy_slider_section',
+    'settings' => 'springy_options[springy-select-slider-from-page-one]',
+    'type' => 'dropdown-pages',
+    'priority' => 15,
+    'active_callback' => 'springy_slider_get_from_page_active_callback',
+));
+/* Page Selection option for the Slider two*/
+$wp_customize->add_setting('springy_options[springy-select-slider-from-page-two]', array(
+    'capability' => 'edit_theme_options',
+    'transport' => 'refresh',
+    'default' => $default['springy-select-slider-from-page-two'],
+    'sanitize_callback' => 'absint'
+));
+
+$wp_customize->add_control('springy_options[springy-select-slider-from-page-two]', array(
+    'label' => __('Select the page', 'springy'),
+    'description' => __('Select the page for the first slide. The featured image will be appear as the slider image.', 'springy'),
+    'section' => 'springy_slider_section',
+    'settings' => 'springy_options[springy-select-slider-from-page-two]',
+    'type' => 'dropdown-pages',
+    'priority' => 15,
+    'active_callback' => 'springy_slider_get_from_page_active_callback',
+));
+
+/* Page Selection option for the Slider three*/
+$wp_customize->add_setting('springy_options[springy-select-slider-from-page-three]', array(
+    'capability' => 'edit_theme_options',
+    'transport' => 'refresh',
+    'default' => $default['springy-select-slider-from-page-three'],
+    'sanitize_callback' => 'absint'
+));
+
+$wp_customize->add_control('springy_options[springy-select-slider-from-page-three]', array(
+    'label' => __('Select the page', 'springy'),
+    'description' => __('Select the page for the first slide. The featured image will be appear as the slider image.', 'springy'),
+    'section' => 'springy_slider_section',
+    'settings' => 'springy_options[springy-select-slider-from-page-three]',
+    'type' => 'dropdown-pages',
+    'priority' => 15,
+    'active_callback' => 'springy_slider_get_from_page_active_callback',
+));

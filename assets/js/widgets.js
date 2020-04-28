@@ -46,6 +46,6 @@ jQuery(document).ready(function($) {
     wrapObject.find('[name]').each(function(){
         $(this).trigger('change');
     });
-};  
+}; 
 
 });
