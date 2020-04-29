@@ -2015,6 +2015,7 @@ a.effect:active {
 .post-cats > span:first-child {
     padding-left: 0;
 }
+.post-cats > a,
 .post-cats > span i,
 .post-cats > span a {
     display: inline-block;
@@ -5563,7 +5564,6 @@ div#springy-breadcrumbs {
 
 .promo-three .item .promo-content{
     padding:15px;
-    background: #fff;
 }
 {
     margin: 10px 0;
@@ -6821,6 +6821,7 @@ div#springy-breadcrumbs {
         font-size: 24px;
     }
 }
+
 /*==============================================================
 ## Tab Navigate
 ================================================================*/

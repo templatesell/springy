@@ -36,7 +36,7 @@
 				  }
 				}
 			]
-    	}).slickAnimation();
+    	});
 
         // Boxes Section
 	    $('.promo-three').slick({
