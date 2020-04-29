@@ -22,24 +22,28 @@ $desc_three = wp_kses_post($springy_theme_options['springy-promo-icon-text-three
 ?>
 <section class="springy-promo-section">
     <div class="container">
-        <div class="promo-section promo-three">                          
-                    <div class="item">
-                        <div class="item-one">
-                            <span class="first-icon"><i class"<?php esc_attr($icon_one); ?>"></i></span>
-                            <h3 class="first-icon-title"><?php esc_html_e($title_one); ?></h3>
-                            <hp class="first-icon-desc"><?php esc_html_e($desc_one); ?></hp>
-                        </div>
-                        <div class="item-two">
-                            <span class="second-icon"><i class"<?php esc_attr($icon_two); ?>"></i></span>
-                            <h3 class="second-icon-title"><?php esc_html_e($title_two); ?></h3>
-                            <hp class="second-icon-desc"><?php esc_html_e($desc_two); ?></hp>
-                        </div>
-                        <div class="item-three">
-                            <span class="third-icon"><i class"<?php esc_attr($icon_three); ?>"></i></span>
-                            <h3 class="third-icon-title"><?php esc_html_e($title_three); ?></h3>
-                            <hp class="third-icon-desc"><?php esc_html_e($desc_three); ?></hp>
-                        </div>
+        <div class="promo-section promo-three row">                          
+            <div class="col-sm-4 col-md-4">
+                <div class="feature-item">
+                    <span class="first-icon"><i class="<?php echo esc_attr($icon_one); ?>"></i></span>
+                    <h4 class="first-icon-title"><?php esc_html_e($title_one); ?></h4>
+                    <p class="first-icon-desc"><?php esc_html_e($desc_one); ?></p>
                 </div>
             </div>
+            <div class="col-sm-4 col-md-4">
+                <div class="feature-item">
+                    <span class="second-icon"><i class="<?php echo esc_attr($icon_two); ?>"></i></span>
+                    <h4 class="second-icon-title"><?php esc_html_e($title_two); ?></h4>
+                    <p class="second-icon-desc"><?php esc_html_e($desc_two); ?></p>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-4">
+                <div class="feature-item">
+                    <span class="third-icon"><i class="<?php echo esc_attr($icon_three); ?>"></i></span>
+                    <h4 class="third-icon-title"><?php esc_html_e($title_three); ?></h4>
+                    <p class="third-icon-desc"><?php esc_html_e($desc_three); ?></p>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
