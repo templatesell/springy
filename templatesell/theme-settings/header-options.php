@@ -8,6 +8,24 @@ $wp_customize->add_section('springy_header_section', array(
     'panel' => 'springy_panel',
 ));
 
+/*Make Primary Menu Transparent or not*/
+$wp_customize->add_setting( 'springy_options[springy_primary_menu_transparent]', array(
+    'capability'        => 'edit_theme_options',
+    'transport' => 'refresh',
+    'default'           => $default['springy_primary_menu_transparent'],
+    'sanitize_callback' => 'springy_sanitize_checkbox'
+) );
+
+$wp_customize->add_control( 'springy_options[springy_primary_menu_transparent]', array(
+    'label'     => __( 'Enable Transparent Menu', 'springy' ),
+    'description' => __('This option will help to make the menu transparent or not.', 'springy'),
+    'section'   => 'springy_header_section',
+    'settings'  => 'springy_options[springy_primary_menu_transparent]',
+    'type'      => 'checkbox',
+    'priority'  => 5,
+
+) );
+
 
 /*Header Search Enable Option*/
 $wp_customize->add_setting( 'springy_options[springy_enable_search]', array(

@@ -10,8 +10,11 @@ get_header();
 
 global $springy_theme_options;
 $main_title = esc_html($springy_theme_options['springy-single-page-blog-title']);
+$page_banner = esc_url($springy_theme_options['springy_single_page_banner_image']);
+$def_banner = get_template_directory_uri()."/assets/images/page-banner.jpg";
+$main_banner = ($page_banner == '') ? $def_banner : $page_banner;
 ?>
-<section  class="page-bg" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/page-banner-1.jpg');">
+<section  class="page-bg" style="background-image: url('<?php echo $main_banner; ?>');">
 	<div class="container">
 		<div class="breadcrumbs-wrapper">	
 			<div class="archive-heading">

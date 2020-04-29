@@ -12,7 +12,8 @@ if ( !function_exists('springy_default_theme_options_values') ) :
         $default_theme_options = array(
 
           /*Header Options*/
-            'springy_enable_search'  => 0,
+            'springy_enable_search'  => 1,
+            'springy_primary_menu_transparent'=> 1,
             'springy_header_image_text'=> esc_html__('Flexible For Everyone','springy'),
             'springy_header_image_sub_heading' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua','springy'),
             'springy_header_image_button_link'=> '#',
@@ -22,7 +23,7 @@ if ( !function_exists('springy_default_theme_options_values') ) :
             'springy_primary_color'              => '#d42929',
 
             /*Slider Options*/
-            'springy_enable_slider'      => 1,
+            'springy_enable_slider'      => 0,
             'springy-select-slider-from'=>'from-page',
             'springy-select-category'    => 0,
             'springy-select-slider-from-page-one'=> 0,
@@ -33,14 +34,23 @@ if ( !function_exists('springy_default_theme_options_values') ) :
             'springy_enable_promo'       => 1,
             'springy-promo-select-category'=> 0,
             'springy-select-boxes-from'=> 'from-customizer',
+            'springy-promo-icon-class-one'=> 'ti-gallery',
+            'springy-promo-icon-class-two'=> 'ti-gallery',
+            'springy-promo-icon-class-three'=> 'ti-gallery',
+            'springy-promo-icon-text-one'=> esc_html__('Description','springy'),
+            'springy-promo-icon-text-two'=> esc_html__('Description','springy'),
+            'springy-promo-icon-text-three'=> esc_html__('Description','springy'),
+            'springy-promo-icon-title-one'=> esc_html__('Title','springy'),
+            'springy-promo-icon-title-two'=> esc_html__('Title','springy'),
+            'springy-promo-icon-title-three'=> esc_html__('Title','springy'),
             
             /*Blog Page*/
-            'springy-sidebar-blog-page' => 'no-sidebar',
-            'springy-column-blog-page'  => 'masonry-post',
+            'springy-sidebar-blog-page' => 'right-sidebar',
+            'springy-column-blog-page'  => 'one-column',
             'springy-blog-image-layout' => 'full-image',
             'springy-content-show-from' => 'excerpt',
             'springy-excerpt-length'    => 25,
-            'springy-pagination-options'=> 'ajax',
+            'springy-pagination-options'=> 'numeric',
             'springy-read-more-text'    => '',
             'springy-show-hide-share'   => 1,
 
@@ -51,7 +61,7 @@ if ( !function_exists('springy_default_theme_options_values') ) :
             'springy-sidebar-single-page'=> 'single-right-sidebar',
             'springy-single-social-share' => 1,
             'springy-single-page-blog-title' =>  esc_html__('Blog','springy'),
-            'springy-single-page-blog-image'=> '',
+            'springy_single_page_banner_image'=> get_template_directory_uri()."/assets/images/page-banner.jpg",
 
 
             /*Sticky Sidebar*/

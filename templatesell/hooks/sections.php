@@ -42,6 +42,29 @@ if (!function_exists('springy_add_main_slider')) :
 endif;
 add_action('springy_action_slider', 'springy_add_main_slider', 10);
 
+
+/**
+ * Custom theme hook for slider page
+ *
+ * This file contains hook functions attached to theme hooks.
+ *
+ * @package Springy
+ */
+if (!function_exists('springy_add_main_slider_page')) :
+    
+    /**
+     * Add main slider from page.
+     *
+     * @since 1.0.0
+     */
+    function springy_add_main_slider_page()
+    {
+        
+        get_template_part('template-parts/sections/slider', 'page');
+    }
+endif;
+add_action('springy_action_slider_page', 'springy_add_main_slider_page', 10);
+
 /**
  * Custom theme hook for promo section
  *
@@ -64,7 +87,35 @@ if (!function_exists('springy_boxes_section')) :
 endif;
 add_action('springy_action_boxes', 'springy_boxes_section', 10);
 
-//only for blog and archive page
+/**
+ * Custom theme hook for boxes section from customizer
+ *
+ * This file contains hook functions attached to theme hooks.
+ *
+ * @package Springy
+ */
+if (!function_exists('springy_boxes_customizer_section')) :
+    
+    /**
+     * Boxes from the customizer.
+     *
+     * @since 1.0.0
+     */
+    function springy_boxes_customizer_section()
+    {       
+        
+        get_template_part('template-parts/sections/boxes', 'customizer');
+    }
+endif;
+add_action('springy_action_customizer_boxes', 'springy_boxes_customizer_section', 10);
+
+/**
+ * Only for blog and archive page
+ *
+ * Function for the sidebar.
+ *
+ * @package Springy
+ */
 if( !function_exists( 'springy_blog_sidebar_position_array' ) ) :
     /*
      * Function to get blog categories
@@ -102,3 +153,43 @@ if( !function_exists( 'springy_sidebar_position_array' ) ) :
 
     }
 endif;
+
+
+/**
+ * Hooks for the header image only
+ *
+ * This file contains hook functions attached to theme hooks.
+ *
+ * @package Springy
+ */
+if (!function_exists('springy_main_header_hooks')) :
+    
+    /**
+     * Add main header.
+     *
+     * @since 1.0.0
+     */
+    function springy_main_header_hooks()
+    {
+    global $springy_theme_options;
+    $header_text = esc_html($springy_theme_options['springy_header_image_text']);
+    $header_subtext = esc_html($springy_theme_options['springy_header_image_sub_heading']);
+    $header_btn = esc_html($springy_theme_options['springy_header_image_button_text']);
+    $header_link = esc_url($springy_theme_options['springy_header_image_button_link']);
+    $header_image = esc_url(get_header_image());
+    $header_class = ($header_image == "") ? '' : 'header-image';
+    ?>
+    <div class="main-header <?php echo esc_attr($header_class); ?>" style="background-image:url(<?php echo esc_url($header_image) ?>); background-size: cover; background-position: center; background-repeat: no-repeat;">
+        <div class="container">
+            <div class="head-img-wrapper">
+                <div class="head-content">
+                    <h1 class="wel-title"><?php esc_html_e($header_text); ?></h1>
+                    <p class="wel-title"><?php esc_html_e($header_subtext); ?></p>
+                    <a href="<?php echo esc_url($header_link); ?>"><?php esc_html_e($header_btn); ?></a>
+                </div>
+            </div>
+        </div>
+    </div><!-- #masthead -->            
+<?php   }
+endif;
+add_action('springy_action_main_header_header', 'springy_main_header_hooks', 10);

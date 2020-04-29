@@ -63,7 +63,7 @@ $wp_customize->add_control('springy_options[springy-select-boxes-from]', array(
     'active_callback'=> 'springy_promo_active_callback',
 ));
 
-/*callback functions slider getting from post*/
+/*callback functions boxes getting from post*/
 if ( !function_exists('springy_boxes_get_from_active_callback') ) :
   function springy_boxes_get_from_active_callback(){
       global $springy_theme_options;
@@ -102,3 +102,191 @@ $wp_customize->add_control(
         )
     )
 );
+
+/*callback functions boxes getting from customizer*/
+if ( !function_exists('springy_boxes_get_from_customizer_active_callback') ) :
+  function springy_boxes_get_from_customizer_active_callback(){
+      global $springy_theme_options;
+      $enable_boxes = absint($springy_theme_options['springy_enable_promo']);
+      $boxes_from = esc_attr($springy_theme_options['springy-select-boxes-from']);
+      if( 1 == $enable_boxes && $boxes_from == 'from-customizer' ){
+          return true;
+      }
+      else{
+          return false;
+      }
+  }
+endif; 
+
+/*Promo Section Font Icon Class one*/
+$wp_customize->add_setting('springy_options[springy-promo-icon-class-one]', array(
+    'capability' => 'edit_theme_options',
+    'transport' => 'refresh',
+    'default' => $default['springy-promo-icon-class-one'],
+    'sanitize_callback' => 'sanitize_text_field'
+));
+
+$wp_customize->add_control('springy_options[springy-promo-icon-class-one]', array(
+    'label' => __('Enter Font Awesome Class One', 'springy'),
+    'description' => sprintf('%1$s <a href="%2$s" target="_blank">%3$s</a> %4$s',
+        __( 'Check', 'springy' ),
+        esc_url('https://themify.me/themify-icons'),
+        __('font awesome list' , 'springy'),
+        __('and copy the class and paste here. Example fa-car, fa-heart.' ,'springy')
+    ),
+    'section' => 'springy_promo_section',
+    'settings' => 'springy_options[springy-promo-icon-class-one]',
+    'type' => 'text',
+    'priority' => 15,
+    'active_callback'=> 'springy_boxes_get_from_customizer_active_callback',
+));
+
+$wp_customize->add_setting('springy_options[springy-promo-icon-title-one]', array(
+    'capability' => 'edit_theme_options',
+    'transport' => 'refresh',
+    'default' => $default['springy-promo-icon-title-one'],
+    'sanitize_callback' => 'sanitize_text_field'
+));
+
+$wp_customize->add_control('springy_options[springy-promo-icon-title-one]', array(
+    'label' => __('Title for first icon', 'springy'),
+    'description' => __('Enter the title for the icon.', 'springy'),
+    'section' => 'springy_promo_section',
+    'settings' => 'springy_options[springy-promo-icon-title-one]',
+    'type' => 'text',
+    'priority' => 15,
+    'active_callback'=> 'springy_boxes_get_from_customizer_active_callback',
+));
+
+$wp_customize->add_setting('springy_options[springy-promo-icon-text-one]', array(
+    'capability' => 'edit_theme_options',
+    'transport' => 'refresh',
+    'default' => $default['springy-promo-icon-text-one'],
+    'sanitize_callback' => 'wp_kses_post'
+));
+
+$wp_customize->add_control('springy_options[springy-promo-icon-text-one]', array(
+    'label' => __('Description for first icon', 'springy'),
+    'description' => __('Enter the short description for the icon.', 'springy'),
+    'section' => 'springy_promo_section',
+    'settings' => 'springy_options[springy-promo-icon-text-one]',
+    'type' => 'textarea',
+    'priority' => 15,
+    'active_callback'=> 'springy_boxes_get_from_customizer_active_callback',
+));
+
+
+/*Promo Section Font Icon Class two*/
+$wp_customize->add_setting('springy_options[springy-promo-icon-class-two]', array(
+    'capability' => 'edit_theme_options',
+    'transport' => 'refresh',
+    'default' => $default['springy-promo-icon-class-two'],
+    'sanitize_callback' => 'sanitize_text_field'
+));
+
+$wp_customize->add_control('springy_options[springy-promo-icon-class-two]', array(
+    'label' => __('Enter Font Awesome Class Two', 'springy'),
+    'description' => sprintf('%1$s <a href="%2$s" target="_blank">%3$s</a> %4$s',
+        __( 'Check', 'springy' ),
+        esc_url('https://themify.me/themify-icons'),
+        __('font awesome list' , 'springy'),
+        __('and copy the class and paste here. Example fa-car, fa-heart.' ,'springy')
+    ),
+    'section' => 'springy_promo_section',
+    'settings' => 'springy_options[springy-promo-icon-class-two]',
+    'type' => 'text',
+    'priority' => 15,
+    'active_callback'=> 'springy_boxes_get_from_customizer_active_callback',
+));
+
+$wp_customize->add_setting('springy_options[springy-promo-icon-title-two]', array(
+    'capability' => 'edit_theme_options',
+    'transport' => 'refresh',
+    'default' => $default['springy-promo-icon-title-two'],
+    'sanitize_callback' => 'sanitize_text_field'
+));
+
+$wp_customize->add_control('springy_options[springy-promo-icon-title-two]', array(
+    'label' => __('Title for second icon', 'springy'),
+    'description' => __('Enter the Title for the icon.', 'springy'),
+    'section' => 'springy_promo_section',
+    'settings' => 'springy_options[springy-promo-icon-title-two]',
+    'type' => 'text',
+    'priority' => 15,
+    'active_callback'=> 'springy_boxes_get_from_customizer_active_callback',
+));
+
+$wp_customize->add_setting('springy_options[springy-promo-icon-text-two]', array(
+    'capability' => 'edit_theme_options',
+    'transport' => 'refresh',
+    'default' => $default['springy-promo-icon-text-two'],
+    'sanitize_callback' => 'wp_kses_post'
+));
+
+$wp_customize->add_control('springy_options[springy-promo-icon-text-two]', array(
+    'label' => __('Description for second icon', 'springy'),
+    'description' => __('Enter the short description for the icon.', 'springy'),
+    'section' => 'springy_promo_section',
+    'settings' => 'springy_options[springy-promo-icon-text-two]',
+    'type' => 'textarea',
+    'priority' => 15,
+    'active_callback'=> 'springy_boxes_get_from_customizer_active_callback',
+));
+
+/*Promo Section Font Icon Class three*/
+$wp_customize->add_setting('springy_options[springy-promo-icon-class-three]', array(
+    'capability' => 'edit_theme_options',
+    'transport' => 'refresh',
+    'default' => $default['springy-promo-icon-class-three'],
+    'sanitize_callback' => 'sanitize_text_field'
+));
+
+$wp_customize->add_control('springy_options[springy-promo-icon-class-three]', array(
+    'label' => __('Enter Font Awesome Class Three', 'springy'),
+    'description' => sprintf('%1$s <a href="%2$s" target="_blank">%3$s</a> %4$s',
+        __( 'Check', 'springy' ),
+        esc_url('https://themify.me/themify-icons'),
+        __('font awesome list' , 'springy'),
+        __('and copy the class and paste here. Example fa-car, fa-heart.' ,'springy')
+    ),
+    'section' => 'springy_promo_section',
+    'settings' => 'springy_options[springy-promo-icon-class-three]',
+    'type' => 'text',
+    'priority' => 15,
+    'active_callback'=> 'springy_boxes_get_from_customizer_active_callback',
+));
+
+
+$wp_customize->add_setting('springy_options[springy-promo-icon-title-three]', array(
+    'capability' => 'edit_theme_options',
+    'transport' => 'refresh',
+    'default' => $default['springy-promo-icon-title-three'],
+    'sanitize_callback' => 'sanitize_text_field'
+));
+
+$wp_customize->add_control('springy_options[springy-promo-icon-title-three]', array(
+    'label' => __('Title for third icon', 'springy'),
+    'description' => __('Enter the title for the icon.', 'springy'),
+    'section' => 'springy_promo_section',
+    'settings' => 'springy_options[springy-promo-icon-title-three]',
+    'type' => 'text',
+    'priority' => 15,
+    'active_callback'=> 'springy_boxes_get_from_customizer_active_callback',
+));
+
+$wp_customize->add_setting('springy_options[springy-promo-icon-text-three]', array(
+    'capability' => 'edit_theme_options',
+    'transport' => 'refresh',
+    'default' => $default['springy-promo-icon-text-three'],
+    'sanitize_callback' => 'wp_kses_post'
+));
+
+$wp_customize->add_control('springy_options[springy-promo-icon-text-three]', array(
+    'label' => __('Description for third icon', 'springy'),
+    'description' => __('Enter the short description for the icon.', 'springy'),
+    'section' => 'springy_promo_section',
+    'settings' => 'springy_options[springy-promo-icon-text-three]',
+    'type' => 'textarea',
+    'priority' => 15,
+    'active_callback'=> 'springy_boxes_get_from_customizer_active_callback',
+));

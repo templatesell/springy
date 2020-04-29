@@ -26,6 +26,27 @@ $wp_customize->add_control('springy_options[springy-single-page-blog-title]', ar
     'priority' => 15,
 ));
 
+/*banner image single page*/
+$wp_customize->add_setting( 'springy_options[springy_single_page_banner_image]', array(
+    'capability'        => 'edit_theme_options',
+    'sanitize_callback' => 'esc_url_raw'
+) );
+
+$wp_customize->add_control(
+    new WP_Customize_Image_Control(
+        $wp_customize,
+        'springy_options[springy_single_page_banner_image]',
+        array(
+            'label'     => __( 'Single Page Banner Image', 'polite' ),
+            'description' => __('This banner image will appear on all the single post at the top.', 'springy'),
+            'section'   => 'springy_single_page_section',
+            'settings'  => 'springy_options[springy_single_page_banner_image]',
+            'priority'  => 15,
+            'description' => __( 'Recommended image size of 1920*500', 'polite' ),
+        )
+    )
+);
+
 /*Featured Image Option*/
 $wp_customize->add_setting('springy_options[springy-single-page-featured-image]', array(
     'capability' => 'edit_theme_options',

@@ -11,10 +11,6 @@
 $GLOBALS['springy_theme_options'] = springy_get_options_value();
 global $springy_theme_options;
 $search_header = absint($springy_theme_options['springy_enable_search']);
-$header_text = esc_html($springy_theme_options['springy_header_image_text']);
-$header_subtext = esc_html($springy_theme_options['springy_header_image_sub_heading']);
-$header_btn = esc_html($springy_theme_options['springy_header_image_button_text']);
-$header_link = esc_url($springy_theme_options['springy_header_image_button_link']);
 ?>
 
 <header class="header-1">		
@@ -72,18 +68,5 @@ $header_link = esc_url($springy_theme_options['springy_header_image_button_link'
 	</div>
 </header>
 <div class="main-content">
-<?php $header_image = esc_url(get_header_image());
-	$header_class = ($header_image == "") ? '' : 'header-image';
-	?>
-	<div class="main-header <?php echo esc_attr($header_class); ?>" style="background-image:url(<?php echo esc_url($header_image) ?>); background-size: cover; background-position: center; background-repeat: no-repeat;">
-		<div class="container">
-			<div class="head-img-wrapper">
-				<div class="head-content">
-					<h1 class="wel-title"><?php esc_html_e($header_text); ?></h1>
-					<p class="wel-title"><?php esc_html_e($header_subtext); ?></p>
-					<a href="<?php echo esc_url($header_link); ?>"><?php esc_html_e($header_btn); ?></a>
-				</div>
-			</div>
-		</div>
-	</div><!-- #masthead -->		
+	
 

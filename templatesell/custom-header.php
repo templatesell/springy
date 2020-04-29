@@ -20,8 +20,8 @@ function springy_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'springy_custom_header_args', array(
 		'default-image'      => get_stylesheet_directory_uri() . '/assets/images/header.png',
 		'default-text-color'     => 'fff',
-		'width'                  => 1200,
-		'height'                 => 450,
+		'width'                  => 1920,
+		'height'                 => 1024,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'springy_header_style',
 	) ) );

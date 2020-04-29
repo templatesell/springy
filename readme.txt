@@ -48,6 +48,7 @@ Springy is distributed under the terms of the GNU GPL v2 or later.
 * TGM-Plugin-Activation: Author: Thomas Griffin (thomasgriffinmedia.com)
 URL:  https://github.com/TGMPA/TGM-Plugin-Activation
 License: GNU General Public License, version 2
+* Themify Icons GNU General Public License https://themify.me/terms
 
 == Screenshot Images [CCO License] ==
 Image for theme screenshot, Copyright Trevor Paterson

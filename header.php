@@ -11,7 +11,9 @@
 $GLOBALS['springy_theme_options'] = springy_get_options_value();
 global $springy_theme_options;
 $enable_slider = absint($springy_theme_options['springy_enable_slider']);
-$enable_box = $springy_theme_options['springy_enable_promo'];
+$slider_from = esc_attr($springy_theme_options['springy-select-slider-from']);
+$enable_box = absint($springy_theme_options['springy_enable_promo']);
+$boxes_from = esc_attr($springy_theme_options['springy-select-boxes-from']);
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -41,6 +43,15 @@ if ( function_exists( 'wp_body_open' ) ) {
      * @hooked springy_add_main_header - 10
      */
     do_action( 'springy_action_header' );
+
+    /**
+     * Hook - springy_action_main_header.
+     *
+     * @hooked springy_action_main_header_header - 10
+     */
+    if( $enable_slider == 0  && (is_home() || is_front_page()) ){
+     do_action('springy_action_main_header_header');
+    }
     ?>
     <div class="clear-fix"></div>
 	 <?php if ($enable_slider == 1 && (is_home() || is_front_page())) { ?>
@@ -49,7 +60,11 @@ if ( function_exists( 'wp_body_open' ) ) {
             /*
             * Slider Section Hook
             */
+            if($slider_from == 'from-post'){
                 do_action('springy_action_slider');
+            }else{
+                do_action('springy_action_slider_page');
+            }
             ?>
         </section>
     <?php } ?>
@@ -60,7 +75,11 @@ if ( function_exists( 'wp_body_open' ) ) {
             /*
             * Boxes Section Hook
             */
-            do_action('springy_action_boxes');
+            if( $boxes_from == 'from-customizer'){
+                do_action('springy_action_customizer_boxes');
+            }else{
+                do_action('springy_action_boxes');
+            }
             ?>
         </section>
     <?php } ?>
