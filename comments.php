@@ -33,13 +33,11 @@ if ( post_password_required() ) {
 			if ( '1' === $springy_comment_count ) {
 				printf(
 					/* translators: 1: title. */
-					//esc_html__( '%1$s&rdquo;', 'springy' ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			} else {
 				printf( // WPCS: XSS OK.
 					/* translators: 1: comment count number, 2: title. */
-					//esc_html( _nx( '%1$s %2$s&rdquo;', '%1$s %2$s&rdquo;', $springy_comment_count, 'comments title', 'springy' ) ),
 					number_format_i18n( $springy_comment_count ),
 					'<span>' . get_the_title() . '</span>'
 				);

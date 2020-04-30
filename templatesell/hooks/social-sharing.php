@@ -27,19 +27,19 @@ if (!function_exists('springy_social_sharing')) :
                 <div class="post-share">
                 <a class="share-facebook" target="_blank" href="<?php echo $springy_facebook_sharing_url; ?>">
                     <i class="fa fa-facebook"></i>
-                    <span>Facebook</span>
+                    <span><?php _e('Facebook','springy');?></span>
                 </a>
                 <a class="share-twitter" target="_blank" href="<?php echo $springy_twitter_sharing_url; ?>">
                     <i class="fa fa-twitter"></i>
-                    <span>Twitter</span>
+                    <span><?php _e('Twitter','springy');?></span>
                 </a>
                 <a class="share-pinterest" target="_blank" href="<?php echo $springy_pinterest_sharing_url; ?>">
                     <i class="fa fa-pinterest"></i>
-                    <span>Pinterest</span>
+                    <span><?php _e('Pinterest','springy');?></span>
                 </a>
                 <a class="share-linkedin" target="_blank" href="<?php echo $springy_linkedin_sharing_url; ?>">
                     <i class="fa fa-linkedin"></i>
-                    <span>Linkedin</span>
+                    <span><?php _e('Linkedin','springy');?></span>
                 </a>
             </div>
             </div>

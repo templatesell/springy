@@ -15,7 +15,7 @@ if (!function_exists('springy_dynamic_css')) :
         global $springy_theme_options;
 
         /* Color Options Options */
-        $springy_primary_color              = esc_attr($springy_theme_options['springy_primary_color']);
+        $springy_primary_color  = esc_attr($springy_theme_options['springy_primary_color']);
 
         $custom_css = '';
 

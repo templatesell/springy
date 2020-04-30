@@ -8,11 +8,11 @@ Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A perfect theme for blog and magazine site. With masonry layout and multiple blog page layout, this theme is the awesome and minimal theme. This theme has search option, off-canvas sidebar, multiple sidebar options, footer options, featured slider, promo boxed, footer widgets and many more. Besides that, this theme comes with added custom widgets for author information, featured posts, social icons, etc. It comes with primary color option to change the whole site color with a single click. More Details: https://www.templatesell.com/item/springy-minimal-blog-wordpress-theme/
+A perfect theme for blog and Elementor site. This theme is built based on customizer and easy to use responsive theme.
 
 == Description ==
 
-A perfect theme for blog and magazine site. With masonry layout and multiple blog page layout, this theme is the awesome and minimal theme.
+A perfect theme for blog and Elementor site. This theme is built based on customizer and easy to use responsive theme.
 == Installation ==
 
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
@@ -29,7 +29,7 @@ Springy includes support for Infinite Scroll in Jetpack.
 * Custom pagination for numeric is made.
 
 == Changelog ==
-= 1.0.0 - February 06 2020 =
+= 1.0.0 - April 30 2020 =
 * Initial release
 
 == Credits ==
@@ -50,21 +50,9 @@ URL:  https://github.com/TGMPA/TGM-Plugin-Activation
 License: GNU General Public License, version 2
 * Themify Icons GNU General Public License https://themify.me/terms
 
-== Screenshot Images [CCO License] ==
-Image for theme screenshot, Copyright Trevor Paterson
+== Screenshot Image [CCO License] ==
+Image for theme screenshot, self created
 License: CC0 1.0 Universal (CC0 1.0)
-Source: https://stocksnap.io/photo/R57YUC6GR4
-
-Image for theme screenshot, Copyright Burst
-License: CC0 1.0 Universal (CC0 1.0)
-Source: https://stocksnap.io/photo/E5BW2K6ZYK
-
-Image for theme screenshot, Copyright Bench Accounting
-License: CC0 1.0 Universal (CC0 1.0)
-Source: https://stocksnap.io/photo/7LJXUWVX9S
-
-Image for theme screenshot, Copyright Daria Shevtsova
-License: CC0 1.0 Universal (CC0 1.0)
-Source: https://stocksnap.io/photo/GAXFQX8BXD
+Source: Self Created
 
 * Sidbear icons for the customizer are self created and license under GPL.
