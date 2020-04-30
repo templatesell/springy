@@ -7,7 +7,7 @@
  * @package Springy
  */
 ?>
-<section class="no-results not-found">
+<section class="no-results not-found text-center">
     <div class="page-content">
         <h1 class="page-title"><?php esc_html_e('Nothing Found', 'springy'); ?></h1>
         <?php

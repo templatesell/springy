@@ -9,33 +9,37 @@
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="post-wrap">
-        <?php if(has_post_thumbnail()) { ?>
-            <div class="post-media">
-                <?php springy_post_thumbnail(); ?>
-            </div>
-        <?php } ?>
         <div class="post-content">
-            <div class="date_title">
-                <div class="post-date">
-                    <?php if ('post' === get_post_type()) : ?>
-                        <div class="entry-meta">
-                            <?php
-                            springy_posted_on();
-                            springy_posted_by();
-                            ?>
-                        </div><!-- .entry-meta -->
-                    <?php endif; ?>
-                </div>
+            <div class="post_title">
                 <?php the_title(sprintf('<h2 class="post-title entry-title"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h2>'); ?>
             </div>
             <div class="post-excerpt entry-summary">
                 <?php the_excerpt(); ?>
-            </div><!-- .entry-summary -->
-
-            <footer class="post-footer entry-footer">
-                <?php do_action( 'springy_social_sharing' ,get_the_ID() );?>
-            </footer><!-- .entry-footer -->
+            </div>
+            <div class="post-meta-desc">  
+                <div class="post-meta">
+                    <?php
+                    if ('post' === get_post_type()) :
+                        ?>
+                        <div class="post-author">
+                            <?php echo get_avatar( get_the_author_meta( 'ID' ) , 32 ); ?>
+                            <?php springy_posted_by(); ?>
+                        </div>
+                        <div class="post-date">
+                            <div class="entry-meta">
+                                <span class="ti-calendar"></span><?php  springy_posted_on();  ?>
+                            </div><!-- .entry-meta -->
+                        </div>
+                        <div class="reading-time">
+                            <span class="ti-time"></span> <?php echo springy_reading_time(); ?>
+                        </div>
+                        <div class="comment-num">
+                            <?php echo get_comments_number($post->ID);?> <span class="ti-comment"></span>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div>
         </div>
     </div>
-</article><!-- #post-->
+</article>
 

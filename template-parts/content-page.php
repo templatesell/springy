@@ -19,7 +19,6 @@ $image_option = absint($springy_theme_options['springy-single-page-featured-imag
             ?>
         </div>
         <div class="post-content">
-            <?php the_title('<h1 class="post-title entry-title">', '</h1>'); ?>
             <div class="post-excerpt entry-content">
                 <?php
                 
