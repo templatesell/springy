@@ -269,7 +269,7 @@ class Springy_Breadcrumb_Trail {
                 $meta = sprintf( '<meta itemprop="position" content="%s" />', absint( $item_position ) );
 
                 // Build the list item.
-				$breadcrumb .= sprintf( '<li %s>%s%s</li><span class="delim">»</span>', $attributes, $item, $meta );
+				$breadcrumb .= sprintf( '<li %s>%s%s</li><span class="delim"></span>', $attributes, $item, $meta );
             }
 
             // Close the unordered list.

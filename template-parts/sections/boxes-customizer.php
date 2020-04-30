@@ -26,22 +26,22 @@ $desc_three = wp_kses_post($springy_theme_options['springy-promo-icon-text-three
             <div class="col-sm-4 col-md-4">
                 <div class="feature-item">
                     <span class="first-icon"><i class="<?php echo esc_attr($icon_one); ?>"></i></span>
-                    <h4 class="first-icon-title"><?php esc_html_e($title_one); ?></h4>
-                    <p class="first-icon-desc"><?php esc_html_e($desc_one); ?></p>
+                    <h4 class="first-icon-title"><?php echo esc_html($title_one); ?></h4>
+                    <p class="first-icon-desc"><?php echo esc_html($desc_one); ?></p>
                 </div>
             </div>
             <div class="col-sm-4 col-md-4">
                 <div class="feature-item">
                     <span class="second-icon"><i class="<?php echo esc_attr($icon_two); ?>"></i></span>
-                    <h4 class="second-icon-title"><?php esc_html_e($title_two); ?></h4>
-                    <p class="second-icon-desc"><?php esc_html_e($desc_two); ?></p>
+                    <h4 class="second-icon-title"><?php echo esc_html($title_two); ?></h4>
+                    <p class="second-icon-desc"><?php echo esc_html($desc_two); ?></p>
                 </div>
             </div>
             <div class="col-sm-4 col-md-4">
                 <div class="feature-item">
                     <span class="third-icon"><i class="<?php echo esc_attr($icon_three); ?>"></i></span>
-                    <h4 class="third-icon-title"><?php esc_html_e($title_three); ?></h4>
-                    <p class="third-icon-desc"><?php esc_html_e($desc_three); ?></p>
+                    <h4 class="third-icon-title"><?php echo esc_html($title_three); ?></h4>
+                    <p class="third-icon-desc"><?php echo esc_html($desc_three); ?></p>
                 </div>
             </div>
         </div>

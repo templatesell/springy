@@ -37,12 +37,12 @@ $wp_customize->add_control(
         $wp_customize,
         'springy_options[springy_single_page_banner_image]',
         array(
-            'label'     => __( 'Single Page Banner Image', 'polite' ),
+            'label'     => __( 'Single Page Banner Image', 'springy' ),
             'description' => __('This banner image will appear on all the single post at the top.', 'springy'),
             'section'   => 'springy_single_page_section',
             'settings'  => 'springy_options[springy_single_page_banner_image]',
             'priority'  => 15,
-            'description' => __( 'Recommended image size of 1920*500', 'polite' ),
+            'description' => __( 'Recommended image size of 1920*500', 'springy' ),
         )
     )
 );

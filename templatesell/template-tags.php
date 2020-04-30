@@ -27,7 +27,6 @@ if ( ! function_exists( 'springy_posted_on' ) ) :
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
 
 	$byline = sprintf(
-            esc_html_x('%s', 'post author', 'springy'),
             '<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a></span>'
         );
         echo '<span class="posted-on">' . $posted_on . '</span>';
@@ -41,7 +40,6 @@ if ( ! function_exists( 'springy_posted_by' ) ) :
 	function springy_posted_by() {
 		$byline = sprintf(
 			/* translators: %s: post author. */
-			esc_html_x( '%s', 'post author', 'springy' ),
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
         echo '<span class="post_by"> ' . $byline . '</span>'; // WPCS: XSS OK.
@@ -63,7 +61,7 @@ if ( ! function_exists( 'springy_entry_meta' ) ) :
 		}
 
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', esc_html__( ' ', 'springy' ) );
+		$tags_list = get_the_tag_list();
 		if ( $tags_list && is_singular() ) {
 			printf( '<span class="tags-links">' . '<i class="fa fa-tag"></i>' . '</span>', $tags_list ); // WPCS: XSS OK.
 		}

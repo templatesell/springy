@@ -59,7 +59,7 @@ $social_share = absint($springy_theme_options['springy-single-social-share']);
                 <?php
                 the_content(sprintf(
                     wp_kses(
-                    /* translators: %s: Name of current post. Only visible to screen readers */
+                        /* translators: %s: Name of current post. Only visible to screen readers */
                         __('Continue reading<span class="screen-reader-text"> "%s"</span>', 'springy'),
                         array(
                             'span' => array(
@@ -68,12 +68,12 @@ $social_share = absint($springy_theme_options['springy-single-social-share']);
                         )
                     ),
                     get_the_title()
-                
+                    
                 ));
                 wp_link_pages(array(
                     'before' => '<div class="page-links">' . esc_html__('Pages:', 'springy'),
                     'after' => '</div>',
-                
+                    
                 ));
                 ?>
             </div><!-- .entry-content -->
@@ -82,66 +82,15 @@ $social_share = absint($springy_theme_options['springy-single-social-share']);
                     <?php the_tags('', ''); ?>
                 </div>
                 <?php 
-                    if( 1 == $social_share ){
-                        do_action( 'springy_social_sharing' ,get_the_ID() );
-                    }
+                if( 1 == $social_share ){
+                    do_action( 'springy_social_sharing' ,get_the_ID() );
+                }
                 ?>
             </div>
         </div>
     </div>
     <div class="post-navigation-wrapper">
-        <?php $prevPost = get_previous_post(true);
-        if($prevPost){
-            $args = array(
-                'posts_per_page' => 1,
-                'include' => $prevPost->ID
-            );
-            $prevPost = get_posts($args);
-            foreach ($prevPost as $post) {
-                setup_postdata($post);
-                ?>
-                <div class="post-prev-wrapper">
-                    <div class="nav-box previous">
-                        <a href="<?php the_permalink(); ?>">
-                            <span class="img-prev"><?php the_post_thumbnail('thumbnail'); ?></span>
-                            <span class="prev-link">
-                                <span class="prev-title"><?php the_title(); ?></span>
-                                <span class="date-post"><?php the_date('F j, Y'); ?></span>
-                            </span>
-                        </a>
-                    </div>
-                </div>
-                    <?php
-                 wp_reset_postdata();
-            } //end foreach
-        } // end if
-         
-        $nextPost = get_next_post(true);
-        if($nextPost) {
-            $args = array(
-                'posts_per_page' => 1,
-                'include' => $nextPost->ID
-            );
-            $nextPost = get_posts($args);
-            foreach ($nextPost as $post) {
-                setup_postdata($post);
-                ?>
-                <div class="post-next-wrapper">
-                    <div class="nav-box next">
-                        <a href="<?php the_permalink(); ?>">
-                            <span class="next-link">
-                                <span class="next-title"><?php the_title(); ?></span>
-                                <span class="date-post"><?php the_date('F j, Y'); ?></span>
-                            </span>
-                            <span class="img-next"><?php the_post_thumbnail('thumbnail'); ?></span>
-                        </a>
-                    </div>
-                </div>
-                <?php
-                wp_reset_postdata();
-            } //end foreach
-        } // end if
-        ?>
+        <?php do_action('springy_action_previous_next_post_pagination'); ?>
     </div>
     <div class="related-posts clearfix">
         <?php do_action( 'springy_related_posts' ,get_the_ID() ); ?>

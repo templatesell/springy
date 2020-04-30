@@ -171,25 +171,97 @@ if (!function_exists('springy_main_header_hooks')) :
      */
     function springy_main_header_hooks()
     {
-    global $springy_theme_options;
-    $header_text = esc_html($springy_theme_options['springy_header_image_text']);
-    $header_subtext = esc_html($springy_theme_options['springy_header_image_sub_heading']);
-    $header_btn = esc_html($springy_theme_options['springy_header_image_button_text']);
-    $header_link = esc_url($springy_theme_options['springy_header_image_button_link']);
-    $header_image = esc_url(get_header_image());
-    $header_class = ($header_image == "") ? '' : 'header-image';
-    ?>
-    <div class="main-header <?php echo esc_attr($header_class); ?>" style="background-image:url(<?php echo esc_url($header_image) ?>); background-size: cover; background-position: center; background-repeat: no-repeat;">
-        <div class="container">
-            <div class="head-img-wrapper">
-                <div class="head-content">
-                    <h1 class="wel-title"><?php esc_html_e($header_text); ?></h1>
-                    <p class="wel-title"><?php esc_html_e($header_subtext); ?></p>
-                    <a href="<?php echo esc_url($header_link); ?>"><?php esc_html_e($header_btn); ?></a>
+        global $springy_theme_options;
+        $header_text = esc_html($springy_theme_options['springy_header_image_text']);
+        $header_subtext = esc_html($springy_theme_options['springy_header_image_sub_heading']);
+        $header_btn = esc_html($springy_theme_options['springy_header_image_button_text']);
+        $header_link = esc_url($springy_theme_options['springy_header_image_button_link']);
+        $header_image = esc_url(get_header_image());
+        $header_class = ($header_image == "") ? '' : 'header-image';
+        ?>
+        <div class="main-header <?php echo esc_attr($header_class); ?>" style="background-image:url(<?php echo esc_url($header_image) ?>); background-size: cover; background-position: center; background-repeat: no-repeat;">
+            <div class="container">
+                <div class="head-img-wrapper">
+                    <div class="head-content">
+                        <h1 class="wel-title"><?php echo esc_html($header_text); ?></h1>
+                        <p class="wel-title"><?php echo esc_html($header_subtext); ?></p>
+                        <a href="<?php echo esc_url($header_link); ?>"><?php echo esc_html($header_btn); ?></a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div><!-- #masthead -->            
-<?php   }
+        </div><!-- #masthead -->            
+    <?php   }
 endif;
 add_action('springy_action_main_header_header', 'springy_main_header_hooks', 10);
+
+
+/**
+ * Hooks for the previous and next post
+ *
+ * This will help to get the next post image and the date of it
+ *
+ * @package Springy
+ */
+if (!function_exists('springy_previous_next_post_pagination')) :
+    
+    /**
+     * Add on single page.
+     *
+     * @since 1.0.0
+     */
+    function springy_previous_next_post_pagination()
+    {
+       $prevPost = get_previous_post(true);
+       if($prevPost){
+        $args = array(
+            'posts_per_page' => 1,
+            'include' => $prevPost->ID
+        );
+        $prevPost = get_posts($args);
+        foreach ($prevPost as $newpost) {
+            setup_postdata($newpost);
+            ?>
+            <div class="post-prev-wrapper">
+                <div class="nav-box previous">
+                    <a href="<?php the_permalink(); ?>">
+                        <span class="img-prev"><?php the_post_thumbnail('thumbnail'); ?></span>
+                        <span class="prev-link">
+                            <span class="prev-title"><?php the_title(); ?></span>
+                            <span class="date-post"><?php esc_html(the_date('F j, Y')); ?></span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <?php
+            wp_reset_postdata();
+            } //end foreach
+        } // end if
+        
+        $nextPost = get_next_post(true);
+        if($nextPost) {
+            $args = array(
+                'posts_per_page' => 1,
+                'include' => $nextPost->ID
+            );
+            $nextPost = get_posts($args);
+            foreach ($nextPost as $newpost) {
+                setup_postdata($newpost);
+                ?>
+                <div class="post-next-wrapper">
+                    <div class="nav-box next">
+                        <a href="<?php the_permalink(); ?>">
+                            <span class="next-link">
+                                <span class="next-title"><?php the_title(); ?></span>
+                                <span class="date-post"><?php esc_html(the_date('F j, Y')); ?></span>
+                            </span>
+                            <span class="img-next"><?php the_post_thumbnail('thumbnail'); ?></span>
+                        </a>
+                    </div>
+                </div>
+                <?php
+                wp_reset_postdata();
+            } //end foreach
+        } // end if
+    }
+endif;
+add_action('springy_action_previous_next_post_pagination', 'springy_previous_next_post_pagination', 10);
