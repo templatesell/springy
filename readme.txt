@@ -1,7 +1,7 @@
 === Springy ===
 
 Contributors: templatesell
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, blog, news
+Tags: custom-background, custom-header, one-column, two-columns, three-columns, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, left-sidebar, right-sidebar, blog, portfolio, education
 Requires at least: 4.5
 Tested up to: 5.4
 Stable tag: 1.0.0
@@ -29,7 +29,7 @@ Springy includes support for Infinite Scroll in Jetpack.
 * Custom pagination for numeric is made.
 
 == Changelog ==
-= 1.0.0 - April 30 2020 =
+= 1.0.0 - May 01 2020 =
 * Initial release
 
 == Credits ==
@@ -55,4 +55,8 @@ Image for theme screenshot, self created
 License: CC0 1.0 Universal (CC0 1.0)
 Source: Self Created
 
-* Sidbear icons for the customizer are self created and license under GPL.
+Single Page Image, self created
+License: CC0 1.0 Universal (CC0 1.0)
+Source: Self Created
+
+* Sidebar icons for the customizer are self created and license under GPL.

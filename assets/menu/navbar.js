@@ -1,18 +1,6 @@
-/*-------------------------------------------------------------------------------------
-Name: Multinav
-Version:    1.0
-Author: Binatestation
--------------------------------------------------------------------------------------*/
-
-
 /**
-****************************************
-@File: Multinav jquery
-
 * This file contains the jquery for the actual menu
 */
-
-
 jQuery(function($) {
 
     "use strict";

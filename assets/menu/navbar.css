@@ -1,53 +1,6 @@
-/*-------------------------------------------------------------------------------------
-Name: Meganav
-Version:    1.0.1
-Author: templatesell
--------------------------------------------------------------------------------------*/
-
-
 /**
-****************************************
-@File: TSNABE Styles
-
-* This file contains the styling for the actual menu, this
-is the file you need to edit to change the look of the
-result.
-
-/*
-========================
-content table
-=========================
-01.import
-02. General css
-03. default menu css
-  04. simple nav 
-  05. megamenu
-  06. right-nav
-  07.shoppin nav
-  08- Submenus nav
-  09- center-logo-sep
-  10- off-canvas-left
-  11.off-canvas-right
-  12. off-canvas-full
-  13. simple right nav
-  14. attributes
-  15. media query
+* This file contains the css for the menu
 */
-
-
-/*===============================
-  01. import
-  ===============================*/
-
-@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900');
-
-/*end of import*/
-
-
-/*===============================
-  02. General css
-  ===============================*/
-
 .mega_ts_body {
   margin: 0;
   padding: 0;
