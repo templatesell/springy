@@ -133,11 +133,12 @@ content table
 
 .menu-box {
   float: right;
-  /*padding:18px 0px;*/
+  padding:0;
   position: relative;
   width: 25px;
   margin-top: 17px;
-  height: 25px;
+  background:none;
+  border: 0;
 }
 
 .menu-box.clicked .line-1 {
@@ -221,6 +222,10 @@ content table
   opacity: 1;
   transform: translateY(0%);
   transition-delay: 0s, 0s, 0.3s;
+}
+.mega_ts_menu li:focus .drop-list.fc{
+  visibility: visible!important;
+  opacity: 1 !important;
 }
 
 .mega_ts_menu .drop-list li {
@@ -1247,6 +1252,15 @@ visibility: visible;
     padding: 15px 20px !important;
     font-size: 10px !important;
     border: 1px solid #333;
+  }
+  .mega_ts_menu nav.nav_on li a{
+    color: #fff!important;
+  }
+  .mega_ts_menu nav.nav_on li .drop-list {
+    background: #333;
+  }
+  .mega_ts_menu nav.nav_on li .drop-list li a {
+        border: 1px solid #333;
   }
   .mega_ts_menu nav li a:hover {
     background: #444;

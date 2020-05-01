@@ -36,6 +36,12 @@ $search_header = absint($springy_theme_options['springy_enable_search']);
 					<?php endif; ?>
 				</div>
 				<!-- .site-logo -->
+				<!-- hamburger -->
+               	<button class="menu-box">
+	               	<div class="hum-line line-1"></div>
+	               	<div class="hum-line line-2"></div>
+	               	<div class="hum-line line-3"></div>
+               	</button><!-- end of menu-box -->
 				<nav>
 					<?php
 					wp_nav_menu( array(
@@ -57,12 +63,7 @@ $search_header = absint($springy_theme_options['springy_enable_search']);
 		               	</div>
 	               </div>
 				<?php } ?>
-				<!-- hamburger -->
-               	<div class="menu-box">
-	               	<div class="hum-line line-1"></div>
-	               	<div class="hum-line line-2"></div>
-	               	<div class="hum-line line-3"></div>
-               	</div><!-- end of menu-box -->
+				
 			</div>
 		</div>
 	</div>

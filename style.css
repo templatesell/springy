@@ -892,6 +892,11 @@ th {
     flex-direction: column;
     justify-content: center;
 }
+@media screen and (max-width: 1000px){
+  .mega_ts_menu nav{
+    justify-content: flex-start;
+  }  
+}
 /*LOGO*/
 .logo h1{
     margin: 0;
@@ -6686,6 +6691,9 @@ div#springy-breadcrumbs {
     }
     .comment-navigation .nav-next {
         padding-left: 5px;
+    }
+    .breadcrumbs-wrapper{
+        display: block;
     }
 
 }
