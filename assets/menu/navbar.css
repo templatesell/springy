@@ -1,12 +1,6 @@
 /**
 * This file contains the css for the menu
 */
-.mega_ts_body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Montserrat', sans-serif;
-}
-
 .mega_ts_menu a {
   text-decoration: none;
 }

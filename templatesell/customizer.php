@@ -14,7 +14,7 @@ if ( !function_exists('springy_default_theme_options_values') ) :
           /*Header Options*/
             'springy_enable_search'  => 1,
             'springy_primary_menu_transparent'=> 1,
-            'springy_header_image_text'=> esc_html__('Flexible For Everyone','springy'),
+            'springy_header_image_text'=> esc_html__('From the top of the World','springy'),
             'springy_header_image_sub_heading' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua','springy'),
             'springy_header_image_button_link'=> '#',
             'springy_header_image_button_text'=> esc_html__('Get Started','springy'),
@@ -40,9 +40,9 @@ if ( !function_exists('springy_default_theme_options_values') ) :
             'springy-promo-icon-text-one'=> esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.','springy'),
             'springy-promo-icon-text-two'=> esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.','springy'),
             'springy-promo-icon-text-three'=> esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.','springy'),
-            'springy-promo-icon-title-one'=> esc_html__('Content Management','springy'),
-            'springy-promo-icon-title-two'=> esc_html__('Project Analysis','springy'),
-            'springy-promo-icon-title-three'=> esc_html__('Support & Service','springy'),
+            'springy-promo-icon-title-one'=> esc_html__('Mount Everest ','springy'),
+            'springy-promo-icon-title-two'=> esc_html__('Mount Annapurna','springy'),
+            'springy-promo-icon-title-three'=> esc_html__('Mount Makalu','springy'),
             
             /*Blog Page*/
             'springy-sidebar-blog-page' => 'right-sidebar',
