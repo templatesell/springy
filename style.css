@@ -6563,9 +6563,10 @@ div#springy-breadcrumbs {
     .page.left-sidebar #primary{
         float: none;
     }
-    .single.single-left-sidebar #primary, .single.single-right-sidebar #primary{
+    .single.single-left-sidebar #primary, 
+    .single.single-right-sidebar #primary{
         max-width: 100%;
-        float: left;
+        float: none;
     }
 
 }
