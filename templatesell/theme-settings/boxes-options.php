@@ -5,7 +5,7 @@ $wp_customize->add_section( 'springy_promo_section', array(
     'priority'       => 20,
     'capability'     => 'edit_theme_options',
     'theme_supports' => '',
-    'title'          => __( 'Boxes Below Slider Settings', 'springy' ),
+    'title'          => __( 'Promo Boxes Settings', 'springy' ),
     'panel'          => 'springy_panel',
 ) );
 
@@ -127,12 +127,12 @@ $wp_customize->add_setting('springy_options[springy-promo-icon-class-one]', arra
 ));
 
 $wp_customize->add_control('springy_options[springy-promo-icon-class-one]', array(
-    'label' => __('Enter Font Awesome Class One', 'springy'),
+    'label' => __('Enter Themify Class Icon One', 'springy'),
     'description' => sprintf('%1$s <a href="%2$s" target="_blank">%3$s</a> %4$s',
         __( 'Check', 'springy' ),
         esc_url('https://themify.me/themify-icons'),
         __('font awesome list' , 'springy'),
-        __('and copy the class and paste here. Example fa-car, fa-heart.' ,'springy')
+        __('and copy the class and paste here. Example ti-layout, ti-bar-chart.' ,'springy')
     ),
     'section' => 'springy_promo_section',
     'settings' => 'springy_options[springy-promo-icon-class-one]',
@@ -190,7 +190,7 @@ $wp_customize->add_control('springy_options[springy-promo-icon-class-two]', arra
         __( 'Check', 'springy' ),
         esc_url('https://themify.me/themify-icons'),
         __('font awesome list' , 'springy'),
-        __('and copy the class and paste here. Example fa-car, fa-heart.' ,'springy')
+        __('and copy the class and paste here. Example ti-layout, ti-bar-chart.' ,'springy')
     ),
     'section' => 'springy_promo_section',
     'settings' => 'springy_options[springy-promo-icon-class-two]',
@@ -247,7 +247,7 @@ $wp_customize->add_control('springy_options[springy-promo-icon-class-three]', ar
         __( 'Check', 'springy' ),
         esc_url('https://themify.me/themify-icons'),
         __('font awesome list' , 'springy'),
-        __('and copy the class and paste here. Example fa-car, fa-heart.' ,'springy')
+        __('and copy the class and paste here. Example ti-layout, ti-bar-chart.' ,'springy')
     ),
     'section' => 'springy_promo_section',
     'settings' => 'springy_options[springy-promo-icon-class-three]',

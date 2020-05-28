@@ -174,3 +174,82 @@ $wp_customize->add_control('springy_options[springy-select-slider-from-page-thre
     'priority' => 15,
     'active_callback' => 'springy_slider_get_from_page_active_callback',
 ));
+
+
+/*Enable Overlay on the Slider part*/
+$wp_customize->add_setting( 'springy_options[springy_enable_slider_overlay]', array(
+   'capability'        => 'edit_theme_options',
+   'transport' => 'refresh',
+   'default'           => $default['springy_enable_slider_overlay'],
+   'sanitize_callback' => 'springy_sanitize_checkbox'
+) );
+
+$wp_customize->add_control(
+    'springy_options[springy_enable_slider_overlay]', 
+    array(
+       'label'     => __( 'Enable Slider Overlay Color', 'springy' ),
+       'description' => __('This option will add colors over the slider.', 'springy'),
+       'section'   => 'springy_slider_section',
+       'settings'  => 'springy_options[springy_enable_slider_overlay]',
+        'type'      => 'checkbox',
+       'priority'  => 15,
+      'active_callback' => 'springy_slider_active_callback',
+   )
+ );
+
+/*callback functions slider getting from post*/
+if ( !function_exists('springy_slider_overlay_color_active_callback') ) :
+  function springy_slider_overlay_color_active_callback(){
+      global $springy_theme_options;
+      $enable_slider = absint($springy_theme_options['springy_enable_slider']);
+      $slider_overlay = absint($springy_theme_options['springy_enable_slider_overlay']);
+      if( 1 == $enable_slider && $slider_overlay == 1 ){
+          return true;
+      }
+      else{
+          return false;
+      }
+  }
+endif;   
+
+/* Select the color for the Overlay */
+$wp_customize->add_setting( 'springy_options[springy_slider_overlay_color]',
+    array(
+        'default'           => $default['springy_slider_overlay_color'],
+        'sanitize_callback' => 'sanitize_hex_color',
+    )
+);
+$wp_customize->add_control(
+    new WP_Customize_Color_Control(                 
+        $wp_customize,
+        'springy_options[springy_slider_overlay_color]',
+        array(
+            'label'       => esc_html__( 'Slider Overlay Color', 'springy' ),
+            'description' => esc_html__( 'It will add the color overlay of the slider. To make it transparent, use the below option.', 'springy' ),
+            'section'     => 'springy_slider_section', 
+            'priority'  => 15, 
+            'active_callback'=> 'springy_slider_overlay_color_active_callback',
+        )
+    )
+);
+
+/*Overlay Range for transparent*/
+$wp_customize->add_setting( 'springy_options[springy_slider_overlay_transparent]', array(
+    'capability'        => 'edit_theme_options',
+    'transport' => 'refresh',
+    'default'           => $default['springy_slider_overlay_transparent'],
+    'sanitize_callback' => 'absint'
+) );
+$wp_customize->add_control( 'springy_options[springy_slider_overlay_transparent]', array(
+   'label'     => __( 'Slider Overlay Color Transparent', 'springy' ),
+   'description' => __('You can make the overlay transparent using this option. Minimim is 1 and maximum is 10.', 'springy'),
+   'section'   => 'springy_slider_section',
+   'settings'  => 'springy_options[springy_slider_overlay_transparent]',
+   'type'      => 'range',
+   'priority'  => 15,
+   'input_attrs' => array(
+          'min' => 1,
+          'max' => 10,
+        ),
+   'active_callback' => 'springy_slider_overlay_color_active_callback',
+) );

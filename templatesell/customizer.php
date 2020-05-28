@@ -29,6 +29,9 @@ if ( !function_exists('springy_default_theme_options_values') ) :
             'springy-select-slider-from-page-one'=> 0,
             'springy-select-slider-from-page-two'=> 0,
             'springy-select-slider-from-page-three'=> 0,
+            'springy_enable_slider_overlay'=> 0,
+            'springy_slider_overlay_color'=> '#ffffff',
+            'springy_slider_overlay_transparent'=> '1',
     
             /*Boxes Section */
             'springy_enable_promo'       => 1,
@@ -65,10 +68,10 @@ if ( !function_exists('springy_default_theme_options_values') ) :
 
 
             /*Sticky Sidebar*/
-            'springy-enable-sticky-sidebar' => 0,
+            'springy-enable-sticky-sidebar' => 1,
 
             /*Footer Section*/
-            'springy-footer-copyright'  => esc_html__('Copyright All Right Reserved 2020','springy'),
+            'springy-footer-copyright'  => esc_html__('Copyright All Rights Reserved 2020','springy'),
 
             /*Breadcrumb Options*/
             'springy-extra-breadcrumb' => 1,
@@ -122,7 +125,6 @@ function springy_customize_register( $wp_customize ) {
   $default = springy_default_theme_options_values();
 
   require get_template_directory() . '/templatesell/theme-settings/theme-settings.php';
-
 }
 add_action( 'customize_register', 'springy_customize_register' );
 

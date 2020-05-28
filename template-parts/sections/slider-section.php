@@ -9,6 +9,7 @@
  */
 global $springy_theme_options;
 $slide_id = absint($springy_theme_options['springy-select-category']);
+$header_btn = esc_html($springy_theme_options['springy_header_image_button_text']);
         $slick_args = array(
             'slidesToShow'      => 1,
             'slidesToScroll'    => 1,
@@ -47,7 +48,7 @@ $slide_id = absint($springy_theme_options['springy-select-category']);
                     </div>
                     <div class="post-excerpt entry-content">
                       <?php the_excerpt(); ?>
-                        <a class="more-btn" href="<?php the_permalink(); ?>"><?php _e('Read More', 'springy'); ?></a>
+                        <a class="more-btn" href="<?php the_permalink(); ?>"><?php esc_html_e($header_btn); ?></a>
                     </div>
                   </div>
                 </div> 

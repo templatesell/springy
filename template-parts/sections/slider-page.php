@@ -4,6 +4,8 @@ global $springy_theme_options;
 $slider_arr[] = absint($springy_theme_options['springy-select-slider-from-page-one']);
 $slider_arr[] = absint($springy_theme_options['springy-select-slider-from-page-two']);
 $slider_arr[] = absint($springy_theme_options['springy-select-slider-from-page-three']);
+$header_btn = esc_html($springy_theme_options['springy_header_image_button_text']);
+
 //remove duplicate post
 $slider_arr = array_unique($slider_arr);
 //remove if an element is empty
@@ -33,7 +35,7 @@ if (count($slider_arr) >= 1):
                                     <p><?php echo get_the_excerpt($s_post_id); ?></p>
                                 </div>
                                 <a href="<?php echo get_the_permalink($s_post_id); ?>" class="more-btn"> 
-                                    <?php _e('Read More', 'springy'); ?>
+                                    <?php esc_html_e($header_btn); ?>
                                 </a>
                             </div>
                         </div>
