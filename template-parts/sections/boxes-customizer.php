@@ -22,7 +22,7 @@ $desc_three = wp_kses_post($springy_theme_options['springy-promo-icon-text-three
 ?>
 <section class="springy-promo-section">
     <div class="container">
-        <div class="promo-section promo-three row">                          
+        <div class="row promo-boxes">                         
             <div class="col-sm-4 col-md-4">
                 <div class="feature-item">
                     <span class="first-icon"><i class="<?php echo esc_attr($icon_one); ?>"></i></span>

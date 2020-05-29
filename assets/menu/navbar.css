@@ -15,7 +15,7 @@
 }
 
 .mega_ts_menu {
-  background: #5c2ca6;
+  background: #ffffff;
   width: 100%;
   box-sizing: border-box;
 }
@@ -53,7 +53,7 @@
 
 .mega_ts_menu .logo a {
   font-size: 20px;
-  color: #fff;
+  color: #424242;
   font-weight: 600;
   display: block;
   padding:0;
@@ -135,10 +135,10 @@
 
 .mega_ts_menu nav>ul>li>a {
   text-transform: uppercase;
-  color: #fff;
+  color: #424242;
   text-decoration: none;
   font-size: 15px;
-  padding: 25px 17px;
+  padding: 30px 17px;
   letter-spacing: 1px;
   display: block;
   font-size: 12px;
@@ -216,6 +216,10 @@
   margin-top: -6px;
 }
 
+.mega_ts_menu .fixed-nav  nav>ul>li>a,
+.mega_ts_menu .fixed-nav .search-box i{
+  color: #fff;
+}
 
 /*===============================
   05. megamenu
@@ -274,20 +278,21 @@
 .mega_ts_menu .search-box-wrapper {
   position: relative;
   width: 100%;
+  z-index: 5;
 }
 
 .mega_ts_menu .search-box {
   float: right;
-  padding: 17px 0px;
+  padding: 22px 0px;
   position: relative;
 }
 
 .mega_ts_menu .search-box i {
   width: 30px;
   height: 30px;
-  border: 1px solid #eee;
+  border: 1px solid #dcdcdc;
   border-radius: 5px;
-  color: #fff;
+  color: #424242;
   display: flex;
   justify-content: center;
   align-items: center;

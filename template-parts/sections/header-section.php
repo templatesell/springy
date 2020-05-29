@@ -17,7 +17,7 @@ $class_menu = ($normal_menu == 1 ) ? 'fixed-nav' : '';
 
 <header class="header-1">		
 	<div class="mega_ts_menu">
-         <div class="navbar transparent-white <?php esc_attr_e($class_menu); ?>">
+         <div class="transparent-white <?php esc_attr_e($class_menu); ?>">
             <div class="nav-container clearfix_mn">	
 				<div class="logo">
 					<?php
