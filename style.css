@@ -1301,6 +1301,21 @@ section.slider-wrapper {
   border-radius: 50%;
   background: #959698;
 }
+/*slider overlay*/
+.slider-items .container{
+    position: relative;
+    z-index: 2;
+}
+.slider-overlay{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    background:#333;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
 @media (max-width: 767px){
     .slide-wrap{
         display: block;

@@ -52,6 +52,7 @@ $header_btn = esc_html($springy_theme_options['springy_header_image_button_text'
                     </div>
                   </div>
                 </div> 
+                <div class="slider-overlay"></div>
               </div>        
           </div>
         </div>

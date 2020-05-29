@@ -12,12 +12,12 @@ $GLOBALS['springy_theme_options'] = springy_get_options_value();
 global $springy_theme_options;
 $search_header = absint($springy_theme_options['springy_enable_search']);
 $normal_menu = esc_attr($springy_theme_options['springy_primary_menu_transparent']);
-$class_menu = ($normal_menu == 1 ) ? 'transparent-menu' : '';
+$class_menu = ($normal_menu == 1 ) ? 'fixed-nav' : '';
 ?>
 
 <header class="header-1">		
 	<div class="mega_ts_menu">
-         <div class="navbar fixed-nav transparent-white <?php esc_attr_e($class_menu); ?>">
+         <div class="navbar transparent-white <?php esc_attr_e($class_menu); ?>">
             <div class="nav-container clearfix_mn">	
 				<div class="logo">
 					<?php
