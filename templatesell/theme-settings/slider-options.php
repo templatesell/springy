@@ -238,18 +238,19 @@ $wp_customize->add_setting( 'springy_options[springy_slider_overlay_transparent]
     'capability'        => 'edit_theme_options',
     'transport' => 'refresh',
     'default'           => $default['springy_slider_overlay_transparent'],
-    'sanitize_callback' => 'absint'
+    'sanitize_callback' => 'springy_sanitize_number'
 ) );
 $wp_customize->add_control( 'springy_options[springy_slider_overlay_transparent]', array(
    'label'     => __( 'Slider Overlay Color Transparent', 'springy' ),
-   'description' => __('You can make the overlay transparent using this option. Minimim is 1 and maximum is 10.', 'springy'),
+   'description' => __('You can make the overlay transparent using this option. Add range from 0.1 to 1.', 'springy'),
    'section'   => 'springy_slider_section',
    'settings'  => 'springy_options[springy_slider_overlay_transparent]',
-   'type'      => 'range',
+   'type'      => 'number',
    'priority'  => 15,
    'input_attrs' => array(
-          'min' => 1,
-          'max' => 10,
-        ),
+        'min' => '0.1',
+        'max' => '1',
+        'step' => '0.1',
+    ),
    'active_callback' => 'springy_slider_overlay_color_active_callback',
 ) );

@@ -10,6 +10,8 @@
 global $springy_theme_options;
 $slide_id = absint($springy_theme_options['springy-select-category']);
 $header_btn = esc_html($springy_theme_options['springy_header_image_button_text']);
+$slider_overlay = absint($springy_theme_options['springy_enable_slider_overlay']);
+
         $slick_args = array(
             'slidesToShow'      => 1,
             'slidesToScroll'    => 1,
@@ -52,7 +54,9 @@ $header_btn = esc_html($springy_theme_options['springy_header_image_button_text'
                     </div>
                   </div>
                 </div> 
-                <div class="slider-overlay"></div>
+                 <?php if($slider_overlay === 1) { ?>
+                    <div class="slider-overlay"></div>
+                 <?php } ?>
               </div>        
           </div>
         </div>

@@ -77,3 +77,17 @@ function springy_sanitize_number_range( $number, $setting ) {
 	// If the number is within the valid range, return it; otherwise, return the default
 	return ( $min <= $number && $number <= $max && is_int( $number / $step ) ? $number : $setting->default );
 }
+
+
+/**
+ * Adds sanitization callback function: Number
+ *  @since Springy 1.0.0
+ */
+if (!function_exists('springy_sanitize_number')) :
+    function springy_sanitize_number($input)
+    {
+        if (isset($input) && is_numeric($input)) {
+            return $input;
+        }
+    }
+endif;

@@ -5,6 +5,7 @@ $slider_arr[] = absint($springy_theme_options['springy-select-slider-from-page-o
 $slider_arr[] = absint($springy_theme_options['springy-select-slider-from-page-two']);
 $slider_arr[] = absint($springy_theme_options['springy-select-slider-from-page-three']);
 $header_btn = esc_html($springy_theme_options['springy_header_image_button_text']);
+$slider_overlay = absint($springy_theme_options['springy_enable_slider_overlay']);
 
 //remove duplicate post
 $slider_arr = array_unique($slider_arr);
@@ -19,7 +20,7 @@ if (count($slider_arr) >= 1):
     <section class="modern-slider"  data-slick='<?php echo $springy_slider_args_encoded; ?>'>
         <?php
         foreach ($slider_arr as $s_post_id) {
-            $thumbnail_url = get_the_post_thumbnail_url($s_post_id);
+            $thumbnail_url = esc_url(get_the_post_thumbnail_url($s_post_id));
             ?>
             <div class="slider-items">
                 <div class="slide-wrap">
@@ -39,6 +40,9 @@ if (count($slider_arr) >= 1):
                                 </a>
                             </div>
                         </div>
+                        <?php if($slider_overlay === 1) { ?>
+                            <div class="slider-overlay"></div>
+                        <?php } ?>
                     </div> 
                 </div>
             </div>

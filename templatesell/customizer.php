@@ -31,7 +31,7 @@ if ( !function_exists('springy_default_theme_options_values') ) :
             'springy-select-slider-from-page-three'=> 0,
             'springy_enable_slider_overlay'=> 0,
             'springy_slider_overlay_color'=> '#ffffff',
-            'springy_slider_overlay_transparent'=> '1',
+            'springy_slider_overlay_transparent'=> '0.3',
     
             /*Boxes Section */
             'springy_enable_promo'       => 1,

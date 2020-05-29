@@ -16,6 +16,8 @@ if (!function_exists('springy_dynamic_css')) :
 
         /* Color Options Options */
         $springy_primary_color  = esc_attr($springy_theme_options['springy_primary_color']);
+        $springy_slider_overlay  = esc_attr($springy_theme_options['springy_slider_overlay_color']);
+        $springy_slider_transparent  = esc_attr($springy_theme_options['springy_slider_overlay_transparent']);
 
         $custom_css = '';
 
@@ -81,6 +83,22 @@ if (!function_exists('springy_dynamic_css')) :
             .site-footer a:hover, 
             .site-footer a:focus{ 
                 color : ". $springy_primary_color."; 
+            }";
+        }
+
+        //Slider Overlay
+        if (!empty($springy_slider_overlay)) {
+            $custom_css .= "
+            .slider-overlay { 
+                background-color : ". $springy_slider_overlay."; 
+            }";
+        }
+
+        //Slider Tranparent
+        if (!empty($springy_slider_transparent)) {
+            $custom_css .= "
+            .slider-overlay { 
+                opacity : ". $springy_slider_transparent."; 
             }";
         }
 
