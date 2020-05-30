@@ -16,7 +16,7 @@ get_header();
 <section id="content" class="site-content posts-container">
     <div class="container">
         <div class="row">
-			<div id="primary" class="col-md-8 content-area">
+			<div id="primary" class="col-lg-8 content-area">
 				<main id="main" class="site-main">
 					
 				<?php

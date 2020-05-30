@@ -16,28 +16,27 @@ $social_share = absint($springy_theme_options['springy-show-hide-share']);
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class($masonry); ?>>
     <div class="post-wrap <?php echo esc_attr($image_location); ?>">
-        <?php if(has_post_thumbnail()) { ?>
-            <div class="post-media-part">
-                <div class="post-media">
-                    <?php springy_post_thumbnail(); ?>
-                </div>
+        <?php if(has_post_thumbnail()) { ?><?php } ?>
+        <div class="post-media-part">
+            <div class="post-media">
+                <?php springy_post_thumbnail(); ?>
             </div>
-            <div class="post-meta-info">
-                <div class="meta-wrapper">
-                    <div class="meta-categories">
-                        <div class="post-cats">
-                            <?php springy_entry_meta(); ?>
-                        </div>
+        </div>
+        <div class="post-meta-info">
+            <div class="meta-wrapper">
+                <div class="meta-categories">
+                    <div class="post-cats">
+                        <?php springy_entry_meta(); ?>
                     </div>
-                    <?php 
-                        if( 1 == $social_share ){
-                            do_action( 'springy_social_sharing' ,get_the_ID() );
-                        }
-                    ?>
                 </div>
+                <?php 
+                    if( 1 == $social_share ){
+                        do_action( 'springy_social_sharing' ,get_the_ID() );
+                    }
+                ?>
             </div>
-        <?php } ?>
-
+        </div>
+        
         <div class="post-content">
             <div class="post_title">
                 <?php

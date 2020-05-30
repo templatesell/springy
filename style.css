@@ -1357,7 +1357,7 @@ section.slider-wrapper {
     font-style: normal;
     font-weight: 400;
     line-height: 1.6;
-    color: #4c4f53;
+    color: #fff;
 }
 .archive-description p {
     margin-bottom: 10px;
@@ -1803,13 +1803,14 @@ object {
     position: relative;
 }
 .post-meta-info{
+    transition: all .45s ease;
+    width: 100%;
+}
+.has-post-thumbnail .post-meta-info{
     position: absolute;
     top: 30px;
     padding-left: 30px;
     padding-right: 30px;
-    z-index: 12;
-    transition: all .45s ease;
-    width: 100%;
 }
 .meta-wrapper {
     display: flex;
@@ -1825,11 +1826,17 @@ object {
     box-shadow: 11px 10px 38px rgba(0, 0, 0, 0.1);
     background: #fff;
 }
+.post-categories{
+    padding: 0;
+    margin: 0;
+}
 .post-content {
     position: relative;
-    padding: 30px;
     word-wrap: break-word;
     overflow: hidden;
+}
+.has-post-thumbnail .post-content{
+    padding: 30px;
 }
 .single-post-wrap .post-media-part img{
     border-radius: 10px;
@@ -2498,16 +2505,19 @@ a.link-format:hover {
     position: absolute;
     line-height: 80px;
     left: 0;
-    margin-left: 20px;
     right: 0;
-    opacity: 1;
     color: #fff;
     display: block;
     text-align: center;
     z-index: 2;
+    opacity: 1;
+    visibility: visible;
+    transition: all .3s ease;
+}
+.has-post-thumbnail .post-prev-wrapper .img-prev:before{
     opacity: 0;
     visibility: hidden;
-    transition: all .3s ease;
+    margin-left: 20px;
 }
 .post-next-wrapper .img-next:before{
     content: "\e628";
@@ -2516,16 +2526,19 @@ a.link-format:hover {
     position: absolute;
     line-height: 80px;
     left: 0;
-    margin-right: 20px;
     right: 0;
-    opacity: 1;
     color: #fff;
     display: block;
     text-align: center;
     z-index: 2;
+    opacity: 1;
+    visibility: visible;
+    transition: all .3s ease;
+}
+.has-post-thumbnail .post-next-wrapper .img-next:before{
     opacity: 0;
     visibility: hidden;
-    transition: all .3s ease;
+    margin-right: 20px;
 }
 .post-prev-wrapper .img-prev,
 .post-next-wrapper .img-next{
@@ -2538,6 +2551,7 @@ a.link-format:hover {
     position: relative;
     transition: all 0.3s;
     border-radius: 5px;
+    border: 1px solid #f5f5f5;
 }
 .post-next-wrapper .img-next{
     margin-left: 20px;
@@ -2552,10 +2566,15 @@ a.link-format:hover {
     position: absolute;
     top: 0;
     left: 0;
-    opacity: 0;
-    visibility: hidden;
+    opacity: 1;
+    visibility: visible;
     transition: all .3s ease;
     background: #f63a3a;
+}
+.has-post-thumbnail .post-prev-wrapper .img-prev:after,
+.has-post-thumbnail .post-next-wrapper .img-next:after {
+    opacity: 0;
+    visibility: hidden;
 }
 .post-prev-wrapper a:hover .img-prev:before {
     margin-left: 0;
@@ -2563,15 +2582,15 @@ a.link-format:hover {
 .post-next-wrapper a:hover .img-next:before {
     margin-right: 0;
 }
-.nav-box.previous a:hover .img-prev:after, 
-.nav-box.previous a:hover .img-prev:before,
-.nav-box.next a:hover .img-next:after, 
-.nav-box.next a:hover .img-next:before {
+.has-post-thumbnail .nav-box.previous a:hover .img-prev:after, 
+.has-post-thumbnail .nav-box.previous a:hover .img-prev:before,
+.has-post-thumbnail .nav-box.next a:hover .img-next:after, 
+.has-post-thumbnail .nav-box.next a:hover .img-next:before {
     visibility: visible;
     opacity: 1;
 }
-.nav-box.previous a:hover .img-prev img
-.nav-box.next a:hover .img-next img {
+.has-post-thumbnail .nav-box.previous a:hover .img-prev img
+.has-post-thumbnail .nav-box.next a:hover .img-next img {
     opacity: 0;
 }
 
@@ -5388,6 +5407,9 @@ ul.social-menu li a[href*="dribble.com"]:before {
     align-items: center;
     margin-top: 18px;
 }
+.breadcrumb{
+    background-color: transparent!important;
+}
 ul.trail-items {
     margin: 0;
     padding: 0;
@@ -5442,22 +5464,47 @@ div#springy-breadcrumbs {
 }
 
 /* Blog Images options */
-
 .left-image{
+    padding: 30px;
+}
+.has-post-thumbnail .left-image{
     overflow: hidden;
     padding: 15px 0;
     display: table;
     width: 100%;
 }
-.left-image .post-content,
-.left-image .post-media{
+.has-post-thumbnail .left-image .post-content,
+.has-post-thumbnail .left-image .post-media{
     padding: 0 15px;
     vertical-align: middle;
     display: table-cell;
 }
-.left-image .post-media{
+.has-post-thumbnail .left-image .post-content{
+    position: relative;
+    z-index: 20;
+}
+.has-post-thumbnail .left-image .post-wrap .meta-bottom{
+    z-index: 25;
+}
+.has-post-thumbnail .left-image .post-media{
     max-width: 350px;
     min-width: 300px;
+}
+.has-post-thumbnail .left-image .post-meta-info{
+    top: 35px;
+}
+.has-post-thumbnail .left-image .meta-bottom{
+    position: relative;
+    z-index: 25;
+}
+.has-post-thumbnail .left-image .post-cats{
+    max-width: 230px;
+}
+.has-post-thumbnail .left-image .meta-wrapper *{
+    align-self: flex-start;
+}
+.has-post-thumbnail .left-image .post_title {
+    max-width: 80%;
 }
 .two-column .left-image,
 .masonry-post .left-image,
@@ -5513,6 +5560,18 @@ div#springy-breadcrumbs {
     display: none;
 }
 
+@media screen and (max-width: 1000px){
+    .has-post-thumbnail .left-image{
+        display: block;
+    }
+    .has-post-thumbnail .left-image .post-media{
+        max-width: 100%;
+    }
+    .has-post-thumbnail .left-image,
+    .has-post-thumbnail .left-image .post-media{
+        padding: 0;
+    }
+}
 
 /*==============================================================
 ## Promo section

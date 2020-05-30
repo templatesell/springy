@@ -8,15 +8,18 @@
  */
 global $springy_theme_options;
 $image_option = absint($springy_theme_options['springy-single-page-featured-image']);
+$social_share = absint($springy_theme_options['springy-single-social-share']);
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <div class="post-wrap">
-        <div class="post-media">
-            <?php
-            if ($image_option == 1) {
-                springy_post_thumbnail();
-            }
-            ?>
+    <div class="single-post-wrap">
+        <div class="post-media-part">
+            <div class="post-media">
+                <?php
+                if ($image_option == 1) {
+                    springy_post_thumbnail();
+                }
+                ?>
+            </div>
         </div>
         <div class="post-content">
             <div class="post-excerpt entry-content">
@@ -37,10 +40,13 @@ $image_option = absint($springy_theme_options['springy-single-page-featured-imag
                 <?php endif; ?>
             </div>
             <!-- .entry-content end -->
-            <footer class="post-footer entry-footer">
-                <?php springy_entry_meta(); ?>
-                <?php do_action( 'springy_social_sharing' ,get_the_ID() );?>
-            </footer><!-- .entry-footer end -->
+            <div class="single-post-info">
+                <?php 
+                if( 1 == $social_share ){
+                    do_action( 'springy_social_sharing' ,get_the_ID() );
+                }
+                ?>
+            </div>
         </div>
     </div>
 </article><!-- #post-->

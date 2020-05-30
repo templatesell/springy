@@ -1157,11 +1157,8 @@ visibility: visible;
 /* Medium devices (desktops, 1000px and up) */
 
 @media screen and (max-width: 1000px) {
-
-  .mega_ts_menu{
-    min-height: 70px;
-  }
-  .scroll-background .hum-line{
+  .mega_ts_menu .hum-line,
+  .mega_ts_menu .fixed-nav.scroll-background .hum-line{
     background: #222222;
   }
   /*logo*/
@@ -1173,6 +1170,9 @@ visibility: visible;
     position: absolute;
     left: 0;
     right: 0;
+  }
+  .mega_ts_menu .fixed-nav.scroll-background .search-box i{
+    color: #424242;
   }
   .nav-container{
     display: block;

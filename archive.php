@@ -32,7 +32,7 @@ $main_banner = ($page_banner == '') ? $def_banner : $page_banner;
 <section id="content" class="site-content posts-container">
 	<div class="container">
 		<div class="row">	
-			<div id="primary" class="col-md-8 content-area">
+			<div id="primary" class="col-lg-8 content-area">
 				<main id="main" class="site-main">
 					<?php if ( have_posts() ) : ?>
 
