@@ -8,6 +8,7 @@
 
 /* Customizer Options */
 require get_template_directory() . '/templatesell/theme-settings/header-options.php';
+require get_template_directory() . '/templatesell/theme-settings/home-page-options.php';
 require get_template_directory() . '/templatesell/theme-settings/color-options.php';
 require get_template_directory() . '/templatesell/theme-settings/slider-options.php';
 require get_template_directory() . '/templatesell/theme-settings/boxes-options.php';

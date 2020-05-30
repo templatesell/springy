@@ -19,6 +19,9 @@ if ( !function_exists('springy_default_theme_options_values') ) :
             'springy_header_image_button_link'=> '#',
             'springy_header_image_button_text'=> esc_html__('Get Started','springy'),
 
+            /*Home Page Options*/
+            'springy-enable-home-title' => 0,
+
             /*Colors Options*/
             'springy_primary_color'              => '#d42929',
 

@@ -7,7 +7,7 @@
  * @package Springy
  */
 if (!function_exists('springy_add_main_header')) :
-    
+
     /**
      * Add main header.
      *
@@ -28,7 +28,7 @@ add_action('springy_action_header', 'springy_add_main_header', 10);
  * @package Springy
  */
 if (!function_exists('springy_add_main_slider')) :
-    
+
     /**
      * Add main slider.
      *
@@ -36,7 +36,7 @@ if (!function_exists('springy_add_main_slider')) :
      */
     function springy_add_main_slider()
     {
-        
+
         get_template_part('template-parts/sections/slider', 'section');
     }
 endif;
@@ -51,7 +51,7 @@ add_action('springy_action_slider', 'springy_add_main_slider', 10);
  * @package Springy
  */
 if (!function_exists('springy_add_main_slider_page')) :
-    
+
     /**
      * Add main slider from page.
      *
@@ -59,7 +59,7 @@ if (!function_exists('springy_add_main_slider_page')) :
      */
     function springy_add_main_slider_page()
     {
-        
+
         get_template_part('template-parts/sections/slider', 'page');
     }
 endif;
@@ -73,7 +73,7 @@ add_action('springy_action_slider_page', 'springy_add_main_slider_page', 10);
  * @package Springy
  */
 if (!function_exists('springy_boxes_section')) :
-    
+
     /**
      * Add main slider.
      *
@@ -81,7 +81,7 @@ if (!function_exists('springy_boxes_section')) :
      */
     function springy_boxes_section()
     {       
-        
+
         get_template_part('template-parts/sections/boxes', 'section');
     }
 endif;
@@ -95,7 +95,7 @@ add_action('springy_action_boxes', 'springy_boxes_section', 10);
  * @package Springy
  */
 if (!function_exists('springy_boxes_customizer_section')) :
-    
+
     /**
      * Boxes from the customizer.
      *
@@ -103,7 +103,7 @@ if (!function_exists('springy_boxes_customizer_section')) :
      */
     function springy_boxes_customizer_section()
     {       
-        
+
         get_template_part('template-parts/sections/boxes', 'customizer');
     }
 endif;
@@ -163,7 +163,7 @@ endif;
  * @package Springy
  */
 if (!function_exists('springy_main_header_hooks')) :
-    
+
     /**
      * Add main header.
      *
@@ -203,65 +203,42 @@ add_action('springy_action_main_header_header', 'springy_main_header_hooks', 10)
  * @package Springy
  */
 if (!function_exists('springy_previous_next_post_pagination')) :
-    
+
     /**
      * Add on single page.
      *
      * @since 1.0.0
      */
     function springy_previous_next_post_pagination()
-    {
-       $prevPost = get_previous_post(true);
-       if($prevPost){
-        $args = array(
-            'posts_per_page' => 1,
-            'include' => $prevPost->ID
-        );
-        $prevPost = get_posts($args);
-        foreach ($prevPost as $newpost) {
-            setup_postdata($newpost);
-            ?>
-            <div class="post-prev-wrapper">
+    { ?>
+
+        <div id="post-nav" class="navigation">
+            <?php $prevPost = get_previous_post(true);
+            if($prevPost) ?>
+                <div class="post-prev-wrapper">
                 <div class="nav-box previous">
-                    <a href="<?php the_permalink(); ?>">
-                        <span class="img-prev"><?php the_post_thumbnail('thumbnail'); ?></span>
-                        <span class="prev-link">
-                            <span class="prev-title"><?php the_title(); ?></span>
-                            <span class="date-post"><?php esc_html(the_date('F j, Y')); ?></span>
-                        </span>
-                    </a>
+                    <?php $prevthumbnail = get_the_post_thumbnail($prevPost->ID, array(100,100) );?>
+                     <span class="img-prev"><?php previous_post_link("$prevthumbnail", TRUE); ?>
+                     </span>
+                      <span class="prev-link">
+                         <span class="prev-title"><?php previous_post_link('%link',"<p>%title</p>", TRUE); ?></span>
+                     </span>
                 </div>
             </div>
-            <?php
-            wp_reset_postdata();
-            } //end foreach
-        } // end if
-        
-        $nextPost = get_next_post(true);
-        if($nextPost) {
-            $args = array(
-                'posts_per_page' => 1,
-                'include' => $nextPost->ID
-            );
-            $nextPost = get_posts($args);
-            foreach ($nextPost as $newpost) {
-                setup_postdata($newpost);
-                ?>
-                <div class="post-next-wrapper">
+                <?php $nextPost = get_next_post(true);
+                if($nextPost) ?>
+                   <div class="post-next-wrapper">
                     <div class="nav-box next">
-                        <a href="<?php the_permalink(); ?>">
-                            <span class="next-link">
-                                <span class="next-title"><?php the_title(); ?></span>
-                                <span class="date-post"><?php esc_html(the_date('F j, Y')); ?></span>
-                            </span>
-                            <span class="img-next"><?php the_post_thumbnail('thumbnail'); ?></span>
-                        </a>
+                        <?php $nextthumbnail = get_the_post_thumbnail($nextPost->ID, array(150,100) ); ?>
+                         <span class="next-link">
+                            <span class="next-title"><?php next_post_link('%link',"<p>%title</p>", TRUE); ?></span>
+                         </span>
+                           <span class="img-next"><?php previous_post_link("$nextthumbnail", TRUE); ?></span>
                     </div>
                 </div>
-                <?php
-                wp_reset_postdata();
-            } //end foreach
-        } // end if
-    }
-endif;
-add_action('springy_action_previous_next_post_pagination', 'springy_previous_next_post_pagination', 10);
+                    <?php ?>
+                </div><!--#post-nav div -->
+
+            <?php  }
+        endif;
+        add_action('springy_action_previous_next_post_pagination', 'springy_previous_next_post_pagination', 10);
