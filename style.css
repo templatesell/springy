@@ -913,11 +913,7 @@ th {
 .mega_ts_menu .scroll-background .logo p{
     color: #222222;
 }
-.scroll-background .logo a img {
-    padding: 8px;
-    background: #3a55ca;
-    border-radius: 3px;
-}
+
 .main-header {
     display: none;
 }
@@ -1804,13 +1800,17 @@ object {
     margin-bottom: 50px;
     position: relative;
 }
+
 .post-meta-info{
     transition: all .45s ease;
     width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
 }
 .has-post-thumbnail .post-meta-info{
     position: absolute;
-    top: 30px;
+    top: 0;
     padding-left: 30px;
     padding-right: 30px;
 }
@@ -1836,6 +1836,8 @@ object {
     position: relative;
     word-wrap: break-word;
     overflow: hidden;
+    padding-left: 30px;
+    padding-left: 30px;
 }
 .has-post-thumbnail .post-content{
     padding: 30px;
@@ -5466,9 +5468,6 @@ div#springy-breadcrumbs {
 }
 
 /* Blog Images options */
-.left-image{
-    padding: 30px;
-}
 .has-post-thumbnail .left-image{
     overflow: hidden;
     padding: 15px 0;

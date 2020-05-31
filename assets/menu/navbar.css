@@ -58,7 +58,13 @@
   display: block;
   padding:0;
 }
-
+.mega_ts_menu .logo p{
+  color: #424242;
+}
+.mega_ts_menu .fixed-nav .logo p,
+.mega_ts_menu .fixed-nav .logo a{
+  color: #fff;
+}
 .mega_ts_menu .logo a span {
   font-weight: 300;
 }
