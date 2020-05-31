@@ -2494,7 +2494,7 @@ a.link-format:hover {
     float: right;
     margin-left: auto;
 } 
-.nav-box > a {
+.nav-box{
     display: flex;
     align-items: center;
 }
@@ -2576,21 +2576,21 @@ a.link-format:hover {
     opacity: 0;
     visibility: hidden;
 }
-.post-prev-wrapper a:hover .img-prev:before {
+.post-prev-wrapper .nav-box:hover .img-prev:before {
     margin-left: 0;
 }
-.post-next-wrapper a:hover .img-next:before {
+.post-next-wrapper .nav-box:hover .img-next:before {
     margin-right: 0;
 }
-.has-post-thumbnail .nav-box.previous a:hover .img-prev:after, 
-.has-post-thumbnail .nav-box.previous a:hover .img-prev:before,
-.has-post-thumbnail .nav-box.next a:hover .img-next:after, 
-.has-post-thumbnail .nav-box.next a:hover .img-next:before {
+.has-post-thumbnail .nav-box.previous:hover .img-prev:after, 
+.has-post-thumbnail .nav-box.previous:hover .img-prev:before,
+.has-post-thumbnail .nav-box.next:hover .img-next:after, 
+.has-post-thumbnail .nav-box.next:hover .img-next:before {
     visibility: visible;
     opacity: 1;
 }
-.has-post-thumbnail .nav-box.previous a:hover .img-prev img
-.has-post-thumbnail .nav-box.next a:hover .img-next img {
+.has-post-thumbnail .nav-box.previous:hover .img-prev img,
+.has-post-thumbnail .nav-box.next:hover .img-next img {
     opacity: 0;
 }
 

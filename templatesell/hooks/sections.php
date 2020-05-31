@@ -212,33 +212,30 @@ if (!function_exists('springy_previous_next_post_pagination')) :
     function springy_previous_next_post_pagination()
     { ?>
 
-        <div id="post-nav" class="navigation">
-            <?php $prevPost = get_previous_post(true);
-            if($prevPost) ?>
-                <div class="post-prev-wrapper">
-                <div class="nav-box previous">
-                    <?php $prevthumbnail = get_the_post_thumbnail($prevPost->ID, array(100,100) );?>
-                     <span class="img-prev"><?php previous_post_link("$prevthumbnail", TRUE); ?>
+        <?php $prevPost = get_previous_post(true);
+        if($prevPost) ?>
+        <div class="post-prev-wrapper">
+            <div class="nav-box previous">
+                <?php $prevthumbnail = get_the_post_thumbnail($prevPost->ID, array(100,100) );?>
+                 <span class="img-prev"><?php previous_post_link("$prevthumbnail", TRUE); ?></span>
+                  <span class="prev-link">
+                     <span class="prev-title"><?php previous_post_link('%link',"<p>%title</p>", TRUE); ?></span>
+                 </span>
+            </div>
+        </div>
+        <?php $nextPost = get_next_post(true);
+        if($nextPost) ?>
+            <div class="post-next-wrapper">
+                <div class="nav-box next">
+                    <?php $nextthumbnail = get_the_post_thumbnail($nextPost->ID, array(150,100) ); ?>
+                     <span class="next-link">
+                        <span class="next-title"><?php next_post_link('%link',"<p>%title</p>", TRUE); ?></span>
                      </span>
-                      <span class="prev-link">
-                         <span class="prev-title"><?php previous_post_link('%link',"<p>%title</p>", TRUE); ?></span>
-                     </span>
+                    <span class="img-next"><?php previous_post_link("$nextthumbnail", TRUE); ?></span>
                 </div>
             </div>
-                <?php $nextPost = get_next_post(true);
-                if($nextPost) ?>
-                   <div class="post-next-wrapper">
-                    <div class="nav-box next">
-                        <?php $nextthumbnail = get_the_post_thumbnail($nextPost->ID, array(150,100) ); ?>
-                         <span class="next-link">
-                            <span class="next-title"><?php next_post_link('%link',"<p>%title</p>", TRUE); ?></span>
-                         </span>
-                           <span class="img-next"><?php previous_post_link("$nextthumbnail", TRUE); ?></span>
-                    </div>
-                </div>
-                    <?php ?>
-                </div><!--#post-nav div -->
+        <?php ?>
 
-            <?php  }
-        endif;
-        add_action('springy_action_previous_next_post_pagination', 'springy_previous_next_post_pagination', 10);
+    <?php  }
+    endif;
+    add_action('springy_action_previous_next_post_pagination', 'springy_previous_next_post_pagination', 10);
