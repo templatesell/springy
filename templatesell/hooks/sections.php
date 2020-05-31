@@ -213,7 +213,7 @@ if (!function_exists('springy_previous_next_post_pagination')) :
     { ?>
 
         <?php $prevPost = get_previous_post(true);
-        if($prevPost) ?>
+        if($prevPost) { ?>
         <div class="post-prev-wrapper">
             <div class="nav-box previous">
                 <?php $prevthumbnail = get_the_post_thumbnail($prevPost->ID, array(100,100) );?>
@@ -223,8 +223,9 @@ if (!function_exists('springy_previous_next_post_pagination')) :
                  </span>
             </div>
         </div>
+        <?php } ?>
         <?php $nextPost = get_next_post(true);
-        if($nextPost) ?>
+        if($nextPost) { ?>
             <div class="post-next-wrapper">
                 <div class="nav-box next">
                     <?php $nextthumbnail = get_the_post_thumbnail($nextPost->ID, array(150,100) ); ?>
@@ -234,7 +235,7 @@ if (!function_exists('springy_previous_next_post_pagination')) :
                     <span class="img-next"><?php previous_post_link("$nextthumbnail", TRUE); ?></span>
                 </div>
             </div>
-        <?php ?>
+        <?php } ?>
 
     <?php  }
     endif;

@@ -54,7 +54,7 @@ if ( function_exists( 'wp_body_open' ) ) {
     }
     ?>
     <div class="clear-fix"></div>
-	 <?php if ($enable_slider == 1 && (is_home() || is_front_page())) { ?>
+	 <?php if ($enable_slider == 1 && (is_home() || is_front_page() || is_page_template( 'templates/template-full-width.php') )) { ?>
         <section class="slider-wrapper">
             <?php
             /*
@@ -68,7 +68,7 @@ if ( function_exists( 'wp_body_open' ) ) {
             ?>
         </section>
     <?php } ?>
-    <?php if ($enable_box == 1 && (is_home() || is_front_page() ) )  { ?>
+    <?php if ($enable_box == 1 && (is_home() || is_front_page() || is_page_template( 'templates/template-full-width.php') ) )  { ?>
         <section class="promo-slider-wrapper">
             <?php
             
