@@ -68,7 +68,7 @@ if ( is_active_sidebar('footer-1') || is_active_sidebar('footer-2') || is_active
 							<?php echo $copyright; ?>
 							<?php
 							/* translators: 1: Theme name, 2: Theme author. */
-							printf( esc_html__( '- %1$s WordPress Theme by : %2$s', 'springy' ), 'Springy', '<a href="https://www.templatesell.com/">Templatesell</a>' );
+							printf( esc_html__( '- %1$s WordPress Theme by : %2$s', 'springy' ), 'Springy', '<a href="https://www.templatesell.com/">Template Sell</a>' );
 							?>
 						</p>
 					</div>
