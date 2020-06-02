@@ -86,6 +86,15 @@
 				},"slow");
 			});
 	  	}
+
+	  	// Tab Navigate
+	    $( '#menu-main li.menu-item-has-children' ).focusin( function() {
+	    $( this ).addClass( 'locked' );
+	    }).add( this ).focusout( function() {
+	        if ( !$( this ).is( ':focus' ) ) {
+	            $( this ).removeClass( 'locked' );
+	        }
+	    });     
         
  	}); 	
 })(jQuery);

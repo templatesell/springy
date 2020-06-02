@@ -44,12 +44,12 @@ $class_menu = ($normal_menu == 1 ) ? 'fixed-nav' : '';
 	               	<div class="hum-line line-2"></div>
 	               	<div class="hum-line line-3"></div>
                	</button><!-- end of menu-box -->
-				<nav>
+				<nav class="main-navigation">
 					<?php
 					wp_nav_menu( array(
 						'theme_location' => 'menu-1',
 						'container' => 'ul',
-						'menu_class'      => 'main-nav',
+						'menu_class'      => '',
 					));
 					?>
 				</nav>
