@@ -14,12 +14,10 @@
 get_header();
 global $springy_theme_options;
 $page_banner = esc_url($springy_theme_options['springy_single_page_banner_image']);
-$page_title = absint($springy_theme_options['springy-enable-home-title']);
+$home_banner = absint($springy_theme_options['springy-enable-home-title']);
 $def_banner = esc_url(get_template_directory_uri()."/assets/images/page-banner.jpg");
 $main_banner = ($page_banner == '') ? $def_banner : $page_banner;
 ?>
-
-<?php if($page_title === 1 && is_front_page() ){ ?>
 <section  class="page-bg" style="background-image: url('<?php echo $main_banner; ?>');">
 	<div class="container">
 		<div class="breadcrumbs-wrapper">	
@@ -33,7 +31,6 @@ $main_banner = ($page_banner == '') ? $def_banner : $page_banner;
 		</div>
 	</div>
 </section>
-<?php } ?>
 <section id="content" class="site-content posts-container">
     <div class="container">
         <div class="row">
