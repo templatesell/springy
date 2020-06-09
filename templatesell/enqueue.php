@@ -40,12 +40,6 @@ function springy_scripts() {
 	/*RTL CSS*/
 	wp_style_add_data( 'springy-style', 'rtl', 'replace' );
 
- $springy_pagination_option =  esc_attr($springy_theme_options['springy-pagination-options']);
-    
-    if( 'ajax' == $springy_pagination_option )  {
-    	
-    	wp_enqueue_script( 'springy-custom-pagination', get_template_directory_uri() . '/assets/js/custom-infinte-pagination.js', array('jquery'), '4.6.0' );
-    }
 
 	wp_enqueue_script( 'springy-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20200430', true );
 
@@ -62,7 +56,7 @@ function springy_scripts() {
     $max_num_pages = $wp_query->max_num_pages;
 
     wp_localize_script( 'springy-custom', 'springy_ajax', array(
-        'ajaxurl' => admin_url( 'admin-ajax.php' ),
+        'ajaxurl' => esc_url(admin_url( 'admin-ajax.php' )),
         'paged'     => $paged,
         'max_num_pages'      => $max_num_pages,
         'next_posts'      => next_posts( $max_num_pages, false ),

@@ -14,8 +14,8 @@ if ( !function_exists('springy_default_theme_options_values') ) :
           /*Header Options*/
             'springy_enable_search'  => 1,
             'springy_primary_menu_transparent'=> 1,
-            'springy_header_image_text'=> esc_html__('From the top of the World','springy'),
-            'springy_header_image_sub_heading' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua','springy'),
+            'springy_header_image_text'=> '',
+            'springy_header_image_sub_heading' => '',
             'springy_header_image_button_link'=> '#',
             'springy_header_image_button_text'=> esc_html__('Get Started','springy'),
 
@@ -37,7 +37,7 @@ if ( !function_exists('springy_default_theme_options_values') ) :
             'springy_slider_overlay_transparent'=> '0.3',
     
             /*Boxes Section */
-            'springy_enable_promo'       => 1,
+            'springy_enable_promo'       => 0,
             'springy-promo-select-category'=> 0,
             'springy-select-boxes-from'=> 'from-customizer',
             'springy-promo-icon-class-one'=> 'ti-layout',

@@ -126,7 +126,7 @@ $wp_customize->add_setting('springy_options[springy-pagination-options]', array(
 $wp_customize->add_control('springy_options[springy-pagination-options]', array(
     'choices' => array(
         'numeric' => __('Numeric Pagination', 'springy'),
-        'ajax' => __('Ajax Pagination', 'springy'),
+        'default' => __('Previous and Next Post Pagination', 'springy'),
     ),
     'label' => __('Pagination Types', 'springy'),
     'description' => __('Choose Required Pagination Type', 'springy'),

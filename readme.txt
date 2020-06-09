@@ -4,7 +4,6 @@ Contributors: templatesell
 Tags: custom-background, custom-header, one-column, two-columns, three-columns, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, left-sidebar, right-sidebar, blog, portfolio, education
 Requires at least: 4.5
 Tested up to: 5.4
-Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,7 +46,6 @@ Springy is distributed under the terms of the GNU GPL v2 or later.
 * Theia Sticky Sidebar https://github.com/WeCodePixels/theia-sticky-sidebar [MIT license]
 * Slick Slider https://github.com/kenwheeler/slick/blob/master/LICENSE [The MIT License (MIT)]
 * Font-Awesome https://github.com/FortAwesome/Font-Awesome FontAwesome 4.6.3 Copyright 2012 Dave Gandy Font License: SIL OFL 1.1 Code License: MIT License http://fontawesome.io/license/
-* imagesLoaded MIT License https://imagesloaded.desandro.com/#mit-license
 * TGM-Plugin-Activation: Author: Thomas Griffin (thomasgriffinmedia.com)
 URL:  https://github.com/TGMPA/TGM-Plugin-Activation
 License: GNU General Public License, version 2
@@ -61,5 +59,9 @@ Source: Self Created
 Single Page Image, self created
 License: CC0 1.0 Universal (CC0 1.0)
 Source: Self Created
+
+Icons on the header.jpg are themify icons
+License: CC0 1.0 Universal (CC0 1.0)
+Source: Themify Icons GNU License
 
 * Sidebar icons for the customizer are self created and license under GPL.

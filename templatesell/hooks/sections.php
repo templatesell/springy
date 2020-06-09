@@ -183,8 +183,17 @@ if (!function_exists('springy_main_header_hooks')) :
             <div class="container">
                 <div class="head-img-wrapper">
                     <div class="head-content">
-                        <h1 class="wel-title"><?php echo esc_html($header_text); ?></h1>
+                        <?php if(!empty($header_text)){ ?>
+                                <h1 class="wel-title"><?php echo esc_html($header_text); ?></h1>
+                         <?php   }else{ ?>
+                           <h1 class="wel-title"><?php bloginfo( 'name' ); ?></h1>
+                        <?php }?>
+
+                        <?php if(!empty($header_subtext)){ ?>
                         <p class="wel-title"><?php echo esc_html($header_subtext); ?></p>
+                    <?php }else{ ?>
+                        <p class="wel-title"><?php bloginfo( 'description' ); ?></p>
+                    <?php } ?>
                         <a href="<?php echo esc_url($header_link); ?>"><?php echo esc_html($header_btn); ?></a>
                     </div>
                 </div>

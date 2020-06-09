@@ -10,7 +10,7 @@
 get_header();
 global $springy_theme_options;
 $page_banner = esc_url($springy_theme_options['springy_single_page_banner_image']);
-$def_banner = get_template_directory_uri()."/assets/images/page-banner.jpg";
+$def_banner = esc_url(get_template_directory_uri()."/assets/images/page-banner.jpg");
 $main_banner = ($page_banner == '') ? $def_banner : $page_banner;
 ?>
 <section  class="page-bg" style="background-image: url('<?php echo $main_banner; ?>');">

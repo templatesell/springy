@@ -18,7 +18,7 @@
  */
 function springy_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'springy_custom_header_args', array(
-		'default-image'      => get_stylesheet_directory_uri() . '/assets/images/header.png',
+		'default-image'      => get_stylesheet_directory_uri() . '/assets/images/header.jpg',
 		'default-text-color'     => 'fff',
 		'width'                  => 1920,
 		'height'                 => 1024,
