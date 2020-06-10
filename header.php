@@ -49,12 +49,12 @@ if ( function_exists( 'wp_body_open' ) ) {
      *
      * @hooked springy_action_main_header_header - 10
      */
-    if( $enable_slider == 0  && (is_home() || is_front_page()) ){
+    if( $enable_slider == 0  && (!is_home() || is_front_page()) ){
      do_action('springy_action_main_header_header');
     }
     ?>
     <div class="clear-fix"></div>
-	 <?php if ($enable_slider == 1 && (is_home() || is_front_page() )) { ?>
+	 <?php if ($enable_slider == 1 && (is_front_page() || !is_home() ) ) { ?>
         <section class="slider-wrapper">
             <?php
             /*
@@ -68,7 +68,7 @@ if ( function_exists( 'wp_body_open' ) ) {
             ?>
         </section>
     <?php } ?>
-    <?php if ($enable_box == 1 && (is_home() || is_front_page() ) )  { ?>
+    <?php if ($enable_box == 1 && (is_front_page() || !is_home() ) )  { ?>
         <section class="promo-slider-wrapper">
             <?php
             
