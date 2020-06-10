@@ -25,6 +25,7 @@ if (!function_exists('springy_dynamic_css')) :
         if (!empty($springy_primary_color)) {
             $custom_css .= "
             #toTop:hover,
+            .mega_ts_menu .scroll-background,
             a.effect:before,
             .show-more,
             a.link-format,
@@ -51,6 +52,10 @@ if (!function_exists('springy_dynamic_css')) :
         //Primary Color
         if (!empty($springy_primary_color)) {
             $custom_css .= "
+            .feature-item i,
+            .head-content a:hover, 
+            .head-content a:focus, 
+            .head-content a:active,
             .main-header a:hover, 
             .main-header a:focus, 
             .main-header a:active,
@@ -101,6 +106,14 @@ if (!function_exists('springy_dynamic_css')) :
                 opacity : ". $springy_slider_transparent."; 
             }";
         }
+        //Slider Tranparent
+        if (!empty($springy_primary_color)) {
+            $custom_css .= "
+            .head-content a:hover { 
+                border-color : ". $springy_primary_color."; 
+            }";
+        }
+
 
         wp_add_inline_style('springy-style', $custom_css);
     }

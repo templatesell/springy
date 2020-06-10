@@ -910,9 +910,9 @@ th {
     max-width: 100%;
     padding:15px 0;
 }
-.mega_ts_menu .scroll-background .logo p{
+/*.mega_ts_menu .scroll-background .logo p{
     color: #222222;
-}
+}*/
 
 .main-header {
     display: none;
@@ -940,7 +940,7 @@ th {
 .head-content p{
     color: #fff;
     margin:15px 0;
-    display: inline-block;
+    display: block;
 }
 .head-content a{
     padding: 14px 35px;
@@ -949,7 +949,7 @@ th {
     border: 2px solid;
     text-transform: capitalize;
     border-radius: 50px;
-    color: #fff !important;
+    color: #fff;
     -webkit-transition: 0.5s;
     transition: 0.5s;
     letter-spacing: 0;
@@ -963,8 +963,8 @@ th {
     -webkit-transition: 0.5s;
     transition: 0.5s;
     background-color: #fff;
-    border: 2px solid #774ddd;
-    color: #774ddd !important;
+    border: 2px solid #f36b8f;
+    color: #774ddd;
 }
 /*==============================================================
 ## Main Banner CSS
@@ -5399,6 +5399,9 @@ ul.social-menu li a[href*="dribble.com"]:before {
 }
 .search-heading h2 span{
     color: #d42929;
+}
+.home .page-bg{
+    display: none;
 }
 /***
 ====================================================================
