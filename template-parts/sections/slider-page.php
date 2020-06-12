@@ -36,7 +36,7 @@ if (count($slider_arr) >= 1):
                                     <p><?php echo get_the_excerpt($s_post_id); ?></p>
                                 </div>
                                 <a href="<?php echo get_the_permalink($s_post_id); ?>" class="more-btn"> 
-                                    <?php esc_html_e($header_btn); ?>
+                                    <?php echo esc_html($header_btn); ?>
                                 </a>
                             </div>
                         </div>

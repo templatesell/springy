@@ -50,7 +50,7 @@ $slider_overlay = absint($springy_theme_options['springy_enable_slider_overlay']
                     </div>
                     <div class="post-excerpt entry-content">
                       <?php the_excerpt(); ?>
-                        <a class="more-btn" href="<?php the_permalink(); ?>"><?php esc_html_e($header_btn); ?></a>
+                        <a class="more-btn" href="<?php the_permalink(); ?>"><?php echo esc_html($header_btn); ?></a>
                     </div>
                   </div>
                 </div> 
