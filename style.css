@@ -3901,6 +3901,8 @@ input[type="radio"]:checked:before {
 .single.single-no-sidebar #primary,
 .post-template-post-no-sidebar.single #primary{
     width:100%!important;
+    max-width: 100%!important;
+    flex: auto;
 }
 
 

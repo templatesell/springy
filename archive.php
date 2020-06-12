@@ -15,7 +15,7 @@ $main_banner = ($page_banner == '') ? $def_banner : $page_banner;
 ?>
 <section  class="page-bg" style="background-image: url('<?php echo $main_banner; ?>');">
 	<div class="container">
-		<div class="breadcrumbs-wrapper">	
+		<div class="breadcrumbs-wrapper row">	
 			<div class="archive-heading">
 				<?php
 				the_archive_title( '<h2 class="archive-title">', '</h2>' );
