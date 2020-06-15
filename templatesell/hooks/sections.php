@@ -194,7 +194,9 @@ if (!function_exists('springy_main_header_hooks')) :
                     <?php }else{ ?>
                         <p class="wel-title"><?php bloginfo( 'description' ); ?></p>
                     <?php } ?>
+                    <?php if(!empty($header_btn)) { ?>
                         <a href="<?php echo esc_url($header_link); ?>"><?php echo esc_html($header_btn); ?></a>
+                    <?php } ?>
                     </div>
                 </div>
             </div>
