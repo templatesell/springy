@@ -52,6 +52,7 @@ $class_menu = ($normal_menu == 1 ) ? 'fixed-nav' : '';
 						'menu_class'      => '',
 					));
 					?>
+					<button class="btnc"><span class="ti-close"></span></button>
 				</nav>
 				<!-- end of nav -->
 				<?php if( 1 == $search_header ){ ?>	               	

@@ -25,6 +25,10 @@ jQuery(function($) {
         $(this).toggleClass('clicked')
         $nav.toggleClass('nav_on')
     });
+    $(".btnc").on("click", function () {
+        $(".main-navigation").removeClass("nav_on");
+        $(".menu-box").removeClass("clicked");
+    });
 
     $('.menu-item-has-children .sub-menu').before('<span class="dropdown-toggle"><strong class="dropdown-icon"></strong>');
     $('.dropdown-toggle').on('click', function(e) {
