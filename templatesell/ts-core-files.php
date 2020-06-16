@@ -92,3 +92,10 @@ require get_template_directory() . '/templatesell/custom-functions.php';
  */
 require get_template_directory() . '/templatesell/library/tgm-plugin-activation.php';
 require get_template_directory() . '/templatesell/library/tgm.php';
+
+/**
+ * For Admin Page
+ */
+if ( is_admin() ) {
+ require get_template_directory() . '/templatesell/about/about.php';
+}
