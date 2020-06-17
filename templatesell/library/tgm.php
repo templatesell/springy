@@ -25,6 +25,11 @@ if ( ! function_exists( 'springy_recommended_plugins' ) ) :
                 'slug'     => 'master-addons',
                 'required' => false,
             ),
+            array(
+                'name'     => __( 'One Click Demo Import', 'springy' ),
+                'slug'     => 'one-click-demo-import',
+                'required' => false,
+            ),
         );
 
         tgmpa( $plugins );

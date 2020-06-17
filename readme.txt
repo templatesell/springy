@@ -11,7 +11,8 @@ A perfect theme for blog and Elementor site. This theme is built based on custom
 
 == Description ==
 
-A perfect theme for blog and Elementor site. This theme is built based on customizer and easy to use responsive theme.
+A perfect theme for blog and Elementor site. This theme is built based on customizer. Besides that, this theme has added custom widgets. Springy is compatible with Master Addons elementor plugin. Futhermore, it has awesome header part, slider section, promotional boxes, related posts and many more. In addition to that, Springy has copyright text, meta option, sidebar option, pagination types etc. Demos: https://www.templatesell.net/demo/springy/
+
 == Installation ==
 
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
@@ -28,6 +29,10 @@ Springy includes support for Infinite Scroll in Jetpack.
 * Custom pagination for numeric is made.
 
 == Changelog ==
+= 1.0.3 - June 17 2020 =
+* Reviewer Issues Fixed
+* About Page Added
+
 = 1.0.2 - June 12 2020 =
 * Reviewer Issues Fixed
 
