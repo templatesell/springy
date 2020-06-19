@@ -5386,6 +5386,7 @@ ul.social-menu li a[href*="dribble.com"]:before {
 #toTop:hover {
     color: #ffffff;
     background-color: #d42929;
+    opacity: 0.8;
 }
 #toTop:active i {
     position: relative;

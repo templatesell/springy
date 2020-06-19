@@ -212,7 +212,7 @@ visibility: visible;
   padding: 0;
   text-align: center;
 }
-
+.main-navigation ul ul.children,
 .main-navigation ul ul.sub-menu {
   background-color: #fff;
   text-align: left;
@@ -239,6 +239,8 @@ visibility: visible;
   display: block;
   opacity: 0;
 }
+.main-navigation ul li:focus-within > ul.children,
+.main-navigation ul li:hover > ul.children,
 .main-navigation ul li:focus-within > ul.sub-menu,
 .main-navigation ul li:hover > ul.sub-menu {
   display: block;
@@ -261,6 +263,7 @@ visibility: visible;
   display: inline-block;
   margin-bottom:0;
 }
+.main-navigation ul ul ul.children,
 .main-navigation ul ul ul.sub-menu {
   left:100%;
   top: -20px;
@@ -327,35 +330,6 @@ visibility: visible;
   position: relative;
 }
 
-/*.main-navigation li.current-menu-item > a,
-.main-navigation li.current-page-item > a:after,
-.main-navigation ul li a:hover {
-    color: #1abc9c;
-}*/
-/*.main-navigation ul ul::before,
-.flat-mega-memu::before {
-    content: "";
-    height: 25px;
-    display: block;
-    position: absolute;
-    top: -25px;
-    background: transparent;
-    z-index: 9999;
-    width: 100%;
-    left: 0;
-}
-.main-navigation ul ul::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: -6px;
-    z-index: 9999;
-    left: 20px;
-    transform: rotate(45deg);
-    background: #fff;
-    height: 12px;
-    width: 12px;
-}*/
 .main-navigation li li.current-menu-item > a:after,
 .main-navigation li li.current-page-item > a:after,
 .main-navigation ul li li a:hover:after {
@@ -431,12 +405,7 @@ visibility: visible;
     transition: .3s all ease-in-out;
     box-shadow: 2px 3px 22px 0px rgba(0, 0, 0, 0.30);
   }
-/*  .mega_ts_menu .scroll-background nav>ul>li>a {
-    color: #222;
-  }
-  .mega_ts_menu .scroll-background nav>ul>li:hover {
-    background: #eee;
-  }*/
+
   .mega_ts_menu .scroll-background .drop-list li a {
     border-bottom: 1px solid #ccc;
     color: #222;
@@ -451,13 +420,6 @@ visibility: visible;
   .mega_ts_menu .scroll-background .megalist .list-col ul li a:hover {
     background: #ccc;
   }
-  /*.mega_ts_menu .scroll-background .search-box i {
-    color: #222;
-    border: 1px solid #ccc;
-  }
-  .mega_ts_menu .scroll-background .logo a {
-    color: #222;
-  }*/
   /*fixed-transparent-black menu*/
   .mega_ts_menu .transparent-black {
     background: rgba(0, 0, 0, 0.3);
@@ -532,6 +494,7 @@ visibility: visible;
     color: #fff!important;
     margin:0;
   }
+  .mega_ts_menu nav.nav_on li .children,
   .mega_ts_menu nav.nav_on li .sub-menu {
     background: #333;
     top: auto;
@@ -539,7 +502,7 @@ visibility: visible;
   .mega_ts_menu nav li a:hover {
     background: #444;
   }
-
+  .mega_ts_menu .children,
   .mega_ts_menu .sub-menu {
     position: relative;
     display: none;
@@ -630,6 +593,7 @@ visibility: visible;
   .main-navigation ul li a{
     line-height: initial;
   }
+  .main-navigation ul ul.children,
   .main-navigation ul ul.sub-menu {
     visibility: initial;
     opacity: 1;
@@ -646,6 +610,7 @@ visibility: visible;
     box-shadow: initial;
 
   }
+  .main-navigation ul li:hover > ul.children,
   .main-navigation ul li:hover > ul.sub-menu {
     display: none;
     opacity: 1;
@@ -662,6 +627,7 @@ visibility: visible;
   .main-navigation li {
     display: block;
   }
+  .main-navigation ul ul ul.children,
   .main-navigation ul ul ul.sub-menu {
     left:initial;
     top:initial;

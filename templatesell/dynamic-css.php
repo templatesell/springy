@@ -24,7 +24,7 @@ if (!function_exists('springy_dynamic_css')) :
         //Primary  Background 
         if (!empty($springy_primary_color)) {
             $custom_css .= "
-            #toTop:hover,
+            #toTop,
             .mega_ts_menu .scroll-background,
             a.effect:before,
             .show-more,
