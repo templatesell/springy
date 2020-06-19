@@ -29,6 +29,11 @@ Springy includes support for Infinite Scroll in Jetpack.
 * Custom pagination for numeric is made.
 
 == Changelog ==
+= 1.0.4 - June 19 2020 =
+* Upgrade to Pro added
+* Fixed Menu Design
+* Changed powered text
+
 = 1.0.3 - June 17 2020 =
 * Reviewer Issues Fixed
 * About Page Added

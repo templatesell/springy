@@ -99,3 +99,8 @@ require get_template_directory() . '/templatesell/library/tgm.php';
 if ( is_admin() ) {
  require get_template_directory() . '/templatesell/about/about.php';
 }
+
+/**
+ * Upgrade to pro
+ */
+ require get_template_directory() . '/templatesell/upgrade/class-customize.php';
