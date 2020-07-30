@@ -75,12 +75,14 @@ if ( is_active_sidebar('footer-1') || is_active_sidebar('footer-2') || is_active
 				</div>
 				<div class="col-md-6">
 					<?php
-					wp_nav_menu( array(
-						'theme_location' => 'footer',
-						'menu_id'        => '',
-						'container' => 'ul',
-						'menu_class'      => 'footer-menu'
-					) );
+					if (has_nav_menu('footer')) {
+						wp_nav_menu( array(
+							'theme_location' => 'footer',
+							'menu_id'        => '',
+							'container' => 'ul',
+							'menu_class'      => 'footer-menu'
+						) );
+					}
 					?>
 				</div>
 			</div>

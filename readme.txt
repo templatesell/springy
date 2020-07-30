@@ -29,6 +29,10 @@ Springy includes support for Infinite Scroll in Jetpack.
 * Custom pagination for numeric is made.
 
 == Changelog ==
+= 1.0.5 - July 30 2020 =
+* Changed default header image
+* Fixed footer menu
+
 = 1.0.4 - June 19 2020 =
 * Upgrade to Pro added
 * Fixed Menu Design
@@ -76,5 +80,9 @@ Source: Self Created
 Icons on the header.jpg are themify icons
 License: CC0 1.0 Universal (CC0 1.0)
 Source: Themify Icons GNU License
+
+Default Header Image 
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://pxhere.com/en/photo/1376514
 
 * Sidebar icons for the customizer are self created and license under GPL.
