@@ -3,7 +3,7 @@
 Contributors: templatesell
 Tags: custom-background, custom-header, one-column, two-columns, three-columns, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, left-sidebar, right-sidebar, blog, portfolio, education
 Requires at least: 4.5
-Tested up to: 5.4
+Tested up to: 5.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -29,6 +29,9 @@ Springy includes support for Infinite Scroll in Jetpack.
 * Custom pagination for numeric is made.
 
 == Changelog ==
+= 1.0.6 - October 08 2020 =
+* Fixed Customizer issues on latest PHP version
+
 = 1.0.5 - July 30 2020 =
 * Changed default header image
 * Fixed footer menu

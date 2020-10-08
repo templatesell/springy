@@ -13,12 +13,14 @@ $wp_customize->add_section( 'springy_promo_section', array(
 if ( !function_exists('springy_promo_active_callback') ) :
     function springy_promo_active_callback(){
         global $springy_theme_options;
-        $enable_promo = absint($springy_theme_options['springy_enable_promo']);
-        if( 1 == $enable_promo ){
-            return true;
-        }
-        else{
-            return false;
+        if(isset($polite_theme_options['springy_enable_promo'])){
+            $enable_promo = absint($springy_theme_options['springy_enable_promo']);
+            if( 1 == $enable_promo ){
+                return true;
+            }
+            else{
+                return false;
+            }
         }
     }
 endif;
@@ -67,15 +69,17 @@ $wp_customize->add_control('springy_options[springy-select-boxes-from]', array(
 if ( !function_exists('springy_boxes_get_from_active_callback') ) :
   function springy_boxes_get_from_active_callback(){
       global $springy_theme_options;
-      $enable_boxes = absint($springy_theme_options['springy_enable_promo']);
-      $boxes_from = esc_attr($springy_theme_options['springy-select-boxes-from']);
-      if( 1 == $enable_boxes && $boxes_from == 'from-post-cat' ){
-          return true;
-      }
-      else{
-          return false;
-      }
-  }
+      if(isset($polite_theme_options['springy_enable_promo'])){
+            $enable_boxes = absint($springy_theme_options['springy_enable_promo']);
+            $boxes_from = esc_attr($springy_theme_options['springy-select-boxes-from']);
+            if( 1 == $enable_boxes && $boxes_from == 'from-post-cat' ){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+    }
 endif; 
 
 /*Boxes Category Selection*/
@@ -107,13 +111,15 @@ $wp_customize->add_control(
 if ( !function_exists('springy_boxes_get_from_customizer_active_callback') ) :
   function springy_boxes_get_from_customizer_active_callback(){
       global $springy_theme_options;
-      $enable_boxes = absint($springy_theme_options['springy_enable_promo']);
-      $boxes_from = esc_attr($springy_theme_options['springy-select-boxes-from']);
-      if( 1 == $enable_boxes && $boxes_from == 'from-customizer' ){
-          return true;
-      }
-      else{
-          return false;
+      if(isset($polite_theme_options['springy_enable_promo'])){      
+          $enable_boxes = absint($springy_theme_options['springy_enable_promo']);
+          $boxes_from = esc_attr($springy_theme_options['springy-select-boxes-from']);
+          if( 1 == $enable_boxes && $boxes_from == 'from-customizer' ){
+              return true;
+          }
+          else{
+              return false;
+          }
       }
   }
 endif; 

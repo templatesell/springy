@@ -108,11 +108,13 @@ if (!function_exists('springy_related_post_callback')) :
     function springy_related_post_callback()
     {
         global $springy_theme_options;
-        $related_posts = absint($springy_theme_options['springy-single-page-related-posts']);
-        if (1 == $related_posts) {
-            return true;
-        } else {
-            return false;
+        if(isset($polite_theme_options['springy_enable_promo'])){        
+            $related_posts = absint($springy_theme_options['springy-single-page-related-posts']);
+            if (1 == $related_posts) {
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 endif;

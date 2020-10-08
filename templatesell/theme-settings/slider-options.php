@@ -13,12 +13,14 @@ $wp_customize->add_section( 'springy_slider_section', array(
 if ( !function_exists('springy_slider_active_callback') ) :
   function springy_slider_active_callback(){
       global $springy_theme_options;
-      $enable_slider = absint($springy_theme_options['springy_enable_slider']);
-      if( 1 == $enable_slider ){
-          return true;
-      }
-      else{
-          return false;
+      if(isset($polite_theme_options['springy_enable_slider'])){
+        $enable_slider = absint($springy_theme_options['springy_enable_slider']);
+        if( 1 == $enable_slider ){
+            return true;
+        }
+        else{
+            return false;
+        }
       }
   }
 endif;
@@ -70,13 +72,15 @@ $wp_customize->add_control('springy_options[springy-select-slider-from]', array(
 if ( !function_exists('springy_slider_get_from_active_callback') ) :
   function springy_slider_get_from_active_callback(){
       global $springy_theme_options;
-      $enable_slider = absint($springy_theme_options['springy_enable_slider']);
-      $slider_from = esc_attr($springy_theme_options['springy-select-slider-from']);
-      if( 1 == $enable_slider && $slider_from == 'from-post' ){
-          return true;
-      }
-      else{
-          return false;
+      if(isset($polite_theme_options['springy_enable_slider'])){
+        $enable_slider = absint($springy_theme_options['springy_enable_slider']);
+        $slider_from = esc_attr($springy_theme_options['springy-select-slider-from']);
+        if( 1 == $enable_slider && $slider_from == 'from-post' ){
+            return true;
+        }
+        else{
+            return false;
+        }
       }
   }
 endif;        
@@ -111,13 +115,15 @@ $wp_customize->add_control(
 if ( !function_exists('springy_slider_get_from_page_active_callback') ) :
   function springy_slider_get_from_page_active_callback(){
       global $springy_theme_options;
-      $enable_slider = absint($springy_theme_options['springy_enable_slider']);
-      $slider_from = esc_attr($springy_theme_options['springy-select-slider-from']);
-      if( 1 == $enable_slider && $slider_from == 'from-page' ){
-          return true;
-      }
-      else{
-          return false;
+      if(isset($polite_theme_options['springy_enable_slider'])){
+        $enable_slider = absint($springy_theme_options['springy_enable_slider']);
+        $slider_from = esc_attr($springy_theme_options['springy-select-slider-from']);
+        if( 1 == $enable_slider && $slider_from == 'from-page' ){
+            return true;
+        }
+        else{
+            return false;
+        }
       }
   }
 endif; 
@@ -201,13 +207,15 @@ $wp_customize->add_control(
 if ( !function_exists('springy_slider_overlay_color_active_callback') ) :
   function springy_slider_overlay_color_active_callback(){
       global $springy_theme_options;
-      $enable_slider = absint($springy_theme_options['springy_enable_slider']);
-      $slider_overlay = absint($springy_theme_options['springy_enable_slider_overlay']);
-      if( 1 == $enable_slider && $slider_overlay == 1 ){
-          return true;
-      }
-      else{
-          return false;
+      if(isset($polite_theme_options['springy_enable_slider'])){
+        $enable_slider = absint($springy_theme_options['springy_enable_slider']);
+        $slider_overlay = absint($springy_theme_options['springy_enable_slider_overlay']);
+        if( 1 == $enable_slider && $slider_overlay == 1 ){
+            return true;
+        }
+        else{
+            return false;
+        }
       }
   }
 endif;   
