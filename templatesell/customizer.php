@@ -14,8 +14,8 @@ if ( !function_exists('springy_default_theme_options_values') ) :
           /*Header Options*/
             'springy_enable_search'  => 1,
             'springy_primary_menu_transparent'=> 1,
-            'springy_header_image_text'=> '',
-            'springy_header_image_sub_heading' => '',
+            'springy_header_image_text'=> esc_html__('Where Dream Become Reality','springy'),
+            'springy_header_image_sub_heading' =>  esc_html__('Start today because sky is the limit & you can get more.','springy'),
             'springy_header_image_button_link'=> '#',
             'springy_header_image_button_text'=> esc_html__('Get Started','springy'),
 
@@ -74,7 +74,7 @@ if ( !function_exists('springy_default_theme_options_values') ) :
             'springy-enable-sticky-sidebar' => 1,
 
             /*Footer Section*/
-            'springy-footer-copyright'  => esc_html__('Copyright All Rights Reserved 2020','springy'),
+            'springy-footer-copyright'  => esc_html__('Copyright All Rights Reserved 2021','springy'),
 
             /*Breadcrumb Options*/
             'springy-extra-breadcrumb' => 1,

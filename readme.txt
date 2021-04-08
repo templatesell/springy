@@ -31,6 +31,8 @@ Springy includes support for Infinite Scroll in Jetpack.
 == Changelog ==
 = 1.0.6 - April 08 2021 =
 * Checked with wp 5.7
+* Copyright year changed
+* Default header text added
 
 = 1.0.6 - Devember 29 2020 =
 * Fixed Customizer issues on latest PHP version
