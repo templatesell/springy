@@ -3,7 +3,7 @@
 Contributors: templatesell
 Tags: custom-background, custom-header, one-column, two-columns, three-columns, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, left-sidebar, right-sidebar, blog, portfolio, education
 Requires at least: 4.5
-Tested up to: 5.7
+Tested up to: 5.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -29,7 +29,11 @@ Springy includes support for Infinite Scroll in Jetpack.
 * Custom pagination for numeric is made.
 
 == Changelog ==
-= 1.0.6 - April 08 2021 =
+= 1.0.8 - August 19 2021 =
+* Checked with wp 5.8
+* Disable new widget screen
+
+= 1.0.7 - April 08 2021 =
 * Checked with wp 5.7
 * Copyright year changed
 * Default header text added
