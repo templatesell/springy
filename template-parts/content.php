@@ -12,6 +12,7 @@ $read_more = esc_html($springy_theme_options['springy-read-more-text']);
 $masonry = esc_attr($springy_theme_options['springy-column-blog-page']);
 $image_location = esc_attr($springy_theme_options['springy-blog-image-layout']);
 $social_share = absint($springy_theme_options['springy-show-hide-share']);
+$drop_cap_class =  isset( $drop_cap_class ) ? $drop_cap_class : '';
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class($masonry); ?>>
@@ -29,14 +30,14 @@ $social_share = absint($springy_theme_options['springy-show-hide-share']);
                         <?php springy_entry_meta(); ?>
                     </div>
                 </div>
-                <?php 
+                <?php
                     if( 1 == $social_share ){
                         do_action( 'springy_social_sharing' ,get_the_ID() );
                     }
                 ?>
             </div>
         </div>
-        
+
         <div class="post-content">
             <div class="post_title">
                 <?php
@@ -48,7 +49,7 @@ $social_share = absint($springy_theme_options['springy-show-hide-share']);
                 <?php endif; ?>
             </div>
 
-            <div class="post-excerpt entry-content <?php echo $drop_cap_class; ?>">
+            <div class="post-excerpt entry-content <?php echo esc_attr( $drop_cap_class ); ?>">
                 <?php
                 if (is_singular()) {
                     the_content();
@@ -72,7 +73,7 @@ $social_share = absint($springy_theme_options['springy-show-hide-share']);
                 <?php endif; ?>
             </div>
             <!-- .entry-content end -->
-            <div class="post-meta-desc">  
+            <div class="post-meta-desc">
                 <div class="post-meta">
                     <?php
                     if ('post' === get_post_type()) :
