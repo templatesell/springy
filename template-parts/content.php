@@ -48,7 +48,7 @@ $social_share = absint($springy_theme_options['springy-show-hide-share']);
                 <?php endif; ?>
             </div>
 
-            <div class="post-excerpt entry-content <?php echo $drop_cap_class; ?>">
+            <div class="post-excerpt entry-content">
                 <?php
                 if (is_singular()) {
                     the_content();
