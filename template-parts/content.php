@@ -12,16 +12,16 @@ $read_more = esc_html($springy_theme_options['springy-read-more-text']);
 $masonry = esc_attr($springy_theme_options['springy-column-blog-page']);
 $image_location = esc_attr($springy_theme_options['springy-blog-image-layout']);
 $social_share = absint($springy_theme_options['springy-show-hide-share']);
-
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class($masonry); ?>>
     <div class="post-wrap <?php echo esc_attr($image_location); ?>">
-        <?php if(has_post_thumbnail()) { ?><?php } ?>
+        <?php if(has_post_thumbnail()) { ?>
         <div class="post-media-part">
             <div class="post-media">
                 <?php springy_post_thumbnail(); ?>
             </div>
         </div>
+        <?php } ?>
         <div class="post-meta-info">
             <div class="meta-wrapper">
                 <div class="meta-categories">
@@ -29,14 +29,14 @@ $social_share = absint($springy_theme_options['springy-show-hide-share']);
                         <?php springy_entry_meta(); ?>
                     </div>
                 </div>
-                <?php 
+                <?php
                     if( 1 == $social_share ){
                         do_action( 'springy_social_sharing' ,get_the_ID() );
                     }
                 ?>
             </div>
         </div>
-        
+
         <div class="post-content">
             <div class="post_title">
                 <?php
@@ -47,7 +47,7 @@ $social_share = absint($springy_theme_options['springy-show-hide-share']);
                     ?>
                 <?php endif; ?>
             </div>
-
+            <div class="post-excerpt entry-content">
             <div class="post-excerpt entry-content">
                 <?php
                 if (is_singular()) {
@@ -72,7 +72,7 @@ $social_share = absint($springy_theme_options['springy-show-hide-share']);
                 <?php endif; ?>
             </div>
             <!-- .entry-content end -->
-            <div class="post-meta-desc">  
+            <div class="post-meta-desc">
                 <div class="post-meta">
                     <?php
                     if ('post' === get_post_type()) :

@@ -17,6 +17,10 @@ if ( ! function_exists( 'springy_setup' ) ) :
 	 */
 	function springy_setup() {
 		/*
+		* Load global variables in theme setup
+		*/
+		$GLOBALS['springy_theme_options'] = springy_get_options_value();
+		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
 		 * If you're building a theme based on Springy, use a find and replace
@@ -129,12 +133,6 @@ if ( ! function_exists( 'springy_setup' ) ) :
         add_image_size('springy-related-size', 600, 400, true); 
         add_image_size('springy-promo-post', 800, 500, true); 
         add_image_size('springy-related-post-thumbnails', 850, 550, true ); 
-
-        /**
-        * Disable new widget screen
-        * @link https://developer.wordpress.org/block-editor/how-to-guides/widgets/overview/
-        */
-		remove_theme_support( 'widgets-block-editor' ); 
 	}
 endif;
 add_action( 'after_setup_theme', 'springy_setup' );

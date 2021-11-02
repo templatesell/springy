@@ -8,7 +8,6 @@
  *
  * @package Springy
  */
-$GLOBALS['springy_theme_options'] = springy_get_options_value();
 global $springy_theme_options;
 $enable_slider = absint($springy_theme_options['springy_enable_slider']);
 $slider_from = esc_attr($springy_theme_options['springy-select-slider-from']);
