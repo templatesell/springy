@@ -32,6 +32,7 @@ function springy_page() {
 			<div class="springy-logo">
 				<img class="ts-logo" src="<?php echo esc_url( get_template_directory_uri() . '/templatesell/about/images/springy-logo.png' ); ?>" alt="Logo">
 			</div>
+			<a href="https://www.templatesell.com/item/springy-plus/" target="_blank" class="btn btn-success pull-right"><?php esc_html_e( 'Upgrade Pro $49', 'springy' ); ?></a>
 			<p>
 			<?php esc_html_e( 'A perfect theme for blog and magazine site. With masonry layout and multiple blog page layout, this theme is the awesome and minimal theme.', 'springy' ); ?></p>
 			<a class="btn btn-primary" href="<?php echo esc_url (admin_url( '/customize.php?' ));
